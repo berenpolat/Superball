@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class EnemyScript : MonoBehaviour
 {
@@ -20,9 +21,11 @@ public class EnemyScript : MonoBehaviour
     #region Enemy variables
 
     private Rigidbody2D rb;
-    [SerializeField] private float enemySpeed;
+    public float enemySpeed;
     public Transform enemyStartPoint;
-    
+    private float originalSpeed;
+
+
     #endregion
 
     #region Ball variables
@@ -39,6 +42,7 @@ public class EnemyScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         transform.position = enemyStartPoint.position;
+        originalSpeed = enemySpeed;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -52,6 +56,10 @@ public class EnemyScript : MonoBehaviour
     private void Update()
     {
         TrackTheBall();
+        if (enemySpeed < originalSpeed)
+        {
+            StartCoroutine(ResetSpeedAfterDelay());
+        }
     }
 
     #endregion
@@ -68,5 +76,14 @@ public class EnemyScript : MonoBehaviour
         
         rb.velocity = direction * enemySpeed;
     }
+    private IEnumerator ResetSpeedAfterDelay()
+    {
+        yield return new WaitForSeconds(3f); // 3 saniye bekle
 
+        // Eðer enemySpeed hala originalSpeed'den düþükse, enemySpeed'i originalSpeed'e eþitle
+        if (enemySpeed < originalSpeed)
+        {
+            enemySpeed = originalSpeed;
+        }
+    }
 }

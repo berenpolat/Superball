@@ -10,12 +10,16 @@ public class PlayerSkills : MonoBehaviour
 
     public bool Frezeer = false;
 
-    private void Update()
+    public void FrezeerButton()
     {
-        if(Frezeer == true)
-        {
-            var Fbullet = Instantiate(frezeeBullet, FirePoint.position, FirePoint.rotation);
-            Fbullet.GetComponent<Rigidbody2D>().velocity = FirePoint.up * bulletSpeed;
+       if(Frezeer == true)
+        { 
+          var Fbullet = Instantiate(frezeeBullet, FirePoint.position, FirePoint.rotation);
+          Fbullet.GetComponent<Rigidbody2D>().velocity = FirePoint.up * bulletSpeed;
         }
+    }
+    public void FrezeerActive()
+    {
+        Frezeer = true;
     }
 }

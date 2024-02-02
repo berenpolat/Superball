@@ -296,7 +296,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      2D Soccer_0: -3371665967269875062
+      2D Soccer_1: 4507999705802905211
+      2D Soccer_2: 3398026038029213528
+      2D Soccer_3: -4891305565523414645
+      2D Soccer_4: -316952229896945721
+      2D Soccer_5: -5036658080102500696
+      2D Soccer_6: 6477797436336263998
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

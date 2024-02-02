@@ -19,7 +19,9 @@ public class Frezeer : MonoBehaviour
             {
                 // Eðer enemyScript deðiþkeni boþ deðilse, enemySpeed'i 0 yap
                 enemyScript.enemySpeed = 0;
+                
             }
+            Destroy(gameObject);
         }
     }
 }

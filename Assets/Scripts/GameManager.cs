@@ -1,20 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    private int enemyScore { get; set; }
-    private int playerScore { get; set; }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int enemyScore = 0;
+    public int playerScore = 0;
 
-    // Update is called once per frame
+    [SerializeField] private Text enScoreText;
+    [SerializeField] private Text plScoreText;
+
     void Update()
     {
-        
+        enScoreText.text = enemyScore.ToString();
+        plScoreText.text = playerScore.ToString();
     }
 }

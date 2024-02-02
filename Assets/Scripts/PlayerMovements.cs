@@ -1,40 +1,36 @@
-using System;
 using UnityEngine;
 
 public class PlayerMovements : MonoBehaviour
 {
+    #region Joytick
+
+    public VariableJoystick variableJoystick;
+
+    #endregion
+
+    #region Player variables
+
     [SerializeField] private float radius;
     [SerializeField] private float speed;
     [SerializeField] private float rotationSpeed;
     [SerializeField] private Transform playerStartPoint;
-    public VariableJoystick variableJoystick;
     private Rigidbody2D rb;
+    
+    #endregion
+
+    #region Vectors
+
     private Vector3 input;
     private Vector2 direction;
-    
+
+    #endregion
+
+    #region Unity Methods
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         transform.position = playerStartPoint.position;
-    }
-    public void ShootButton()
-    {
-   
-        Collider2D[] colls = Physics2D.OverlapCircleAll(transform.position, radius);
-        foreach(Collider2D coll in colls)
-        {
-            if(coll.TryGetComponent(out BallMovements ball))
-            {
-                Vector3 dir = coll.transform.position - transform.position;
-                ball.Shoot(dir);
-                break;
-            }
-        }
-    }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, radius);
     }
     private void FixedUpdate()
     {
@@ -51,4 +47,21 @@ public class PlayerMovements : MonoBehaviour
         // Hareketi uygula
         rb.velocity = targetDirection * speed;
     }
+    #endregion
+    
+    public void ShootButton()
+    {
+   
+        Collider2D[] colls = Physics2D.OverlapCircleAll(transform.position, radius);
+        foreach(Collider2D coll in colls)
+        {
+            if(coll.TryGetComponent(out BallMovements ball))
+            {
+                Vector3 dir = coll.transform.position - transform.position;
+                ball.Shoot(dir);
+                break;
+            }
+        }
+    }
+    
 }

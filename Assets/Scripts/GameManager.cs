@@ -1,17 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+
+    #region General variables 
+    
     public int enemyScore = 0;
     public int playerScore = 0;
-    public float timer = 0;  // Change the timer to a float to allow for fractions of a second
+    public float timer = 0;
+
+    #endregion
+
+    #region Texts
 
     [SerializeField] private Text enScoreText;
     [SerializeField] private Text plScoreText;
     [SerializeField] private Text timerText;
+
+    #endregion
+
+    #region Unity Methods
 
     void Update()
     {
@@ -21,4 +30,8 @@ public class GameManager : MonoBehaviour
         plScoreText.text = playerScore.ToString();
         timerText.text = Mathf.Floor(timer).ToString(); 
     }
+
+    #endregion
+    
+   
 }

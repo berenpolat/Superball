@@ -31,28 +31,14 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] private GameObject ball;
 
     #endregion
+
+
+    #region Unity Methods
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         transform.position = enemyStartPoint.position;
-    }
-
-    void TrackTheBall()
-    {
-        Vector2 direction = (ball.transform.position - transform.position).normalized;
-        
-        rb.velocity = direction * enemySpeed;
-    }
-
-    private void Update()
-    {
-        TrackTheBall();
-    }
-
-    private void ShootBall()
-    {
-        Vector2 direction = (winFile.transform.position - transform.position).normalized;
-        bm.Shoot(direction*ballSpeed);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -62,4 +48,25 @@ public class EnemyScript : MonoBehaviour
             ShootBall();
         }
     }
+
+    private void Update()
+    {
+        TrackTheBall();
+    }
+
+    #endregion
+    
+    
+    private void ShootBall()
+    {
+        Vector2 direction = (winFile.transform.position - transform.position).normalized;
+        bm.Shoot(direction*ballSpeed);
+    }
+    void TrackTheBall()
+    {
+        Vector2 direction = (ball.transform.position - transform.position).normalized;
+        
+        rb.velocity = direction * enemySpeed;
+    }
+
 }

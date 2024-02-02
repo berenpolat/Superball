@@ -152,7 +152,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      footballnet4_0: 9051092789124559489
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

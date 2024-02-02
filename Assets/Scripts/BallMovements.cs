@@ -56,7 +56,7 @@ public class BallMovements : MonoBehaviour
         rb.AddForce(direction * force);
     }
 
-    public void SetInitialPositions()
+    private void SetInitialPositions()
     {
         Player.transform.position = pm.playerStartPoint.position;
         Enemy.transform.position = es.enemyStartPoint.position;

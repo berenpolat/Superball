@@ -5,6 +5,7 @@ public class BallMovements : MonoBehaviour
 {
     
     [SerializeField] private float force;
+    [SerializeField] private Transform ballStartPoint;
     public GameManager gm;
     private Rigidbody2D rb;
     
@@ -12,6 +13,7 @@ public class BallMovements : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        transform.position = ballStartPoint.position;
     }
     public void Shoot(Vector3 direction)
     {

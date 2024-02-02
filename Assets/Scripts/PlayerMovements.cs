@@ -6,6 +6,7 @@ public class PlayerMovements : MonoBehaviour
     [SerializeField] private float radius;
     [SerializeField] private float speed;
     [SerializeField] private float rotationSpeed;
+    [SerializeField] private Transform playerStartPoint;
     public VariableJoystick variableJoystick;
     private Rigidbody2D rb;
     private Vector3 input;
@@ -14,6 +15,7 @@ public class PlayerMovements : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        transform.position = playerStartPoint.position;
     }
     public void ShootButton()
     {

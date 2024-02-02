@@ -21,6 +21,7 @@ public class EnemyScript : MonoBehaviour
 
     private Rigidbody2D rb;
     [SerializeField] private float enemySpeed;
+    [SerializeField] private Transform enemyStartPoint;
     
     #endregion
 
@@ -33,6 +34,7 @@ public class EnemyScript : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        transform.position = enemyStartPoint.position;
     }
 
     void TrackTheBall()

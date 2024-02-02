@@ -5,6 +5,7 @@ public class PlayerMovements : MonoBehaviour
 {
     [SerializeField] private float radius;
     [SerializeField] private float speed;
+    [SerializeField] private float rotationSpeed;
     public VariableJoystick variableJoystick;
     private Rigidbody2D rb;
     private Vector3 input;
@@ -35,8 +36,17 @@ public class PlayerMovements : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        direction = new Vector2(variableJoystick.Horizontal, variableJoystick.Vertical);
-        direction.Normalize(); 
-        rb.velocity = direction * speed;
+        Vector2 targetDirection = new Vector2(variableJoystick.Horizontal, variableJoystick.Vertical);
+        targetDirection.Normalize();
+
+        // Dönüþ açýsýný hesapla
+        float angle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg;
+        Quaternion targetRotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+        // Karakterin dönmesi
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.fixedDeltaTime * rotationSpeed);
+
+        // Hareketi uygula
+        rb.velocity = targetDirection * speed;
     }
 }

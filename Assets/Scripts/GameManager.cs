@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         StopTheGame();
+        timer = 0;
     }
 
     void Update()
@@ -76,6 +77,7 @@ public class GameManager : MonoBehaviour
     {
         mainMenu.SetActive(false);
         StartCountdown();
+        timer = 0;
     }
     private void StartTheGameplay()
     {

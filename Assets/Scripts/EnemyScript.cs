@@ -2,13 +2,34 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
-    [SerializeField] private float ballSpeed;
-    [SerializeField] private float enemySpeed;
-    [SerializeField] private GameObject ball;
+
+    #region File Transform
+
     [SerializeField] private GameObject winFile;
-    private Rigidbody2D rb;
+
+    #endregion
+ 
+    
+    #region scripts instances
+
     [SerializeField] private BallMovements bm;
 
+
+    #endregion
+
+    #region Enemy variables
+
+    private Rigidbody2D rb;
+    [SerializeField] private float enemySpeed;
+    
+    #endregion
+
+    #region Ball variables
+
+    [SerializeField] private float ballSpeed;
+    [SerializeField] private GameObject ball;
+
+    #endregion
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();

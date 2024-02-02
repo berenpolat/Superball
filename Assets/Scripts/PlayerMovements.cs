@@ -1,18 +1,35 @@
-using System;
 using UnityEngine;
 
 public class PlayerMovements : MonoBehaviour
 {
-    [SerializeField] private float radius;
-    [SerializeField] private float speed;
+
+
+    #region joyStick
+
     public VariableJoystick variableJoystick;
-    private Rigidbody2D rb;
+
+    #endregion
+    
+
+    #region Vectors
+
     private Vector3 input;
     private Vector2 direction;
+
+    #endregion
+    
+    #region player variables
+    
+    [SerializeField] private float radius;
+    [SerializeField] private float speed;
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private Transform startPoint;
+    #endregion
     
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        transform.position = startPoint.position;
     }
     public void ShootButton()
     {
@@ -27,11 +44,6 @@ public class PlayerMovements : MonoBehaviour
                 break;
             }
         }
-    }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, radius);
     }
     private void FixedUpdate()
     {

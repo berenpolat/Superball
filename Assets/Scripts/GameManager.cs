@@ -16,8 +16,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-
-   
+        
         enScoreText.text = enemyScore.ToString();
         plScoreText.text = playerScore.ToString();
         timerText.text = Mathf.Floor(timer).ToString(); 

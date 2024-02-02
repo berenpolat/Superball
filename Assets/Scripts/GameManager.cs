@@ -4,6 +4,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
 
+
+    
     #region General variables 
     
     public int enemyScore = 0;

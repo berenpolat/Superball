@@ -21,7 +21,7 @@ public class EnemyScript : MonoBehaviour
 
     private Rigidbody2D rb;
     [SerializeField] private float enemySpeed;
-    [SerializeField] private Transform enemyStartPoint;
+    public Transform enemyStartPoint;
     
     #endregion
 

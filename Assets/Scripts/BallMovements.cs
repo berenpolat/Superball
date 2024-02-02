@@ -2,11 +2,19 @@ using UnityEngine;
 
 public class BallMovements : MonoBehaviour
 {
+    #region Prefabs
+    
+    [SerializeField] private GameObject Player;
+    [SerializeField] private GameObject Enemy;
+    
+    #endregion
 
 
     #region Script instances
 
     public GameManager gm;
+    public PlayerMovements pm;
+    public EnemyScript es;
 
     #endregion
    
@@ -15,7 +23,7 @@ public class BallMovements : MonoBehaviour
 
     private Rigidbody2D rb;
     [SerializeField] private float force;
-    [SerializeField] private Transform ballStartPoint;
+    public Transform ballStartPoint;
 
     #endregion
 
@@ -31,10 +39,12 @@ public class BallMovements : MonoBehaviour
         if (other.gameObject.CompareTag("WinColLeft"))
         {
             gm.enemyScore += 1;
+            SetInitialPositions();
         }
         if (other.gameObject.CompareTag("WinColRight"))
         {
             gm.playerScore += 1;
+            SetInitialPositions();
         }
         
     }
@@ -46,5 +56,11 @@ public class BallMovements : MonoBehaviour
         rb.AddForce(direction * force);
     }
 
+    public void SetInitialPositions()
+    {
+        Player.transform.position = pm.playerStartPoint.position;
+        Enemy.transform.position = es.enemyStartPoint.position;
+        transform.position = ballStartPoint.position;
+    }
     
 }

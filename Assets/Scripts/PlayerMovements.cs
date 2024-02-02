@@ -13,7 +13,7 @@ public class PlayerMovements : MonoBehaviour
     [SerializeField] private float radius;
     [SerializeField] private float speed;
     [SerializeField] private float rotationSpeed;
-    [SerializeField] private Transform playerStartPoint;
+    public Transform playerStartPoint;
     private Rigidbody2D rb;
     
     #endregion

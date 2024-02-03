@@ -119,7 +119,13 @@ public class GameManager : MonoBehaviour
         player.SetActive(false);
         ball.SetActive(false);
         timer = 0;
+        isBestOfThree = false;  
+        isBestOfFive = false;
+        enemy.transform.position = es.enemyStartPoint.position;
+        player.transform.position = pm.playerStartPoint.position;
+        ball.transform.position = bm.ballStartPoint.position;
     }
+
 
     public void StartTheBestOfThreeGame()
     {

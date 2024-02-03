@@ -23,5 +23,9 @@ public class Frezeer : MonoBehaviour
             }
             Destroy(gameObject);
         }
+        if(other.CompareTag("Border"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

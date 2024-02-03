@@ -43,6 +43,7 @@ public class EnemyScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         transform.position = enemyStartPoint.position;
         originalSpeed = enemySpeed;
+        
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -59,6 +60,7 @@ public class EnemyScript : MonoBehaviour
         if (enemySpeed < originalSpeed)
         {
             StartCoroutine(ResetSpeedAfterDelay());
+            
         }
     }
 
@@ -78,7 +80,10 @@ public class EnemyScript : MonoBehaviour
     }
     private IEnumerator ResetSpeedAfterDelay()
     {
+       
+
         yield return new WaitForSeconds(3f); // 3 saniye bekle
+            
 
         // Eðer enemySpeed hala originalSpeed'den düþükse, enemySpeed'i originalSpeed'e eþitle
         if (enemySpeed < originalSpeed)
@@ -86,4 +91,5 @@ public class EnemyScript : MonoBehaviour
             enemySpeed = originalSpeed;
         }
     }
+
 }

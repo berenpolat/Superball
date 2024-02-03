@@ -156,5 +156,15 @@ public class GameManager : MonoBehaviour
         StartTheGameplay();
         countDownText.text = "";
     }
-   
+
+    public void BackToMenuButtonForWinner()
+    {
+        winPanel.SetActive(false);
+        mainMenu.SetActive(true);
+    }
+    public void BackToMenuButtonForLoser()
+    {
+        losePanel.SetActive(false);
+        mainMenu.SetActive(true);
+    }
 }

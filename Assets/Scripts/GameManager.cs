@@ -1,7 +1,7 @@
-using System;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEngine.ScreenOrientation;
+using Vector3 = UnityEngine.Vector3;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,12 +32,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject enemy;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject ball;
+    [SerializeField] private Camera cam;
 
     #endregion
 
     #region Panels
 
     [SerializeField] private GameObject mainMenuPanel;
+    [SerializeField] private GameObject ingamePanel;
     [SerializeField] private GameObject winPanel;
     [SerializeField] private GameObject losePanel;
     [SerializeField] private GameObject marketPanel;
@@ -92,25 +94,57 @@ public class GameManager : MonoBehaviour
                 losePanel.SetActive(true);
             }
         }
-        if (isBestOfFive)
-        {//KAZANDI BUDGET VER
-            if (playerScore == 5)
-            {
-                StopTheGame();
-                winPanel.SetActive(true);
-                budget += 500;
-            }
-
-            if (enemyScore == 5)
-            {
-                StopTheGame();
-                losePanel.SetActive(true);
-            }
+        
+        if (Input.GetMouseButtonDown(0))
+        {
+            HandleClick();
         }
-            
     }
 
     #endregion
+
+    private void HandleClick()
+    {
+        Vector2 rayOrigin = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.zero);
+
+        if (hit.collider != null)
+        {
+            if (hit.collider.gameObject.CompareTag("Level1"))
+            {
+                OnLevel1Click();
+            }
+            // if (hit.collider.gameObject.CompareTag("Level2"))
+            // {
+            //     OnLevel1Click();
+            // }
+            // if (hit.collider.gameObject.CompareTag("Level3"))
+            // {
+            //     OnLevel1Click();
+            // }
+            // if (hit.collider.gameObject.CompareTag("Level4"))
+            // {
+            //     OnLevel1Click();
+            // }
+        }
+    }
+
+    private void OnLevel1Click()
+    {
+        cam.transform.position = new Vector3(0, -0.2f, -10);
+        mainMenuPanel.SetActive(false);
+        StartCountdown();
+        timer = 0;
+        isBestOfThree = true;
+        isBestOfFive = false;
+    }
+    
+    public void DisplayLevelTree()
+    {
+        ingamePanel.SetActive(false);
+        cam.transform.DOMove(new Vector3(0, -42.2f, -10),1f) ;
+        mainMenuPanel.SetActive(false);
+    }
     private void StopTheGame()
     {
         mainMenuPanel.SetActive(true);
@@ -126,25 +160,8 @@ public class GameManager : MonoBehaviour
         player.transform.position = pm.playerStartPoint.position;
         ball.transform.position = bm.ballStartPoint.position;
     }
-
-
-    public void StartTheBestOfThreeGame()
-    {
-        mainMenuPanel.SetActive(false);
-        StartCountdown();
-        timer = 0;
-        isBestOfThree = true;
-        isBestOfFive = false;
-    }
-
-    public void StartTheBestOfFiveGame()
-    {
-        mainMenuPanel.SetActive(false);
-        StartCountdown();
-        timer = 0;
-        isBestOfThree = false;
-        isBestOfFive = true;
-    }
+    
+    
     private void StartTheGameplay()
     {
         enemyScore = 0;
@@ -153,6 +170,7 @@ public class GameManager : MonoBehaviour
         enemy.transform.position = es.enemyStartPoint.position;
         player.transform.position = pm.playerStartPoint.position;
         ball.transform.position = bm.ballStartPoint.position;
+        ingamePanel.SetActive(true);
         enemy.SetActive(true);
         player.SetActive(true);
         ball.SetActive(true);

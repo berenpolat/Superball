@@ -10,7 +10,9 @@ public class GameManager : MonoBehaviour
     public int enemyScore = 0;
     public int playerScore = 0;
     public float timer = 0;
-
+    private bool isBestOfThree;
+    private bool isBestOfFive;
+    
     #endregion
 
     #region Texts
@@ -25,6 +27,8 @@ public class GameManager : MonoBehaviour
     #region Gameobjects
 
     [SerializeField] private GameObject mainMenu;
+    [SerializeField] private GameObject winPanel;
+    [SerializeField] private GameObject losePanel;
     [SerializeField] private GameObject enemy;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject ball;
@@ -51,14 +55,44 @@ public class GameManager : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-            enScoreText.text = enemyScore.ToString();
-            plScoreText.text = playerScore.ToString();
-            timerText.text = Mathf.Floor(timer).ToString();
+        enScoreText.text = enemyScore.ToString();
+        plScoreText.text = playerScore.ToString();
+        timerText.text = Mathf.Floor(timer).ToString();
 
-            if (timer >= 60f)  
+        if (timer >= 60f)  
+        {
+            StopTheGame();
+        }
+
+        if (isBestOfThree)
+        {
+            if (playerScore == 3)
             {
                 StopTheGame();
+                winPanel.SetActive(true);
             }
+
+            if (enemyScore == 3)
+            {
+                StopTheGame();
+                losePanel.SetActive(true);
+            }
+        }
+        if (isBestOfFive)
+        {
+            if (playerScore == 5)
+            {
+                StopTheGame();
+                winPanel.SetActive(true);
+            }
+
+            if (enemyScore == 5)
+            {
+                StopTheGame();
+                losePanel.SetActive(true);
+            }
+        }
+            
     }
 
     #endregion
@@ -73,11 +107,22 @@ public class GameManager : MonoBehaviour
         timer = 0;
     }
 
-    public void StartTheGame()
+    public void StartTheBestOfThreeGame()
     {
         mainMenu.SetActive(false);
         StartCountdown();
         timer = 0;
+        isBestOfThree = true;
+        isBestOfFive = false;
+    }
+
+    public void StartTheBestOfFiveGame()
+    {
+        mainMenu.SetActive(false);
+        StartCountdown();
+        timer = 0;
+        isBestOfThree = false;
+        isBestOfFive = true;
     }
     private void StartTheGameplay()
     {

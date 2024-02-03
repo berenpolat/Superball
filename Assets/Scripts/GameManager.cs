@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public int enemyScore = 0;
     public int playerScore = 0;
     public float timer = 0;
-    private int budget = 0;
+    public int budget = 0;
     private bool isBestOfThree;
     private bool isBestOfFive;
     

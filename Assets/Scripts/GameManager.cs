@@ -27,16 +27,22 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Gameobjects
-
-    [SerializeField] private GameObject mainMenu;
-    [SerializeField] private GameObject winPanel;
-    [SerializeField] private GameObject losePanel;
+    
     [SerializeField] private GameObject enemy;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject ball;
 
     #endregion
 
+    #region Panels
+
+    [SerializeField] private GameObject mainMenuPanel;
+    [SerializeField] private GameObject winPanel;
+    [SerializeField] private GameObject losePanel;
+    [SerializeField] private GameObject marketPanel;
+
+    #endregion
+    
     #region Script Instances
 
     [SerializeField] private EnemyScript es;
@@ -70,10 +76,12 @@ public class GameManager : MonoBehaviour
 
         if (isBestOfThree)
         {
+            //KAZANDI BUDGET VER
             if (playerScore == 3)
             {
                 StopTheGame();
                 winPanel.SetActive(true);
+                budget += 300;
             }
 
             if (enemyScore == 3)
@@ -83,11 +91,12 @@ public class GameManager : MonoBehaviour
             }
         }
         if (isBestOfFive)
-        {
+        {//KAZANDI BUDGET VER
             if (playerScore == 5)
             {
                 StopTheGame();
                 winPanel.SetActive(true);
+                budget += 500;
             }
 
             if (enemyScore == 5)
@@ -102,7 +111,7 @@ public class GameManager : MonoBehaviour
     #endregion
     private void StopTheGame()
     {
-        mainMenu.SetActive(true);
+        mainMenuPanel.SetActive(true);
         enemyScore = 0;
         playerScore = 0;
         enemy.SetActive(false);
@@ -113,7 +122,7 @@ public class GameManager : MonoBehaviour
 
     public void StartTheBestOfThreeGame()
     {
-        mainMenu.SetActive(false);
+        mainMenuPanel.SetActive(false);
         StartCountdown();
         timer = 0;
         isBestOfThree = true;
@@ -122,7 +131,7 @@ public class GameManager : MonoBehaviour
 
     public void StartTheBestOfFiveGame()
     {
-        mainMenu.SetActive(false);
+        mainMenuPanel.SetActive(false);
         StartCountdown();
         timer = 0;
         isBestOfThree = false;
@@ -164,11 +173,21 @@ public class GameManager : MonoBehaviour
     public void BackToMenuButtonForWinner()
     {
         winPanel.SetActive(false);
-        mainMenu.SetActive(true);
+        mainMenuPanel.SetActive(true);
     }
     public void BackToMenuButtonForLoser()
     {
         losePanel.SetActive(false);
-        mainMenu.SetActive(true);
+        mainMenuPanel.SetActive(true);
+    }
+
+    public void OpenMarket()
+    {
+        marketPanel.SetActive(true);
+    }
+
+    public void BackFromMarket()
+    {
+        marketPanel.SetActive(false);
     }
 }

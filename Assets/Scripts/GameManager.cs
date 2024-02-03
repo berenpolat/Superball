@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public int enemyScore = 0;
     public int playerScore = 0;
     public float timer = 0;
+    private int budget = 0;
     private bool isBestOfThree;
     private bool isBestOfFive;
     
@@ -21,7 +22,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Text plScoreText;
     [SerializeField] private Text timerText;
     [SerializeField] private Text countDownText;
-
+    [SerializeField] private Text budgetText;
+    
     #endregion
 
     #region Gameobjects
@@ -53,6 +55,8 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        budgetText.text = budget.ToString();
+        
         timer += Time.deltaTime;
 
         enScoreText.text = enemyScore.ToString();

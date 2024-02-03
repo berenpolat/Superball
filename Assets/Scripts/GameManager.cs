@@ -72,6 +72,7 @@ public class GameManager : MonoBehaviour
         if (timer >= 60f)  
         {
             StopTheGame();
+            losePanel.SetActive(true);
         }
 
         if (isBestOfThree)

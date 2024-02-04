@@ -324,7 +324,7 @@ public class GameManager : MonoBehaviour
             } if (hit.collider.gameObject.CompareTag("Level7"))
             {
                 OnLevel7Click();
-            } if (hit.collider.gameObject.CompareTag("Leve8"))
+            } if (hit.collider.gameObject.CompareTag("Level8"))
             {
                 OnLevel8Click();
             } if (hit.collider.gameObject.CompareTag("Level9"))
@@ -441,7 +441,7 @@ public class GameManager : MonoBehaviour
     public void DisplayLevelTree()
     {
         ingamePanel.SetActive(false);
-        cam.transform.DOMove(new Vector3(0, yPos, -10),1f) ;
+        cam.transform.DOMove(new Vector3(0, yPos, -10),1.5f) ;
         mainMenuPanel.SetActive(false);
     }
     private void StopTheGame()

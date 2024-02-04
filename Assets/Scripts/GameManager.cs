@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     private bool isBestOfThree1,isBestOfThree2,isBestOfThree3,isBestOfThree4,isBestOfThree5,isBestOfThree6,
         isBestOfThree7,isBestOfThree8,isBestOfThree9,isBestOfThree10,isBestOfThree11,isBestOfThree12;
 
-    private float yPos = -42.2f;
+    private float yPos = -147f;
     #endregion
 
     #region Texts

@@ -441,7 +441,7 @@ public class GameManager : MonoBehaviour
     public void DisplayLevelTree()
     {
         ingamePanel.SetActive(false);
-        cam.transform.DOMove(new Vector3(0, yPos, -10),1.5f) ;
+        cam.transform.DOMove(new Vector3(0, yPos, -10),2f) ;
         mainMenuPanel.SetActive(false);
     }
     private void StopTheGame()

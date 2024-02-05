@@ -44,7 +44,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject winPanel;
     [SerializeField] private GameObject losePanel;
     [SerializeField] private GameObject marketPanel;
-
+    [SerializeField] private GameObject skillTreePanel;
+    
     #endregion
     
     #region Script Instances
@@ -453,7 +454,6 @@ public class GameManager : MonoBehaviour
         player.SetActive(false);
         ball.SetActive(false);
         timer = 0;
-        //isBestOfThree1 = false;
         enemy.transform.position = es.enemyStartPoint.position;
         player.transform.position = pm.playerStartPoint.position;
         ball.transform.position = bm.ballStartPoint.position;
@@ -518,5 +518,15 @@ public class GameManager : MonoBehaviour
     public void BackFromMarket()
     {
         marketPanel.SetActive(false);
+    }
+
+    public void OpenSkillTree()
+    {
+        skillTreePanel.SetActive(true);
+    }
+
+    public void BackFromSkillTree()
+    {
+        skillTreePanel.SetActive(false);
     }
 }

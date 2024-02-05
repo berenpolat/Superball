@@ -6,8 +6,8 @@ public class SkillTreeManager : MonoBehaviour
 {
     #region skill gameobjects
 
-    [SerializeField] private Image freezeSkill;
-    [SerializeField] private Image powerUpSkill;
+    [SerializeField] private UnityEngine.UI.Image freezeSkill;
+    [SerializeField] private UnityEngine.UI.Image powerUpSkill;
     
     #endregion
     
@@ -22,12 +22,12 @@ public class SkillTreeManager : MonoBehaviour
     {
         if (isFreezeSkillUnlocked)
         {
-       
+            freezeSkill.color = Color.white;
         }
 
         if (isPowerUpSkillUnlocked)
         {
-            
+            powerUpSkill.color =Color.white;
         }
     }
 }

@@ -96,6 +96,7 @@ public class GameManager : MonoBehaviour
                 winPanel.SetActive(true);
                 budget += 300;
                 isBestOfThree2 = true;
+                yPos+=4;
             }
 
             if (enemyScore == 3)
@@ -112,7 +113,7 @@ public class GameManager : MonoBehaviour
                 winPanel.SetActive(true);
                 budget += 300;
                 isBestOfThree3 = true;
-                yPos+=10;
+                yPos+=4;
             }
 
             if (enemyScore == 3)
@@ -129,6 +130,7 @@ public class GameManager : MonoBehaviour
                 winPanel.SetActive(true);
                 budget += 300;
                 isBestOfThree4 = true;
+                yPos+=4;
             }
 
             if (enemyScore == 3)
@@ -145,7 +147,7 @@ public class GameManager : MonoBehaviour
                 winPanel.SetActive(true);
                 budget += 300;
                 isBestOfThree5 = true;
-                yPos+=10;
+                yPos+=4;
             }
 
             if (enemyScore == 3)
@@ -162,6 +164,7 @@ public class GameManager : MonoBehaviour
                 winPanel.SetActive(true);
                 budget += 300;
                 isBestOfThree6 = true;
+                yPos+=4;
             }
 
             if (enemyScore == 3)
@@ -178,7 +181,7 @@ public class GameManager : MonoBehaviour
                 winPanel.SetActive(true);
                 budget += 300;
                 isBestOfThree7 = true;
-                yPos+=10;
+                yPos+=4;
             }
 
             if (enemyScore == 3)
@@ -195,6 +198,7 @@ public class GameManager : MonoBehaviour
                 winPanel.SetActive(true);
                 budget += 300;
                 isBestOfThree8 = true;
+                yPos+=4;
             }
 
             if (enemyScore == 3)
@@ -211,7 +215,7 @@ public class GameManager : MonoBehaviour
                 winPanel.SetActive(true);
                 budget += 300;
                 isBestOfThree9 = true;
-                yPos+=10;
+                yPos+=4;
             }
 
             if (enemyScore == 3)
@@ -228,6 +232,7 @@ public class GameManager : MonoBehaviour
                 winPanel.SetActive(true);
                 budget += 300;
                 isBestOfThree10 = true;
+                yPos+=4;
             }
 
             if (enemyScore == 3)
@@ -244,7 +249,7 @@ public class GameManager : MonoBehaviour
                 winPanel.SetActive(true);
                 budget += 300;
                 isBestOfThree11 = true;
-                yPos+=10;
+                yPos+=4;
             }
 
             if (enemyScore == 3)
@@ -261,6 +266,7 @@ public class GameManager : MonoBehaviour
                 winPanel.SetActive(true);
                 budget += 300;
                 isBestOfThree12 = true;
+                yPos+=4;
             }
 
             if (enemyScore == 3)
@@ -277,7 +283,7 @@ public class GameManager : MonoBehaviour
                 winPanel.SetActive(true);
                 budget += 300;
                 isBestOfThree1 = true;
-                yPos+=10;
+                yPos+=4;
             }
 
             if (enemyScore == 3)
@@ -306,39 +312,39 @@ public class GameManager : MonoBehaviour
             {
                 OnLevel1Click();
             }
-            if (hit.collider.gameObject.CompareTag("Level2"))
+            if (hit.collider.gameObject.CompareTag("Level2") && isBestOfThree1)
             {
                 OnLevel2Click();
             }
-            if (hit.collider.gameObject.CompareTag("Level3"))
+            if (hit.collider.gameObject.CompareTag("Level3") && isBestOfThree2)
             {
                 OnLevel3Click();
             }
-            if (hit.collider.gameObject.CompareTag("Level4"))
+            if (hit.collider.gameObject.CompareTag("Level4")&& isBestOfThree3)
             {
                 OnLevel4Click();
-            } if (hit.collider.gameObject.CompareTag("Level5"))
+            } if (hit.collider.gameObject.CompareTag("Level5")&& isBestOfThree4)
             {
                 OnLevel5Click();
-            } if (hit.collider.gameObject.CompareTag("Level6"))
+            } if (hit.collider.gameObject.CompareTag("Level6")&& isBestOfThree5)
             {
                 OnLevel6Click();
-            } if (hit.collider.gameObject.CompareTag("Level7"))
+            } if (hit.collider.gameObject.CompareTag("Level7")&& isBestOfThree6)
             {
                 OnLevel7Click();
-            } if (hit.collider.gameObject.CompareTag("Level8"))
+            } if (hit.collider.gameObject.CompareTag("Level8")&& isBestOfThree7)
             {
                 OnLevel8Click();
-            } if (hit.collider.gameObject.CompareTag("Level9"))
+            } if (hit.collider.gameObject.CompareTag("Level9")&& isBestOfThree8)
             {
                 OnLevel9Click();
-            } if (hit.collider.gameObject.CompareTag("Level10"))
+            } if (hit.collider.gameObject.CompareTag("Level10")&& isBestOfThree9)
             {
                 OnLevel10Click();
-            } if (hit.collider.gameObject.CompareTag("Level11"))
+            } if (hit.collider.gameObject.CompareTag("Level11")&& isBestOfThree10)
             {
                 OnLevel11Click();
-            } if (hit.collider.gameObject.CompareTag("Level12"))
+            } if (hit.collider.gameObject.CompareTag("Level12")&& isBestOfThree11)
             {
                 OnLevel12Click();
             }
@@ -475,7 +481,6 @@ public class GameManager : MonoBehaviour
         ball.SetActive(true);
     }
 
-    
     
     
     

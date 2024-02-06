@@ -29,7 +29,7 @@ public class PlayerSkills : MonoBehaviour
     [SerializeField] private Transform rayPoint;
     [SerializeField] private float rayDistance;
     [SerializeField] private float circleRadius = 1f;
-
+    BallMovements ballMovementsScript;
     private GameObject grabbedObject;
     private int layerIndex;
 
@@ -49,15 +49,19 @@ public class PlayerSkills : MonoBehaviour
         {
             grabbedObject = hitInfo.collider.gameObject;
             grabbedObject.GetComponent<Rigidbody2D>().isKinematic = true;
+            grabbedObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            grabbedObject.GetComponent<Rigidbody2D>().angularVelocity = 0f;
             grabbedObject.transform.position = grabPoint.position;
             grabbedObject.transform.SetParent(transform);
-
+           
         }
         else if (Input.GetKeyUp(KeyCode.K))
         {
+           
             grabbedObject.GetComponent<Rigidbody2D>().isKinematic = false;
             grabbedObject.transform.SetParent(null);
             grabbedObject = null;
+            
         }
     }
 

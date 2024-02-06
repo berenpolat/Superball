@@ -152,7 +152,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Saha2_kalesiz_0: -2010965262075586403
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

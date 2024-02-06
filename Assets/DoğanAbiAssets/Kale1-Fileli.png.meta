@@ -152,7 +152,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Kale1-Fileli_0: -2751034354732266269
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -77,7 +77,14 @@ public class GameManager : MonoBehaviour
         if (timer >= 60f)  
         {
             StopTheGame();
-            losePanel.SetActive(true);
+            if (playerScore > enemyScore)
+            {
+                winPanel.SetActive(true);
+            }
+            else
+            {
+                losePanel.SetActive(true);
+            }
         }
 
         if (isBestOfThree1)

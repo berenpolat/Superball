@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     private bool isBestOfThree1,isBestOfThree2,isBestOfThree3,isBestOfThree4,isBestOfThree5,isBestOfThree6,
         isBestOfThree7,isBestOfThree8,isBestOfThree9,isBestOfThree10,isBestOfThree11,isBestOfThree12;
 
-    private float yPos = -147f;
+    private float yPos = -54.6f;
     #endregion
 
     #region Texts
@@ -76,12 +76,12 @@ public class GameManager : MonoBehaviour
 
         if (timer >= 60f)  
         {
-            StopTheGame();
+            // StopTheGame();
             if (playerScore > enemyScore)
             {
                 winPanel.SetActive(true);
             }
-            else
+            if(playerScore < enemyScore)
             {
                 losePanel.SetActive(true);
             }
@@ -96,7 +96,6 @@ public class GameManager : MonoBehaviour
                 winPanel.SetActive(true);
                 budget += 300;
                 isBestOfThree2 = true;
-                yPos+=10;
             }
 
             if (enemyScore == 3)
@@ -130,7 +129,6 @@ public class GameManager : MonoBehaviour
                 winPanel.SetActive(true);
                 budget += 300;
                 isBestOfThree4 = true;
-                yPos+=10;
             }
 
             if (enemyScore == 3)
@@ -164,7 +162,6 @@ public class GameManager : MonoBehaviour
                 winPanel.SetActive(true);
                 budget += 300;
                 isBestOfThree6 = true;
-                yPos+=10;
             }
 
             if (enemyScore == 3)
@@ -198,7 +195,6 @@ public class GameManager : MonoBehaviour
                 winPanel.SetActive(true);
                 budget += 300;
                 isBestOfThree8 = true;
-                yPos+=10;
             }
 
             if (enemyScore == 3)
@@ -232,7 +228,6 @@ public class GameManager : MonoBehaviour
                 winPanel.SetActive(true);
                 budget += 300;
                 isBestOfThree10 = true;
-                yPos+=10;
             }
 
             if (enemyScore == 3)
@@ -266,7 +261,6 @@ public class GameManager : MonoBehaviour
                 winPanel.SetActive(true);
                 budget += 300;
                 isBestOfThree12 = true;
-                yPos+=10;
             }
 
             if (enemyScore == 3)

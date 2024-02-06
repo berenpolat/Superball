@@ -85,7 +85,7 @@ public class EnemyScript : MonoBehaviour
         yield return new WaitForSeconds(3f); // 3 saniye bekle
             
 
-        // Eðer enemySpeed hala originalSpeed'den düþükse, enemySpeed'i originalSpeed'e eþitle
+        // EÄŸer enemySpeed hala originalSpeed'den dÃ¼ÅŸÃ¼kse, enemySpeed'i originalSpeed'e eÅŸitle
         if (enemySpeed < originalSpeed)
         {
             enemySpeed = originalSpeed;

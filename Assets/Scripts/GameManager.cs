@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private EnemyScript es;
     [SerializeField] private PlayerMovements pm;
     [SerializeField] private BallMovements bm;
-
+    [SerializeField] private SkillTreeManager stm;
     #endregion
 
     #region Unity Methods
@@ -440,6 +440,7 @@ public class GameManager : MonoBehaviour
         timer = 0;
         freeze.SetActive(true);
         isBestOfThree4 = true;
+        stm.isFreezeSkillUnlocked = true;
     }
     private void OnLevel5Click()
     {
@@ -475,6 +476,7 @@ public class GameManager : MonoBehaviour
         freeze.SetActive(true);
         powerShot.SetActive(true);
         isBestOfThree8 = true;
+        stm.isPowerUpSkillUnlocked = true;
     } private void OnLevel9Click()
     {
         cam.transform.position = new Vector3(0, -0.2f, -10);

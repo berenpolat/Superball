@@ -15,7 +15,8 @@ public class GameManager : MonoBehaviour
     private bool isBestOfThree1,isBestOfThree2,isBestOfThree3,isBestOfThree4,isBestOfThree5,isBestOfThree6,
         isBestOfThree7,isBestOfThree8,isBestOfThree9,isBestOfThree10,isBestOfThree11,isBestOfThree12;
 
-    private float yPos = -54.6f;
+    private float yPos = -107.8f;
+    private bool isClickable = true;
     #endregion
 
     #region Texts
@@ -45,6 +46,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject losePanel;
     [SerializeField] private GameObject marketPanel;
     [SerializeField] private GameObject skillTreePanel;
+    [SerializeField] private GameObject settingsPanel;
     
     #endregion
     
@@ -87,6 +89,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
+       
         if (isBestOfThree1)
         {
             //KAZANDI BUDGET VER
@@ -96,7 +99,7 @@ public class GameManager : MonoBehaviour
                 winPanel.SetActive(true);
                 budget += 300;
                 isBestOfThree2 = true;
-                yPos+=4;
+                yPos+=8;
             }
 
             if (enemyScore == 3)
@@ -104,7 +107,8 @@ public class GameManager : MonoBehaviour
                 StopTheGame();
                 losePanel.SetActive(true);
             }
-        }if (isBestOfThree2)
+        }
+        if (isBestOfThree2)
         {
             //KAZANDI BUDGET VER
             if (playerScore == 3)
@@ -113,13 +117,14 @@ public class GameManager : MonoBehaviour
                 winPanel.SetActive(true);
                 budget += 300;
                 isBestOfThree3 = true;
-                yPos+=4;
+                yPos+=8;
             }
 
             if (enemyScore == 3)
             {
                 StopTheGame();
                 losePanel.SetActive(true);
+                isBestOfThree3 = false;
             }
         }if (isBestOfThree3)
         {
@@ -130,7 +135,7 @@ public class GameManager : MonoBehaviour
                 winPanel.SetActive(true);
                 budget += 300;
                 isBestOfThree4 = true;
-                yPos+=4;
+                yPos+=8;
             }
 
             if (enemyScore == 3)
@@ -147,7 +152,7 @@ public class GameManager : MonoBehaviour
                 winPanel.SetActive(true);
                 budget += 300;
                 isBestOfThree5 = true;
-                yPos+=4;
+                yPos+=8;
             }
 
             if (enemyScore == 3)
@@ -164,7 +169,7 @@ public class GameManager : MonoBehaviour
                 winPanel.SetActive(true);
                 budget += 300;
                 isBestOfThree6 = true;
-                yPos+=4;
+                yPos+=8;
             }
 
             if (enemyScore == 3)
@@ -181,7 +186,7 @@ public class GameManager : MonoBehaviour
                 winPanel.SetActive(true);
                 budget += 300;
                 isBestOfThree7 = true;
-                yPos+=4;
+                yPos+=8;
             }
 
             if (enemyScore == 3)
@@ -198,7 +203,7 @@ public class GameManager : MonoBehaviour
                 winPanel.SetActive(true);
                 budget += 300;
                 isBestOfThree8 = true;
-                yPos+=4;
+                yPos+=8;
             }
 
             if (enemyScore == 3)
@@ -215,7 +220,7 @@ public class GameManager : MonoBehaviour
                 winPanel.SetActive(true);
                 budget += 300;
                 isBestOfThree9 = true;
-                yPos+=4;
+                yPos+=8;
             }
 
             if (enemyScore == 3)
@@ -232,7 +237,7 @@ public class GameManager : MonoBehaviour
                 winPanel.SetActive(true);
                 budget += 300;
                 isBestOfThree10 = true;
-                yPos+=4;
+                yPos+=8;
             }
 
             if (enemyScore == 3)
@@ -249,7 +254,7 @@ public class GameManager : MonoBehaviour
                 winPanel.SetActive(true);
                 budget += 300;
                 isBestOfThree11 = true;
-                yPos+=4;
+                yPos+=8;
             }
 
             if (enemyScore == 3)
@@ -266,7 +271,7 @@ public class GameManager : MonoBehaviour
                 winPanel.SetActive(true);
                 budget += 300;
                 isBestOfThree12 = true;
-                yPos+=4;
+                yPos+=8;
             }
 
             if (enemyScore == 3)
@@ -283,7 +288,7 @@ public class GameManager : MonoBehaviour
                 winPanel.SetActive(true);
                 budget += 300;
                 isBestOfThree1 = true;
-                yPos+=4;
+                yPos+=8;
             }
 
             if (enemyScore == 3)
@@ -461,9 +466,9 @@ public class GameManager : MonoBehaviour
         player.SetActive(false);
         ball.SetActive(false);
         timer = 0;
-        enemy.transform.position = es.enemyStartPoint.position;
-        player.transform.position = pm.playerStartPoint.position;
-        ball.transform.position = bm.ballStartPoint.position;
+        enemy.GetComponent<Rigidbody2D>().velocity= Vector2.zero;
+        player.GetComponent<Rigidbody2D>().velocity=Vector2.zero;
+        ball.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     }
     
     
@@ -481,9 +486,6 @@ public class GameManager : MonoBehaviour
         ball.SetActive(true);
     }
 
-    
-    
-    
     
     private void StartCountdown()
     {
@@ -534,5 +536,15 @@ public class GameManager : MonoBehaviour
     public void BackFromSkillTree()
     {
         skillTreePanel.SetActive(false);
+    }
+
+    public void OpenSettings()
+    {
+        settingsPanel.SetActive(true);
+    }
+    
+    public void BackFromSettings()
+    {
+        settingsPanel.SetActive(false);
     }
 }

@@ -23,6 +23,7 @@ public class BallMovements : MonoBehaviour
 
     private Rigidbody2D rb;
     [SerializeField] private float force;
+    [SerializeField] private float PowerShotForce;
     public Transform ballStartPoint;
 
     #endregion
@@ -57,6 +58,10 @@ public class BallMovements : MonoBehaviour
     public void Shoot(Vector3 direction)
     {
         rb.AddForce(direction * force);
+    }
+    public void PowerShoot(Vector3 direction)
+    {
+        rb.AddForce(direction * PowerShotForce);
     }
 
     private void SetInitialPositions()

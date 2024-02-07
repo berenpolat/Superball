@@ -14,6 +14,7 @@ public class PlayerMovements : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float rotationSpeed;
     public Transform playerStartPoint;
+    public static bool CanShoot;
     private Rigidbody2D rb;
     
     #endregion
@@ -31,6 +32,7 @@ public class PlayerMovements : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         transform.position = playerStartPoint.position;
+        CanShoot = true;
     }
     private void FixedUpdate()
     {
@@ -51,7 +53,9 @@ public class PlayerMovements : MonoBehaviour
     
     public void ShootButton()
     {
-   
+      if(CanShoot == true)
+      {
+
         Collider2D[] colls = Physics2D.OverlapCircleAll(transform.position, radius);
         foreach(Collider2D coll in colls)
         {
@@ -62,6 +66,19 @@ public class PlayerMovements : MonoBehaviour
                 break;
             }
         }
+      }
     }
-    
+    public  void powerShot()
+    {
+        Collider2D[] colls = Physics2D.OverlapCircleAll(transform.position, radius);
+        foreach (Collider2D coll in colls)
+        {
+            if (coll.TryGetComponent(out BallMovements ball))
+            {
+                Vector3 dir = coll.transform.position - transform.position;
+                ball.PowerShoot(dir);
+                break;
+            }
+        }
+    }
 }

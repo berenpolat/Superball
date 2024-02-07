@@ -7,7 +7,9 @@ public class PlayerSkills : MonoBehaviour
 {
     #region effectler
     [SerializeField] private GameObject frezeerPowerUpEffect;
+    [SerializeField] private GameObject PowerShotPowerUpEffect;
     private GameObject FrezeerPowerUpInstance;
+    private GameObject PowerShotInstance;
     public Vector2 offset;
     #endregion
 
@@ -30,7 +32,11 @@ public class PlayerSkills : MonoBehaviour
     [SerializeField] private float rayDistance;
     [SerializeField] private float circleRadius = 1f;
     BallMovements ballMovementsScript;
+    public PlayerMovements playerMovements;
+    public Button PowerShootButton;
+    public bool PowerShoot;
     private GameObject grabbedObject;
+    private bool PowerShooCanUse;
     private int layerIndex;
 
     #endregion
@@ -38,31 +44,11 @@ public class PlayerSkills : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        playerMovements = FindObjectOfType<PlayerMovements>();
         layerIndex = LayerMask.NameToLayer("ball");
         frezeerUsed = false;
-    }
-    void Update()
-    {
-        RaycastHit2D hitInfo = Physics2D.Raycast(rayPoint.position, transform.right, rayDistance);
-
-        if (Input.GetKey(KeyCode.K))
-        {
-            grabbedObject = hitInfo.collider.gameObject;
-            grabbedObject.GetComponent<Rigidbody2D>().isKinematic = true;
-            grabbedObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            grabbedObject.GetComponent<Rigidbody2D>().angularVelocity = 0f;
-            grabbedObject.transform.position = grabPoint.position;
-            grabbedObject.transform.SetParent(transform);
-           
-        }
-        else if (Input.GetKeyUp(KeyCode.K))
-        {
-           
-            grabbedObject.GetComponent<Rigidbody2D>().isKinematic = false;
-            grabbedObject.transform.SetParent(null);
-            grabbedObject = null;
-            
-        }
+        PowerShoot = true;
+        PowerShooCanUse = false;
     }
 
     public void FrezeerButton()
@@ -96,7 +82,54 @@ public class PlayerSkills : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(rayPoint.position + (Vector3)transform.right * rayDistance, circleRadius);
     }
+    public void PowerShot()
+    {     
+        if(PowerShoot == true)
+        {
+            PowerShooCanUse = true;
+            PowerShootButton.interactable = false;
+            PlayerMovements.CanShoot = false;
+            PowerShotInstance = Instantiate(PowerShotPowerUpEffect, (Vector2)player.transform.position + offset, Quaternion.identity);
+            FrezeerPowerUpInstance.transform.SetParent(player.transform);
+            
+        }
 
+    }
+    public void PowerShootCharging()
+    {
+        if(PowerShooCanUse == true)
+        {
+            // Yuvarlak alanda tarama yapılır
+            Collider2D[] hitColliders = Physics2D.OverlapCircleAll(rayPoint.position, circleRadius);
 
+            // Tarama sonucunda çarpışan objeler kontrol edilir
+            foreach (Collider2D collider in hitColliders)
+            {
+                // Eğer bir çarpışma olduysa ve çarpışan obje "ball" tag'ine sahip ise
+                if (collider.CompareTag("Ball"))
+                {
+                    grabbedObject = collider.gameObject;
+                    grabbedObject.GetComponent<Rigidbody2D>().isKinematic = true;
+                    grabbedObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                    grabbedObject.GetComponent<Rigidbody2D>().angularVelocity = 0f;
+                    grabbedObject.transform.position = grabPoint.position;
+                    grabbedObject.transform.SetParent(transform);
+                    break; // Bir obje bulunduğunda döngüden çıkılır
+                }
+            }
+        }
+    }
+    public void PowerShootRelease()
+    {
+        grabbedObject.GetComponent<Rigidbody2D>().isKinematic = false;
+        grabbedObject.transform.SetParent(null);
+        grabbedObject = null;
+        PowerShootButton.interactable = false;
+        PowerShooCanUse = false;
+        PlayerMovements.CanShoot = true;
+        playerMovements.powerShot();
+        
+
+    }
 
 }

@@ -152,7 +152,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FrezeerAura_0: 3187394812896551761
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

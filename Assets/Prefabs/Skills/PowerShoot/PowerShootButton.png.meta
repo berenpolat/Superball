@@ -200,7 +200,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PowerShootButton_0: -6613913644581910039
+      PowerShootButton_1: -6883384960788803666
+      PowerShootButton_2: -3200996236090821265
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

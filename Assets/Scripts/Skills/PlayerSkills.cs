@@ -50,7 +50,7 @@ public class PlayerSkills : MonoBehaviour
         PowerShoot = true;
         PowerShooCanUse = false;
     }
-
+    #region Freezer
     public void FrezeerButton()
     {
         if (Frezeer == true)
@@ -76,6 +76,8 @@ public class PlayerSkills : MonoBehaviour
             frezeerButton.interactable = true;
         }
     }
+    #endregion
+    #region PowerShot
     void OnDrawGizmos()
     {
         // Gizmos ile CircleCast'in alanını çizelim.
@@ -90,8 +92,8 @@ public class PlayerSkills : MonoBehaviour
             PowerShootButton.interactable = false;
             PlayerMovements.CanShoot = false;
             PowerShotInstance = Instantiate(PowerShotPowerUpEffect, (Vector2)player.transform.position + offset, Quaternion.identity);
-            FrezeerPowerUpInstance.transform.SetParent(player.transform);
-            
+            PowerShotInstance.transform.SetParent(player.transform.GetChild(0));
+
         }
 
     }
@@ -128,8 +130,9 @@ public class PlayerSkills : MonoBehaviour
         PowerShooCanUse = false;
         PlayerMovements.CanShoot = true;
         playerMovements.powerShot();
-        
+        Destroy(PowerShotInstance);
 
     }
+    #endregion
 
 }

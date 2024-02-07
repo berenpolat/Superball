@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject losePanel;
     [SerializeField] private GameObject marketPanel;
     [SerializeField] private GameObject skillTreePanel;
+    [SerializeField] private GameObject settingsPanel;
     
     #endregion
     
@@ -535,5 +536,15 @@ public class GameManager : MonoBehaviour
     public void BackFromSkillTree()
     {
         skillTreePanel.SetActive(false);
+    }
+
+    public void OpenSettings()
+    {
+        settingsPanel.SetActive(true);
+    }
+    
+    public void BackFromSettings()
+    {
+        settingsPanel.SetActive(false);
     }
 }

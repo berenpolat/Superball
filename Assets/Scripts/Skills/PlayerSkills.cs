@@ -34,7 +34,7 @@ public class PlayerSkills : MonoBehaviour
     BallMovements ballMovementsScript;
     public PlayerMovements playerMovements;
     public Button PowerShootButton;
-    public bool PowerShoot;
+    public bool PowerShoot; 
     private GameObject grabbedObject;
     private bool PowerShooCanUse;
     private int layerIndex;
@@ -123,16 +123,21 @@ public class PlayerSkills : MonoBehaviour
     }
     public void PowerShootRelease()
     {
-        grabbedObject.GetComponent<Rigidbody2D>().isKinematic = false;
-        grabbedObject.transform.SetParent(null);
-        grabbedObject = null;
+        if (grabbedObject != null)
+        {
+            grabbedObject.GetComponent<Rigidbody2D>().isKinematic = false;
+            grabbedObject.transform.SetParent(null);
+            grabbedObject = null;
+        }
+    
+        // Additional code
         PowerShootButton.interactable = false;
         PowerShooCanUse = false;
         PlayerMovements.CanShoot = true;
         playerMovements.powerShot();
         Destroy(PowerShotInstance);
-
     }
+
     #endregion
 
 }

@@ -59,6 +59,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject losePanel;
     [SerializeField] private GameObject marketPanel;
     [SerializeField] private GameObject skillTreePanel;
+    [SerializeField] private GameObject characterShopPanel;
+    [SerializeField] private GameObject skinShopPanel;
 
 
 
@@ -682,7 +684,16 @@ public class GameManager : MonoBehaviour
         skillTreePanel.SetActive(false);
     }
 
-
+    public void GoToCharacterShop()
+    {
+        skinShopPanel.SetActive(false);
+        characterShopPanel.SetActive(true);
+    }
+    public void GoToSkinShop()
+    {
+        characterShopPanel.SetActive(false);
+        skinShopPanel.SetActive(true);
+    }
 
 
     public void OpenSettings()

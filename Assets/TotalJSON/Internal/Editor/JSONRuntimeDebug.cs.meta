@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: dd472f7a2d8907c4fa13cc27c68a39f4
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 130344
+  packageName: Total JSON
+  packageVersion: 2.1
+  assetPath: Assets/TotalJSON/Internal/Editor/JSONRuntimeDebug.cs
+  uploadId: 629351

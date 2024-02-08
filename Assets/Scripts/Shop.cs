@@ -11,28 +11,35 @@ public class Shop : MonoBehaviour
         public Sprite image;
         public int price;
         public bool isPurchased;
+        
     }
 
     [SerializeField] private GameObject shopItemPrefab; // Prefab for the shop item
     [SerializeField] private Transform content; // Reference to the Content object
     [SerializeField] private List<ShopItem> shopItemsList; // List of shop items
 
+
     void Start()
     {
+        int i = 0;
         foreach (ShopItem item in shopItemsList)
         {
             // Instantiate shop item UI based on the shopItemsList
-            GameObject shopItemUI = Instantiate(shopItemPrefab, content);
+            GameObject shopItemUI= Instantiate(shopItemPrefab, content);
             
             // Access UI elements of shopItemUI and set their properties
-            Image iconImage = shopItemUI.transform.Find("icon").GetComponent<Image>();
-            iconImage.sprite = item.image;
+            Image iconImage = shopItemUI.transform.Find("icon")?.GetComponent<Image>();
+            Text priceText = shopItemUI.transform.Find("price")?.GetComponent<Text>();
+            Button purchaseButton = shopItemUI.transform.Find("Button")?.GetComponent<Button>();
 
-            Text priceText = shopItemUI.transform.Find("price").GetComponent<Text>();
-            priceText.text = item.price.ToString();
-
-            Button purchaseButton = shopItemUI.transform.Find("Button").GetComponent<Button>();
-            purchaseButton.interactable = !item.isPurchased;
+            if (iconImage != null && priceText != null && purchaseButton != null)
+            {
+                iconImage.sprite = item.image;
+                priceText.text = item.price.ToString();
+                purchaseButton.interactable = !item.isPurchased;
+            }
         }
     }
+
+
 }

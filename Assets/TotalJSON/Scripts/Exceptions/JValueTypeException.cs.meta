@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: dd4e8553edfa51747a9f603037136b60
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 130344
+  packageName: Total JSON
+  packageVersion: 2.1
+  assetPath: Assets/TotalJSON/Scripts/Exceptions/JValueTypeException.cs
+  uploadId: 629351

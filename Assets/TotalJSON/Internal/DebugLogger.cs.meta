@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 23f205b462b0dee40b9ee440d7cb1cce
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 130344
+  packageName: Total JSON
+  packageVersion: 2.1
+  assetPath: Assets/TotalJSON/Internal/DebugLogger.cs
+  uploadId: 629351

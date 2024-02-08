@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: e47b0f3992e0232419eac53940948159
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 130344
+  packageName: Total JSON
+  packageVersion: 2.1
+  assetPath: Assets/TotalJSON/Scripts/Exceptions/JSONKeyNotFoundException.cs
+  uploadId: 629351

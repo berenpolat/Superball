@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 951941f4547f23840810348b4969ba00
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 130344
+  packageName: Total JSON
+  packageVersion: 2.1
+  assetPath: Assets/TotalJSON/Scripts/Exceptions/UnknownObjectTypeException.cs
+  uploadId: 629351

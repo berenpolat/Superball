@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 2077e5258f6b9ce43be7c1406c16aa4f
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 130344
+  packageName: Total JSON
+  packageVersion: 2.1
+  assetPath: Assets/TotalJSON/Internal/StringPointer.cs
+  uploadId: 629351

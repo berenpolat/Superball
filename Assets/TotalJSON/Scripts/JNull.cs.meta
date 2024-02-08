@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: a6590f14a3524344684bb0378328c57a
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 130344
+  packageName: Total JSON
+  packageVersion: 2.1
+  assetPath: Assets/TotalJSON/Scripts/JNull.cs
+  uploadId: 629351

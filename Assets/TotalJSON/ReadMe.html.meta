@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e403641c191c3b947b6c942b8ebd66d0
+timeCreated: 1539193207
+licenseType: Store
+TextScriptImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 130344
+  packageName: Total JSON
+  packageVersion: 2.1
+  assetPath: Assets/TotalJSON/ReadMe.html
+  uploadId: 629351

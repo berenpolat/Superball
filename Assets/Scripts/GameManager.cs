@@ -359,6 +359,11 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
+    #region Skills
+    public GameObject PowerShootbutton;
+    public GameObject Frezeerbutton;
+    #endregion
+
     private void HandleClick()
     {
         Vector2 rayOrigin = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -418,8 +423,9 @@ public class GameManager : MonoBehaviour
         StartCountdown();
         timer = 0;
         isBestOfThree1 = true;
-        freeze.SetActive(true);
-        powerShot.SetActive(true);
+        PowerShootbutton.SetActive(true);
+        Frezeerbutton.SetActive(true);
+
         LastLevel = 1;
     }
     private void OnLevel2Click()

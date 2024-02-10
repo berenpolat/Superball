@@ -9,22 +9,32 @@ public class HoldButtonDetector : MonoBehaviour, IPointerDownHandler, IPointerUp
     public float holdTime = 3f; // Basýlý tutma süresi (saniye)
     private bool pointerDown = false;
     private float pointerDownTimer = 0f;
+    public static bool PowerShotUselable = false;
 
     public UnityEvent onHold;
 
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        PlayerSkills playerSkills = FindAnyObjectByType<PlayerSkills>();
-        playerSkills.PowerShootCharging();
-        pointerDown = true;
+        if(PowerShotUselable == true)
+        {
+
+         PlayerSkills playerSkills = FindAnyObjectByType<PlayerSkills>();
+         playerSkills.PowerShootCharging();
+         pointerDown = true;
+        }
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        PlayerSkills playerSkillss = FindAnyObjectByType<PlayerSkills>();
-        playerSkillss.PowerShootRelease();
-        Reset();
+        if(PowerShotUselable == true)
+        {
+
+         PlayerSkills playerSkillss = FindAnyObjectByType<PlayerSkills>();
+         playerSkillss.PowerShootRelease();
+         Reset();
+            PowerShotUselable = false;
+        }
         
     }
 

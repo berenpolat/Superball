@@ -94,6 +94,7 @@ public class PlayerSkills : MonoBehaviour
     {     
         if(PowerShoot == true)
         {
+            HoldButtonDetector.PowerShotUselable = true;
             PowerShooCanUse = true;
             PowerShootButton.interactable = false;
             PlayerMovements.CanShoot = false;

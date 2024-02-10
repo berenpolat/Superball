@@ -418,6 +418,8 @@ public class GameManager : MonoBehaviour
         StartCountdown();
         timer = 0;
         isBestOfThree1 = true;
+        freeze.SetActive(true);
+        powerShot.SetActive(true);
         LastLevel = 1;
     }
     private void OnLevel2Click()

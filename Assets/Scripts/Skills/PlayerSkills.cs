@@ -50,6 +50,12 @@ public class PlayerSkills : MonoBehaviour
         PowerShoot = true;
         PowerShooCanUse = false;
     }
+    public void ResetSkills()
+    {
+        frezeerUsed = false;
+        PowerShoot = true;
+        PowerShooCanUse = false;
+    }
     #region Freezer
     public void FrezeerButton()
     {

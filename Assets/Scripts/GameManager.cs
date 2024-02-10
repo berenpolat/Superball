@@ -52,8 +52,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject marketPanel;
     [SerializeField] private GameObject skillTreePanel;
     [SerializeField] private GameObject settingsPanel;
-    [SerializeField] private GameObject freeze;
-    [SerializeField] private GameObject powerShot;
     #endregion
     
     #region Script Instances
@@ -359,9 +357,11 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
-    #region Skills
-    public GameObject PowerShootbutton;
-    public GameObject Frezeerbutton;
+    #region Skills variables
+    [SerializeField] private GameObject freeze;
+    [SerializeField] private GameObject powerShot;
+    [SerializeField] private Button  FrezeerButton;
+    [SerializeField] private Button PowerShotbutton;
     #endregion
 
     private void HandleClick()
@@ -423,9 +423,11 @@ public class GameManager : MonoBehaviour
         StartCountdown();
         timer = 0;
         isBestOfThree1 = true;
-        PowerShootbutton.SetActive(true);
-        Frezeerbutton.SetActive(true);
-
+        freeze.SetActive(true);
+        powerShot.SetActive(true);
+        FrezeerButton.interactable = true;
+        PowerShotbutton.interactable = true;
+        PlayerSkills.frezeerUsed = false;
         LastLevel = 1;
     }
     private void OnLevel2Click()
@@ -436,6 +438,11 @@ public class GameManager : MonoBehaviour
         timer = 0;
         isBestOfThree2 = true;
         LastLevel = 2;
+        freeze.SetActive(true);
+        powerShot.SetActive(true);
+        FrezeerButton.interactable = true;
+        PowerShotbutton.interactable = true;
+        PlayerSkills.frezeerUsed = false;
     }
 
     private void OnLevel3Click()

@@ -21,7 +21,7 @@ public class PlayerSkills : MonoBehaviour
     [SerializeField] private float bulletSpeed;
     public Button frezeerButton;
     public bool Frezeer = false;
-    private bool frezeerUsed;
+    public static bool frezeerUsed;
 
     #endregion
 

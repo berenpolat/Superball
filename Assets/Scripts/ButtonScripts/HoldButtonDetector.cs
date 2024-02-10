@@ -19,9 +19,9 @@ public class HoldButtonDetector : MonoBehaviour, IPointerDownHandler, IPointerUp
         if(PowerShotUselable == true)
         {
 
-         PlayerSkills playerSkills = FindAnyObjectByType<PlayerSkills>();
-         playerSkills.PowerShootCharging();
-         pointerDown = true;
+            PlayerSkills playerSkills = FindAnyObjectByType<PlayerSkills>();
+            playerSkills.PowerShootCharging();
+            pointerDown = true;
         }
     }
 
@@ -30,9 +30,9 @@ public class HoldButtonDetector : MonoBehaviour, IPointerDownHandler, IPointerUp
         if(PowerShotUselable == true)
         {
 
-         PlayerSkills playerSkillss = FindAnyObjectByType<PlayerSkills>();
-         playerSkillss.PowerShootRelease();
-         Reset();
+            PlayerSkills playerSkillss = FindAnyObjectByType<PlayerSkills>();
+            playerSkillss.PowerShootRelease();
+            Reset();
             PowerShotUselable = false;
         }
         

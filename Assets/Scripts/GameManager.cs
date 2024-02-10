@@ -423,11 +423,8 @@ public class GameManager : MonoBehaviour
         StartCountdown();
         timer = 0;
         isBestOfThree1 = true;
-        freeze.SetActive(true);
-        powerShot.SetActive(true);
-        FrezeerButton.interactable = true;
-        PowerShotbutton.interactable = true;
-        PlayerSkills.frezeerUsed = false;
+        FrezeerSkill();
+        PowerShootSkill();
         LastLevel = 1;
     }
     private void OnLevel2Click()
@@ -438,11 +435,7 @@ public class GameManager : MonoBehaviour
         timer = 0;
         isBestOfThree2 = true;
         LastLevel = 2;
-        freeze.SetActive(true);
-        powerShot.SetActive(true);
-        FrezeerButton.interactable = true;
-        PowerShotbutton.interactable = true;
-        PlayerSkills.frezeerUsed = false;
+       
     }
 
     private void OnLevel3Click()
@@ -471,7 +464,7 @@ public class GameManager : MonoBehaviour
         mainMenuPanel.SetActive(false);
         StartCountdown();
         timer = 0;
-        freeze.SetActive(true);
+        FrezeerSkill();
         isBestOfThree5 = true;
         LastLevel = 5;
     }
@@ -481,7 +474,7 @@ public class GameManager : MonoBehaviour
         mainMenuPanel.SetActive(false);
         StartCountdown();
         timer = 0;
-        freeze.SetActive(true);
+        FrezeerSkill();
         isBestOfThree6 = true;
         LastLevel = 6;
     } 
@@ -491,7 +484,7 @@ public class GameManager : MonoBehaviour
         mainMenuPanel.SetActive(false);
         StartCountdown();
         timer = 0;
-        freeze.SetActive(true);
+        FrezeerSkill();
         isBestOfThree7 = true;
         LastLevel = 7;
     }
@@ -501,7 +494,7 @@ public class GameManager : MonoBehaviour
         mainMenuPanel.SetActive(false);
         StartCountdown();
         timer = 0;
-        freeze.SetActive(true);
+        FrezeerSkill();
         powerShot.SetActive(true);
         isBestOfThree8 = true;
         stm.isPowerUpSkillUnlocked = true;
@@ -513,8 +506,8 @@ public class GameManager : MonoBehaviour
         mainMenuPanel.SetActive(false);
         StartCountdown();
         timer = 0;
-        freeze.SetActive(true);
-        powerShot.SetActive(true);
+        FrezeerSkill();
+        PowerShootSkill();
         isBestOfThree9 = true;
         LastLevel = 9;
     } 
@@ -525,8 +518,8 @@ public class GameManager : MonoBehaviour
         StartCountdown();
         timer = 0;
         isBestOfThree10 = true;
-        freeze.SetActive(true);
-        powerShot.SetActive(true);
+        FrezeerSkill();
+        PowerShootSkill();
         LastLevel = 10;
     } private void OnLevel11Click()
     {
@@ -534,8 +527,8 @@ public class GameManager : MonoBehaviour
         mainMenuPanel.SetActive(false);
         StartCountdown();
         timer = 0;
-        freeze.SetActive(true);
-        powerShot.SetActive(true);
+        FrezeerSkill();
+        PowerShootSkill();
         isBestOfThree11 = true;
         LastLevel = 11;
     } private void OnLevel12Click()
@@ -544,8 +537,8 @@ public class GameManager : MonoBehaviour
         mainMenuPanel.SetActive(false);
         StartCountdown();
         timer = 0;
-        freeze.SetActive(true);
-        powerShot.SetActive(true);
+        FrezeerSkill();
+        PowerShootSkill();
         isBestOfThree12 = true;
         LastLevel = 12;
     }
@@ -590,6 +583,18 @@ public class GameManager : MonoBehaviour
     private void StartCountdown()
     {
         StartCoroutine(CountdownCoroutine());
+    }
+
+    private void FrezeerSkill()
+    {
+        freeze.SetActive(true);
+        FrezeerButton.interactable = true;
+        PlayerSkills.frezeerUsed = false;
+    }
+    private void PowerShootSkill()
+    {
+        powerShot.SetActive(true);
+        PowerShotbutton.interactable = true;
     }
 
     private System.Collections.IEnumerator CountdownCoroutine()
@@ -647,4 +652,5 @@ public class GameManager : MonoBehaviour
     {
         settingsPanel.SetActive(false);
     }
+
 }

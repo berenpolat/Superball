@@ -573,6 +573,8 @@ public class GameManager : MonoBehaviour
         enemy.transform.position = es.enemyStartPoint.position;
         player.transform.position = pm.playerStartPoint.position;
         ball.transform.position = bm.ballStartPoint.position;
+        ball.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        ball.GetComponent<Rigidbody2D>().angularVelocity = 0f;
         ingamePanel.SetActive(true);
         enemy.SetActive(true);
         player.SetActive(true);

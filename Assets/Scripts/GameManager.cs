@@ -66,13 +66,15 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        budget = PlayerPrefs.GetInt("Budget");
         StopTheGame();
         timer = 0;
     }
 
     void Update()
     {
-        budgetText.text = budget.ToString();
+        budgetText.text = PlayerPrefs.GetInt("Budget").ToString();
+        PlayerPrefs.SetInt("Budget",budget);
         timer += Time.deltaTime;
 
         enScoreText.text = enemyScore.ToString();

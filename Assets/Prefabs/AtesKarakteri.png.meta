@@ -176,7 +176,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      AtesKarakteri_0: 8185075958759471816
+      AtesKarakteri_1: -6028493824848792702
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

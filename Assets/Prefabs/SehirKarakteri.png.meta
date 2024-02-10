@@ -176,7 +176,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SehirKarakteri_0: 134830285232064583
+      SehirKarakteri_1: -9110550419934743142
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

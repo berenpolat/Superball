@@ -176,7 +176,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BuzKarakteri_0: -4127713989953233809
+      BuzKarakteri_1: -946493454739372662
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

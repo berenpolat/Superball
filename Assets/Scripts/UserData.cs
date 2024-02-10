@@ -1,12 +1,12 @@
 using System.Collections.Generic;
-using UnityEngine;
 using Leguar.TotalJSON;
+using UnityEngine;
 
 public class Storage
 {
     public int LastLevel { get; set; }
     public int Budget { get; set; }
-    public List<GameObject> ShoppedGameObjectNames { get; set; } 
+    public List<string> ShoppedGameObjectNames { get; set; }
 }
 
 public class UserData : MonoBehaviour
@@ -30,13 +30,17 @@ public class UserData : MonoBehaviour
         {
             LastLevel = gm.LastLevel,
             Budget = gm.budget,
-            ShoppedGameObjectNames = new List<GameObject>()
+       //     ShoppedGameObjectNames = new List<string>()
         };
 
-        foreach (GameObject obj in gm.shoppedGameObject)
-        {
-            data.ShoppedGameObjectNames.Add(obj);
-        }
+        // foreach (GameObject obj in gm.shoppedGameObject)
+        // {
+        //     if (obj != null)
+        //     {
+        //         // Save the name of the GameObject
+        //         data.ShoppedGameObjectNames.Add(obj.name);
+        //     }
+        // }
 
         JSON json = JSON.Serialize(data);
         string jsonData = json.CreateString();
@@ -53,16 +57,19 @@ public class UserData : MonoBehaviour
             data = json.Deserialize<Storage>();
 
             gm.LastLevel = data.LastLevel;
-            gm.budget = data.Budget;
+            gm.budget = data.Budget; // Assign the loaded budget to the GameManager's budget
 
-            gm.shoppedGameObject.Clear();
-            foreach (GameObject obj in data.ShoppedGameObjectNames)
-            {
-                if (obj != null)
-                {
-                    gm.shoppedGameObject.Add(obj);
-                }
-            }
+            // gm.shoppedGameObject.Clear();
+            // foreach (string objName in data.ShoppedGameObjectNames)
+            // {
+            //     // Load the GameObject by name
+            //     GameObject prefab = Resources.Load<GameObject>(objName);
+            //     if (prefab != null)
+            //     {
+            //         GameObject obj = Instantiate(prefab);
+            //         gm.shoppedGameObject.Add(obj);
+            //     }
+            // }
         }
         else
         {

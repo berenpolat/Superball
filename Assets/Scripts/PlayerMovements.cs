@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerMovements : MonoBehaviour
@@ -11,9 +12,10 @@ public class PlayerMovements : MonoBehaviour
     #region Player variables
 
     [SerializeField] private float radius;
-    [SerializeField] private float speed;
     [SerializeField] private float rotationSpeed;
     public Transform playerStartPoint;
+    public  float speed;
+    private float playerOriginalSpeed;
     public static bool CanShoot;
     private Rigidbody2D rb;
     
@@ -33,6 +35,7 @@ public class PlayerMovements : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         transform.position = playerStartPoint.position;
         CanShoot = true;
+        playerOriginalSpeed = speed;
     }
     private void FixedUpdate()
     {
@@ -48,7 +51,16 @@ public class PlayerMovements : MonoBehaviour
 
         // Hareketi uygula
         rb.velocity = targetDirection * speed;
+
+        if (speed < playerOriginalSpeed)
+        {
+            StartCoroutine(resetSpeed());
+        }
     }
+
+    
+        
+    
     #endregion
     
     public void ShootButton()
@@ -81,6 +93,16 @@ public class PlayerMovements : MonoBehaviour
                 break;
                 
             }
+        }
+    }
+
+    private IEnumerator resetSpeed()
+    {
+        yield return new WaitForSeconds(3f);
+
+        if (speed < playerOriginalSpeed)
+        {
+            speed = playerOriginalSpeed;
         }
     }
 }

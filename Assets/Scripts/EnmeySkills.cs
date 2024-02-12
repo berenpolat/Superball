@@ -35,7 +35,9 @@ public class EnmeySkills : MonoBehaviour
     {
         GameObject bullet = Instantiate(FrezeerPrefab, FrezeerSpwnPoint.position, quaternion.identity);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.velocity = transform.right * bulletSpeed;
+        
+        Vector2 direction = (GameObject.FindGameObjectWithTag("Player").transform.position - FrezeerSpwnPoint.position).normalized;
+        rb.velocity = direction * bulletSpeed;
         Destroy(bullet, 5f);
         
     }

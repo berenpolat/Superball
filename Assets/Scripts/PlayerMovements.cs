@@ -64,6 +64,7 @@ public class PlayerMovements : MonoBehaviour
                 Vector3 dir = coll.transform.position - transform.position;
                 ball.Shoot(dir);
                 break;
+                
             }
         }
       }
@@ -78,6 +79,7 @@ public class PlayerMovements : MonoBehaviour
                 Vector3 dir = coll.transform.position - transform.position;
                 ball.PowerShoot(dir);
                 break;
+                
             }
         }
     }

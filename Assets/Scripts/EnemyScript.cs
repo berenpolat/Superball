@@ -78,7 +78,7 @@ public class EnemyScript : MonoBehaviour
         
         rb.velocity = direction * enemySpeed;
     }
-    private IEnumerator ResetSpeedAfterDelay()
+    private IEnumerator ResetSpeedAfterDelay() 
     {
        
 

@@ -77,59 +77,54 @@ public class GameManager : MonoBehaviour
         {
             case 0:
                 mainMenuPanel.SetActive(true);
-                StopTheGame();
                 break;
             case 1:
                 mainMenuPanel.SetActive(true);
-                StopTheGame();
-                OnLevel1Click();
+                isBestOfThree1 = true;
                 break;
             case 2:
                 mainMenuPanel.SetActive(true);
-                StopTheGame();
-                OnLevel2Click();
+                isBestOfThree2 = true;
                 break;
             case 3:
                 mainMenuPanel.SetActive(true);
-                StopTheGame();
-                OnLevel3Click();
+                isBestOfThree3 = true;
                 break;
             case 4:
                 mainMenuPanel.SetActive(true);
-                StopTheGame();
-                OnLevel4Click();
+                isBestOfThree4 = true;
                 break;
             case 5:
                 mainMenuPanel.SetActive(true);
-                OnLevel5Click();
+                isBestOfThree5= true;
                 break;
             case 6:
                 mainMenuPanel.SetActive(true);
-                OnLevel6Click();
+                isBestOfThree6 = true;
                 break;
             case 7:
                 mainMenuPanel.SetActive(true);
-                OnLevel7Click();
+                isBestOfThree7 = true;
                 break;
             case 8:
                 mainMenuPanel.SetActive(true);
-                OnLevel8Click();
+                isBestOfThree8 = true;
                 break;
             case 9:
                 mainMenuPanel.SetActive(true);
-                OnLevel9Click();
+                isBestOfThree9 = true;
                 break;
             case 10:
                 mainMenuPanel.SetActive(true);
-                OnLevel10Click();
+                isBestOfThree10 = true;
                 break;
             case 11:
                 mainMenuPanel.SetActive(true);
-                OnLevel11Click();
+                isBestOfThree11 = true;
                 break;
             case 12:
                 mainMenuPanel.SetActive(true);
-                OnLevel12Click();
+                isBestOfThree12 = true;
                 break;
             default:
                 // Handle the default case, maybe start from level 1

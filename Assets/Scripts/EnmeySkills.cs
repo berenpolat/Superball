@@ -28,7 +28,7 @@ public class EnmeySkills : MonoBehaviour
 
     void Update()
     {
-        if (Time.time > nextActionTime)
+        if (Time.time > nextActionTime && EnemyHaveFrezeer)
         {
             FireFrezeer();
             

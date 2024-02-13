@@ -52,6 +52,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject marketPanel;
     [SerializeField] private GameObject skillTreePanel;
     [SerializeField] private GameObject settingsPanel;
+    [SerializeField] private GameObject freezeSkillTutorialPanel;
+    [SerializeField] private GameObject powerShootTutorialPanel;
     #endregion
     
     #region Script Instances
@@ -228,6 +230,7 @@ public class GameManager : MonoBehaviour
             {
                 StopTheGame();
                 winPanel.SetActive(true);
+                freezeSkillTutorialPanel.SetActive(true);
                 budget += 300;
                 isBestOfThree4 = true;
                 yPos+=8;
@@ -345,6 +348,7 @@ public class GameManager : MonoBehaviour
             {
                 StopTheGame();
                 winPanel.SetActive(true);
+                powerShootTutorialPanel.SetActive(true);
                 budget += 300;
                 isBestOfThree9 = true;
                 yPos+=8;
@@ -689,6 +693,8 @@ public class GameManager : MonoBehaviour
         StartCoroutine(CountdownCoroutine());
     }
 
+    #region Skills
+
     private void FrezeerSkill()
     {
         freeze.SetActive(true);
@@ -700,6 +706,9 @@ public class GameManager : MonoBehaviour
         powerShot.SetActive(true);
         PowerShotbutton.interactable = true;
     }
+
+    #endregion
+   
 
     private System.Collections.IEnumerator CountdownCoroutine()
     {
@@ -715,6 +724,8 @@ public class GameManager : MonoBehaviour
         StartTheGameplay();
         countDownText.text = "";
     }
+
+    #region ButtonFunctions
 
     public void BackToMenuButtonForWinner()
     {
@@ -756,5 +767,18 @@ public class GameManager : MonoBehaviour
     {
         settingsPanel.SetActive(false);
     }
+
+    public void BackToMenuButtonForFreezeTutorial()
+    {
+        freezeSkillTutorialPanel.SetActive(false);
+    }
+
+    public void BackToMenuButtonForPowerShootTutorial()
+    {
+        powerShootTutorialPanel.SetActive(false);
+    }
+
+    #endregion
+    
 
 }

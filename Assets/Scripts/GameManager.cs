@@ -15,9 +15,8 @@ public class GameManager : MonoBehaviour
     public int budget = 0;
     private bool isBestOfThree1,isBestOfThree2,isBestOfThree3,isBestOfThree4,isBestOfThree5,isBestOfThree6,
         isBestOfThree7,isBestOfThree8,isBestOfThree9,isBestOfThree10,isBestOfThree11,isBestOfThree12;
-    private float yPos = -107.8f;
+    [SerializeField]private float yPos = -107.8f;
     private bool isClickable = true;
-
     public int LastLevel=0;
     public List<GameObject> shoppedGameObject;
 
@@ -69,6 +68,7 @@ public class GameManager : MonoBehaviour
     {
         budget = PlayerPrefs.GetInt("Budget");
         LastLevel = PlayerPrefs.GetInt("Level");
+        // yPos = PlayerPrefs.GetFloat("yPos", -107.8f);
         StopTheGame();
 
         
@@ -76,53 +76,66 @@ public class GameManager : MonoBehaviour
         switch (LastLevel)
         {
             case 0:
+                yPos = -107.8f;
                 mainMenuPanel.SetActive(true);
                 break;
             case 1:
+                yPos = -99.8f;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree1 = true;
                 break;
             case 2:
+                yPos = -91.8f;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree2 = true;
                 break;
             case 3:
+                yPos = -83.8f;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree3 = true;
                 break;
             case 4:
+                yPos = -75.8f;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree4 = true;
                 break;
             case 5:
+                yPos = -67.8f;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree5= true;
                 break;
             case 6:
+                yPos = -59.8f;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree6 = true;
                 break;
             case 7:
+                yPos = -51.8f;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree7 = true;
                 break;
             case 8:
+                yPos = -43.8f;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree8 = true;
                 break;
             case 9:
+                yPos = -35.8f;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree9 = true;
                 break;
             case 10:
+                yPos = -27.8f;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree10 = true;
                 break;
             case 11:
+                yPos = -19.8f;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree11 = true;
                 break;
             case 12:
+                yPos = -11.8f;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree12 = true;
                 break;
@@ -170,10 +183,9 @@ public class GameManager : MonoBehaviour
                 yPos+=8;
                 freeze.SetActive(false);
                 powerShot.SetActive(false);
-                LastLevel++; // Increment LastLevel to move to the next level
-                PlayerPrefs.SetInt("Level", LastLevel); // Update PlayerPrefs with the new level
+                LastLevel++;
+                PlayerPrefs.SetInt("Level", LastLevel); 
 
-                // Reset isBestOfThreeX to false
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
             }
 
@@ -187,7 +199,6 @@ public class GameManager : MonoBehaviour
         }
         if (isBestOfThree2)
         {
-            //KAZANDI BUDGET VER
             if (playerScore == 3)
             {
                 StopTheGame();
@@ -197,10 +208,9 @@ public class GameManager : MonoBehaviour
                 yPos+=8;
                 freeze.SetActive(false);
                 powerShot.SetActive(false);
-                LastLevel++; // Increment LastLevel to move to the next level
-                PlayerPrefs.SetInt("Level", LastLevel); // Update PlayerPrefs with the new level
+                LastLevel++; 
+                PlayerPrefs.SetInt("Level", LastLevel);
 
-                // Reset isBestOfThreeX to false
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
             }
 
@@ -214,7 +224,6 @@ public class GameManager : MonoBehaviour
             }
         }if (isBestOfThree3)
         {
-            //KAZANDI BUDGET VER
             if (playerScore == 3)
             {
                 StopTheGame();
@@ -224,10 +233,8 @@ public class GameManager : MonoBehaviour
                 yPos+=8;
                 freeze.SetActive(false);
                 powerShot.SetActive(false);
-                LastLevel++; // Increment LastLevel to move to the next level
-                PlayerPrefs.SetInt("Level", LastLevel); // Update PlayerPrefs with the new level
-
-                // Reset isBestOfThreeX to false
+                LastLevel++;
+                PlayerPrefs.SetInt("Level", LastLevel); 
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
             }
 
@@ -240,7 +247,6 @@ public class GameManager : MonoBehaviour
             }
         }if (isBestOfThree4)
         {
-            //KAZANDI BUDGET VER
             if (playerScore == 4)
             {
                 StopTheGame();
@@ -250,10 +256,9 @@ public class GameManager : MonoBehaviour
                 yPos+=8;
                 freeze.SetActive(false);
                 powerShot.SetActive(false);
-                LastLevel++; // Increment LastLevel to move to the next level
-                PlayerPrefs.SetInt("Level", LastLevel); // Update PlayerPrefs with the new level
-
-                // Reset isBestOfThreeX to false
+                LastLevel++; 
+                PlayerPrefs.SetInt("Level", LastLevel);
+                
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
             }
 
@@ -266,7 +271,6 @@ public class GameManager : MonoBehaviour
             }
         }if (isBestOfThree5)
         {
-            //KAZANDI BUDGET VER
             if (playerScore == 5)
             {
                 StopTheGame();
@@ -276,10 +280,9 @@ public class GameManager : MonoBehaviour
                 yPos+=8;
                 freeze.SetActive(false);
                 powerShot.SetActive(false);
-                LastLevel++; // Increment LastLevel to move to the next level
-                PlayerPrefs.SetInt("Level", LastLevel); // Update PlayerPrefs with the new level
+                LastLevel++;
+                PlayerPrefs.SetInt("Level", LastLevel); 
 
-                // Reset isBestOfThreeX to false
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
             }
 
@@ -292,7 +295,6 @@ public class GameManager : MonoBehaviour
             }
         }if (isBestOfThree6)
         {
-            //KAZANDI BUDGET VER
             if (playerScore == 3)
             {
                 StopTheGame();
@@ -316,7 +318,6 @@ public class GameManager : MonoBehaviour
             }
         }if (isBestOfThree7)
         {
-            //KAZANDI BUDGET VER
             if (playerScore == 3)
             {
                 StopTheGame();
@@ -340,7 +341,6 @@ public class GameManager : MonoBehaviour
             }
         }if (isBestOfThree8)
         {
-            //KAZANDI BUDGET VER
             if (playerScore == 3)
             {
                 StopTheGame();
@@ -352,8 +352,7 @@ public class GameManager : MonoBehaviour
                 powerShot.SetActive(false);
                 LastLevel++;
                 PlayerPrefs.SetInt("Level", LastLevel); 
-
-                // Reset isBestOfThreeX to false
+                
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
             }
 
@@ -366,7 +365,6 @@ public class GameManager : MonoBehaviour
             }
         }if (isBestOfThree9)
         {
-            //KAZANDI BUDGET VER
             if (playerScore == 3)
             {
                 StopTheGame();
@@ -390,7 +388,6 @@ public class GameManager : MonoBehaviour
             }
         }if (isBestOfThree10)
         {
-            //KAZANDI BUDGET VER
             if (playerScore == 3)
             {
                 StopTheGame();
@@ -414,7 +411,6 @@ public class GameManager : MonoBehaviour
             }
         }if (isBestOfThree11)
         {
-            //KAZANDI BUDGET VER
             if (playerScore == 3)
             {
                 StopTheGame();
@@ -439,7 +435,6 @@ public class GameManager : MonoBehaviour
             }
         }if (isBestOfThree12)
         {
-            //KAZANDI BUDGET VER
             if (playerScore == 3)
             {
                 StopTheGame();
@@ -543,7 +538,6 @@ public class GameManager : MonoBehaviour
         isBestOfThree1 = true;
         FrezeerSkill();
         PowerShootSkill();
-        EnmeySkills.EnemyHaveFrezeer = true;
     }
     private void OnLevel2Click()
     {
@@ -552,7 +546,6 @@ public class GameManager : MonoBehaviour
         StartCountdown();
         timer = 0;
         isBestOfThree2 = true;
-        EnmeySkills.EnemyHaveFrezeer = false;
 
     }
 
@@ -563,7 +556,6 @@ public class GameManager : MonoBehaviour
         StartCountdown();
         timer = 0;
         isBestOfThree3 = true;
-        EnmeySkills.EnemyHaveFrezeer = false;
     }
     private void OnLevel4Click()
     {
@@ -573,9 +565,7 @@ public class GameManager : MonoBehaviour
         timer = 0;
         freeze.SetActive(true);
         isBestOfThree4 = true;
-        FrezeerSkill();
         stm.isFreezeSkillUnlocked = true;
-        EnmeySkills.EnemyHaveFrezeer = true;
     }
     private void OnLevel5Click()
     {
@@ -584,7 +574,6 @@ public class GameManager : MonoBehaviour
         StartCountdown();
         timer = 0;
         FrezeerSkill();
-        EnmeySkills.EnemyHaveFrezeer = true;
         isBestOfThree5 = true;
     }
     private void OnLevel6Click()
@@ -594,7 +583,6 @@ public class GameManager : MonoBehaviour
         StartCountdown();
         timer = 0;
         FrezeerSkill();
-        EnmeySkills.EnemyHaveFrezeer = true;
         isBestOfThree6 = true;
     } 
     private void OnLevel7Click()
@@ -604,7 +592,6 @@ public class GameManager : MonoBehaviour
         StartCountdown();
         timer = 0;
         FrezeerSkill();
-        EnmeySkills.EnemyHaveFrezeer = true;
         isBestOfThree7 = true;
     }
     private void OnLevel8Click()
@@ -614,7 +601,6 @@ public class GameManager : MonoBehaviour
         StartCountdown();
         timer = 0;
         FrezeerSkill();
-        EnmeySkills.EnemyHaveFrezeer = true;
         powerShot.SetActive(true);
         isBestOfThree8 = true;
         stm.isPowerUpSkillUnlocked = true;
@@ -627,7 +613,6 @@ public class GameManager : MonoBehaviour
         StartCountdown();
         timer = 0;
         FrezeerSkill();
-        EnmeySkills.EnemyHaveFrezeer = true;
         PowerShootSkill();
         isBestOfThree9 = true;
     } 
@@ -639,7 +624,6 @@ public class GameManager : MonoBehaviour
         timer = 0;
         isBestOfThree10 = true;
         FrezeerSkill();
-        EnmeySkills.EnemyHaveFrezeer = true;
         PowerShootSkill();
     } private void OnLevel11Click()
     {
@@ -648,7 +632,6 @@ public class GameManager : MonoBehaviour
         StartCountdown();
         timer = 0;
         FrezeerSkill();
-        EnmeySkills.EnemyHaveFrezeer = true;
         PowerShootSkill();
         isBestOfThree11 = true;
     } private void OnLevel12Click()
@@ -658,7 +641,6 @@ public class GameManager : MonoBehaviour
         StartCountdown();
         timer = 0;
         FrezeerSkill();
-        EnmeySkills.EnemyHaveFrezeer = true;
         PowerShootSkill();
         isBestOfThree12 = true;
     }

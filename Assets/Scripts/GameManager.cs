@@ -6,7 +6,6 @@ using Vector3 = UnityEngine.Vector3;
 
 public class GameManager : MonoBehaviour
 {
-
     #region General variables 
     
     public int enemyScore = 0;
@@ -42,7 +41,6 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
-
     #region Panels
 
     [SerializeField] private GameObject mainMenuPanel;
@@ -70,7 +68,6 @@ public class GameManager : MonoBehaviour
     {
         budget = PlayerPrefs.GetInt("Budget");
         LastLevel = PlayerPrefs.GetInt("Level");
-        // yPos = PlayerPrefs.GetFloat("yPos", -107.8f);
         StopTheGame();
 
         
@@ -142,7 +139,6 @@ public class GameManager : MonoBehaviour
                 isBestOfThree12 = true;
                 break;
             default:
-                // Handle the default case, maybe start from level 1
                 OnLevel1Click();
                 break;
         }
@@ -175,7 +171,6 @@ public class GameManager : MonoBehaviour
        
         if (isBestOfThree1)
         {
-            //KAZANDI BUDGET VER
             if (playerScore == 3)
             {
                 StopTheGame();
@@ -188,7 +183,8 @@ public class GameManager : MonoBehaviour
                 LastLevel++;
                 PlayerPrefs.SetInt("Level", LastLevel); 
 
-                isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
+                isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
+                    isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
             }
 
             if (enemyScore == 3)
@@ -213,7 +209,8 @@ public class GameManager : MonoBehaviour
                 LastLevel++; 
                 PlayerPrefs.SetInt("Level", LastLevel);
 
-                isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
+                isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
+                    isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
             }
 
             if (enemyScore == 3)
@@ -238,7 +235,8 @@ public class GameManager : MonoBehaviour
                 powerShot.SetActive(false);
                 LastLevel++;
                 PlayerPrefs.SetInt("Level", LastLevel); 
-                isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
+                isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
+                    isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
             }
 
             if (enemyScore == 3)
@@ -262,7 +260,8 @@ public class GameManager : MonoBehaviour
                 LastLevel++; 
                 PlayerPrefs.SetInt("Level", LastLevel);
                 
-                isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
+                isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = isBestOfThree7 = 
+                    isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
             }
 
             if (enemyScore == 3)
@@ -286,7 +285,8 @@ public class GameManager : MonoBehaviour
                 LastLevel++;
                 PlayerPrefs.SetInt("Level", LastLevel); 
 
-                isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
+                isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
+                    isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
             }
 
             if (enemyScore == 3)
@@ -309,7 +309,8 @@ public class GameManager : MonoBehaviour
                 powerShot.SetActive(false);
                 LastLevel++; 
                 PlayerPrefs.SetInt("Level", LastLevel); 
-                isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
+                isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
+                    isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
             }
 
             if (enemyScore == 3)
@@ -332,7 +333,8 @@ public class GameManager : MonoBehaviour
                 powerShot.SetActive(false);
                 LastLevel++; 
                 PlayerPrefs.SetInt("Level", LastLevel);
-                isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
+                isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
+                    isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
             }
 
             if (enemyScore == 3)
@@ -357,7 +359,8 @@ public class GameManager : MonoBehaviour
                 LastLevel++;
                 PlayerPrefs.SetInt("Level", LastLevel); 
                 
-                isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
+                isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
+                    isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
             }
 
             if (enemyScore == 3)
@@ -380,7 +383,8 @@ public class GameManager : MonoBehaviour
                 powerShot.SetActive(false);
                 LastLevel++; 
                 PlayerPrefs.SetInt("Level", LastLevel);
-                isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
+                isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
+                    isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
             }
 
             if (enemyScore == 3)
@@ -403,7 +407,8 @@ public class GameManager : MonoBehaviour
                 powerShot.SetActive(false);
                 LastLevel++; 
                 PlayerPrefs.SetInt("Level", LastLevel); 
-                isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
+                isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
+                    isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
             }
 
             if (enemyScore == 3)
@@ -427,7 +432,8 @@ public class GameManager : MonoBehaviour
                 LastLevel++; 
                 PlayerPrefs.SetInt("Level", LastLevel);
 
-                isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
+                isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
+                    isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
             }
 
             if (enemyScore == 3)
@@ -450,7 +456,8 @@ public class GameManager : MonoBehaviour
                 powerShot.SetActive(false);
                 LastLevel++; 
                 PlayerPrefs.SetInt("Level", LastLevel); 
-                isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
+                isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
+                    isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
             }
 
             if (enemyScore == 3)
@@ -480,56 +487,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Button  FrezeerButton;
     [SerializeField] private Button PowerShotbutton;
     #endregion
-
-    private void HandleClick()
-    {
-        Vector2 rayOrigin = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.zero);
-
-        if (hit.collider != null)
-        {
-            if (hit.collider.gameObject.CompareTag("Level1"))
-            {
-                OnLevel1Click();
-            }
-            if (hit.collider.gameObject.CompareTag("Level2"))
-            {
-                OnLevel2Click();
-            }
-            if (hit.collider.gameObject.CompareTag("Level3"))
-            {
-                OnLevel3Click();
-            }
-            if (hit.collider.gameObject.CompareTag("Level4"))
-            {
-                OnLevel4Click();
-            } if (hit.collider.gameObject.CompareTag("Level5"))
-            {
-                OnLevel5Click();
-            } if (hit.collider.gameObject.CompareTag("Level6"))
-            {
-                OnLevel6Click();
-            } if (hit.collider.gameObject.CompareTag("Level7"))
-            {
-                OnLevel7Click();
-            } if (hit.collider.gameObject.CompareTag("Level8"))
-            {
-                OnLevel8Click();
-            } if (hit.collider.gameObject.CompareTag("Level9"))
-            {
-                OnLevel9Click();
-            } if (hit.collider.gameObject.CompareTag("Level10"))
-            {
-                OnLevel10Click();
-            } if (hit.collider.gameObject.CompareTag("Level11"))
-            {
-                OnLevel11Click();
-            } if (hit.collider.gameObject.CompareTag("Level12"))
-            {
-                OnLevel12Click();
-            }
-        }
-    }
 
     #region Level Functions
 
@@ -649,13 +606,66 @@ public class GameManager : MonoBehaviour
         isBestOfThree12 = true;
     }
     #endregion
-   
+
+    #region LevelTree Function
+
     public void DisplayLevelTree()
     {
         ingamePanel.SetActive(false);
         cam.transform.DOMove(new Vector3(0, yPos, -10),2f) ;
         mainMenuPanel.SetActive(false);
     }
+    private void HandleClick()
+    {
+        Vector2 rayOrigin = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.zero);
+
+        if (hit.collider != null)
+        {
+            if (hit.collider.gameObject.CompareTag("Level1"))
+            {
+                OnLevel1Click();
+            }
+            if (hit.collider.gameObject.CompareTag("Level2"))
+            {
+                OnLevel2Click();
+            }
+            if (hit.collider.gameObject.CompareTag("Level3"))
+            {
+                OnLevel3Click();
+            }
+            if (hit.collider.gameObject.CompareTag("Level4"))
+            {
+                OnLevel4Click();
+            } if (hit.collider.gameObject.CompareTag("Level5"))
+            {
+                OnLevel5Click();
+            } if (hit.collider.gameObject.CompareTag("Level6"))
+            {
+                OnLevel6Click();
+            } if (hit.collider.gameObject.CompareTag("Level7"))
+            {
+                OnLevel7Click();
+            } if (hit.collider.gameObject.CompareTag("Level8"))
+            {
+                OnLevel8Click();
+            } if (hit.collider.gameObject.CompareTag("Level9"))
+            {
+                OnLevel9Click();
+            } if (hit.collider.gameObject.CompareTag("Level10"))
+            {
+                OnLevel10Click();
+            } if (hit.collider.gameObject.CompareTag("Level11"))
+            {
+                OnLevel11Click();
+            } if (hit.collider.gameObject.CompareTag("Level12"))
+            {
+                OnLevel12Click();
+            }
+        }
+    }
+    #endregion
+    
     private void StopTheGame()
     {
         mainMenuPanel.SetActive(true);
@@ -669,8 +679,7 @@ public class GameManager : MonoBehaviour
         player.GetComponent<Rigidbody2D>().velocity=Vector2.zero;
         ball.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     }
-    
-    
+
     private void StartTheGameplay()
     {
         enemyScore = 0;
@@ -687,11 +696,29 @@ public class GameManager : MonoBehaviour
         ball.SetActive(true);
     }
 
-    
+    #region CounterRegion
+
     private void StartCountdown()
     {
         StartCoroutine(CountdownCoroutine());
+        
     }
+    private System.Collections.IEnumerator CountdownCoroutine()
+    {
+
+        for (int i = 3; i > 0; i--)
+        {
+            countDownText.text = i.ToString();
+            yield return new WaitForSeconds(1f);
+        }
+
+        countDownText.text = "Go!";
+        yield return new WaitForSeconds(1f);
+        StartTheGameplay();
+        countDownText.text = "";
+    }
+
+    #endregion
 
     #region Skills
 
@@ -708,22 +735,6 @@ public class GameManager : MonoBehaviour
     }
 
     #endregion
-   
-
-    private System.Collections.IEnumerator CountdownCoroutine()
-    {
-
-        for (int i = 3; i > 0; i--)
-        {
-            countDownText.text = i.ToString();
-            yield return new WaitForSeconds(1f);
-        }
-
-        countDownText.text = "Go!";
-        yield return new WaitForSeconds(1f);
-        StartTheGameplay();
-        countDownText.text = "";
-    }
 
     #region ButtonFunctions
 
@@ -779,6 +790,4 @@ public class GameManager : MonoBehaviour
     }
 
     #endregion
-    
-
 }

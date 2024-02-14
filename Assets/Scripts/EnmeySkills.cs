@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 public class EnmeySkills : MonoBehaviour
 {
-    #region  değerler
+    #region  Frezeerdegerleri
     [SerializeField] private GameObject FrezeerPrefab;
     [SerializeField] private GameObject FrezeerEffect;
     [SerializeField] private Transform FrezeerSpwnPoint;
@@ -19,6 +19,18 @@ public class EnmeySkills : MonoBehaviour
     private GameObject Enemyy;
     private GameObject FrezeerEffectInstance;
     public static bool EnemyHaveFrezeer;
+    #endregion
+
+    #region  PowerShootDegerleri
+
+    [SerializeField] private Transform grabPoint;
+    [SerializeField] private Transform rayPoint;
+    [SerializeField] private float rayDistance;
+    [SerializeField] private float circleRadius = 1f;
+     BallMovements ballMovements;
+     private GameObject grabbedGameObject;
+     private int layerIndex;
+
     #endregion
 
     private void Start()
@@ -36,6 +48,7 @@ public class EnmeySkills : MonoBehaviour
 
             nextActionTime = Time.time + Random.Range(minDelay, maxDelay);
         }
+        
         
         
     }
@@ -63,5 +76,18 @@ public class EnmeySkills : MonoBehaviour
         Destroy(bullet, 5f);
         Destroy(FrezeerEffectInstance);
         
+    }
+
+    public void enemyPowerShootCharging()
+    {
+      /*  Collider2D hitCollider = Physics2D.OverlapCircleAll(rayPoint.position, circleRadius);
+        foreach (Collider2D collider in hitCollider)
+        {
+            if (collider.CompareTag("Ball"))
+            {
+                grabbedGameObject = collider.gameObject;
+                grabbedGameObject.GetComponent<Rigidbody2D>().isKinematic = true;
+            }
+        }*/
     }
 }

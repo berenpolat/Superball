@@ -24,6 +24,7 @@ public class EnemyScript : MonoBehaviour
     public float enemySpeed;
     public Transform enemyStartPoint;
     private float originalSpeed;
+    public static bool canShootBall = true;
 
 
     #endregion
@@ -48,7 +49,7 @@ public class EnemyScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Ball"))
+        if (other.gameObject.CompareTag("Ball") && canShootBall)
         {
             ShootBall();
         }
@@ -67,7 +68,7 @@ public class EnemyScript : MonoBehaviour
     #endregion
     
     
-    private void ShootBall()
+    public void ShootBall()
     {
         Vector2 direction = (winFile.transform.position - transform.position).normalized;
         bm.Shoot(direction*ballSpeed);

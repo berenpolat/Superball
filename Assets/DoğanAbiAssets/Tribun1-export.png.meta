@@ -152,7 +152,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Tribun1-export_0: -8537305795246545195
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

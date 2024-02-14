@@ -47,11 +47,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject ingamePanel;
     [SerializeField] private GameObject winPanel;
     [SerializeField] private GameObject losePanel;
-    [SerializeField] private GameObject marketPanel;
     [SerializeField] private GameObject skillTreePanel;
     [SerializeField] private GameObject settingsPanel;
     [SerializeField] private GameObject freezeSkillTutorialPanel;
     [SerializeField] private GameObject powerShootTutorialPanel;
+    
     #endregion
     
     #region Script Instances
@@ -759,16 +759,6 @@ public class GameManager : MonoBehaviour
     {
         losePanel.SetActive(false);
         mainMenuPanel.SetActive(true);
-    }
-
-    public void OpenMarket()
-    {
-        marketPanel.SetActive(true);
-    }
-
-    public void BackFromMarket()
-    {
-        marketPanel.SetActive(false);
     }
 
     public void OpenSkillTree()

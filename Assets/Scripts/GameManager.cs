@@ -40,7 +40,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Camera cam;
 
     #endregion
-
+    
+    
     #region Panels
 
     [SerializeField] private GameObject mainMenuPanel;
@@ -51,7 +52,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject settingsPanel;
     [SerializeField] private GameObject freezeSkillTutorialPanel;
     [SerializeField] private GameObject powerShootTutorialPanel;
-    
+    [SerializeField] private GameObject levelTreeDisplayPanel;
     #endregion
     
     #region Script Instances
@@ -62,74 +63,160 @@ public class GameManager : MonoBehaviour
     [SerializeField] private SkillTreeManager stm;
     #endregion
 
+    #region Buttons
+
+    [SerializeField] private GameObject Button1,Button2,Button3,Button4,Button5,Button6,
+        Button7,Button8,Button9,Button10,Button11,Button12;
+
+    #endregion
+    
     #region Unity Methods
 
     private void Start()
     {
+        
         budget = PlayerPrefs.GetInt("Budget");
         LastLevel = PlayerPrefs.GetInt("Level");
         StopTheGame();
 
+        Button1.GetComponent<Button>().interactable = true;
+        Button2.GetComponent<Button>().interactable = false;
+        Button3.GetComponent<Button>().interactable = false;
+        Button4.GetComponent<Button>().interactable = false;
+        Button5.GetComponent<Button>().interactable = false;
+        Button6.GetComponent<Button>().interactable = false;
+        Button7.GetComponent<Button>().interactable = false;
+        Button8.GetComponent<Button>().interactable = false;
+        Button9.GetComponent<Button>().interactable = false;
+        Button10.GetComponent<Button>().interactable = false;
+        Button11.GetComponent<Button>().interactable = false;
+        Button12.GetComponent<Button>().interactable = false;
         
         timer = 0;
         switch (LastLevel)
         {
             case 0:
-                yPos = -107.8f;
+                Button1.GetComponent<Button>().interactable = true;
                 mainMenuPanel.SetActive(true);
                 break;
             case 1:
-                yPos = -99.8f;
+                Button1.GetComponent<Button>().interactable = true;
+                Button2.GetComponent<Button>().interactable = true;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree1 = true;
                 break;
             case 2:
-                yPos = -91.8f;
+                Button1.GetComponent<Button>().interactable = true;
+                Button2.GetComponent<Button>().interactable = true;
+                Button3.GetComponent<Button>().interactable = true;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree2 = true;
                 break;
             case 3:
-                yPos = -83.8f;
+                Button1.GetComponent<Button>().interactable = true;
+                Button2.GetComponent<Button>().interactable = true;
+                Button3.GetComponent<Button>().interactable = true;
+                Button4.GetComponent<Button>().interactable = true;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree3 = true;
                 break;
             case 4:
-                yPos = -75.8f;
+                Button1.GetComponent<Button>().interactable = true;
+                Button2.GetComponent<Button>().interactable = true;
+                Button3.GetComponent<Button>().interactable = true;
+                Button4.GetComponent<Button>().interactable = true;
+                Button5.GetComponent<Button>().interactable = true;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree4 = true;
                 break;
             case 5:
-                yPos = -67.8f;
+                Button1.GetComponent<Button>().interactable = true;
+                Button2.GetComponent<Button>().interactable = true;
+                Button3.GetComponent<Button>().interactable = true;
+                Button4.GetComponent<Button>().interactable = true;
+                Button5.GetComponent<Button>().interactable = true;
+                Button6.GetComponent<Button>().interactable = true;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree5= true;
                 break;
             case 6:
-                yPos = -59.8f;
+                Button1.GetComponent<Button>().interactable = true;
+                Button2.GetComponent<Button>().interactable = true;
+                Button3.GetComponent<Button>().interactable = true;
+                Button4.GetComponent<Button>().interactable = true;
+                Button5.GetComponent<Button>().interactable = true;
+                Button6.GetComponent<Button>().interactable = true;
+                Button7.GetComponent<Button>().interactable = true;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree6 = true;
                 break;
             case 7:
-                yPos = -51.8f;
+                Button1.GetComponent<Button>().interactable = true;
+                Button2.GetComponent<Button>().interactable = true;
+                Button3.GetComponent<Button>().interactable = true;
+                Button4.GetComponent<Button>().interactable = true;
+                Button5.GetComponent<Button>().interactable = true;
+                Button6.GetComponent<Button>().interactable = true;
+                Button7.GetComponent<Button>().interactable = true;
+                Button8.GetComponent<Button>().interactable = true;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree7 = true;
                 break;
             case 8:
-                yPos = -43.8f;
+                Button1.GetComponent<Button>().interactable = true;
+                Button2.GetComponent<Button>().interactable = true;
+                Button3.GetComponent<Button>().interactable = true;
+                Button4.GetComponent<Button>().interactable = true;
+                Button5.GetComponent<Button>().interactable = true;
+                Button6.GetComponent<Button>().interactable = true;
+                Button7.GetComponent<Button>().interactable = true;
+                Button8.GetComponent<Button>().interactable = true;
+                Button9.GetComponent<Button>().interactable = true;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree8 = true;
                 break;
             case 9:
-                yPos = -35.8f;
+                Button1.GetComponent<Button>().interactable = true;
+                Button2.GetComponent<Button>().interactable = true;
+                Button3.GetComponent<Button>().interactable = true;
+                Button4.GetComponent<Button>().interactable = true;
+                Button5.GetComponent<Button>().interactable = true;
+                Button6.GetComponent<Button>().interactable = true;
+                Button7.GetComponent<Button>().interactable = true;
+                Button8.GetComponent<Button>().interactable = true;
+                Button9.GetComponent<Button>().interactable = true;
+                Button10.GetComponent<Button>().interactable = true;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree9 = true;
                 break;
             case 10:
-                yPos = -27.8f;
+                Button1.GetComponent<Button>().interactable = true;
+                Button2.GetComponent<Button>().interactable = true;
+                Button3.GetComponent<Button>().interactable = true;
+                Button4.GetComponent<Button>().interactable = true;
+                Button5.GetComponent<Button>().interactable = true;
+                Button6.GetComponent<Button>().interactable = true;
+                Button7.GetComponent<Button>().interactable = true;
+                Button8.GetComponent<Button>().interactable = true;
+                Button9.GetComponent<Button>().interactable = true;
+                Button10.GetComponent<Button>().interactable = true;
+                Button11.GetComponent<Button>().interactable = true;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree10 = true;
                 break;
             case 11:
-                yPos = -19.8f;
+                Button1.GetComponent<Button>().interactable = true;
+                Button2.GetComponent<Button>().interactable = true;
+                Button3.GetComponent<Button>().interactable = true;
+                Button4.GetComponent<Button>().interactable = true;
+                Button5.GetComponent<Button>().interactable = true;
+                Button6.GetComponent<Button>().interactable = true;
+                Button7.GetComponent<Button>().interactable = true;
+                Button8.GetComponent<Button>().interactable = true;
+                Button9.GetComponent<Button>().interactable = true;
+                Button10.GetComponent<Button>().interactable = true;
+                Button11.GetComponent<Button>().interactable = true;
+                Button12.GetComponent<Button>().interactable = true;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree11 = true;
                 break;
@@ -185,6 +272,7 @@ public class GameManager : MonoBehaviour
 
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
                     isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
+                Button2.GetComponent<Button>().interactable = true;
             }
 
             if (enemyScore == 3)
@@ -211,6 +299,8 @@ public class GameManager : MonoBehaviour
 
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
                     isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
+                
+                Button3.GetComponent<Button>().interactable = true;
             }
 
             if (enemyScore == 3)
@@ -237,6 +327,7 @@ public class GameManager : MonoBehaviour
                 PlayerPrefs.SetInt("Level", LastLevel); 
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
                     isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
+                Button4.GetComponent<Button>().interactable = true;
             }
 
             if (enemyScore == 3)
@@ -262,6 +353,7 @@ public class GameManager : MonoBehaviour
                 
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = isBestOfThree7 = 
                     isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
+                Button5.GetComponent<Button>().interactable = true;
             }
 
             if (enemyScore == 3)
@@ -287,6 +379,7 @@ public class GameManager : MonoBehaviour
 
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
                     isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
+                Button6.GetComponent<Button>().interactable = true;
             }
 
             if (enemyScore == 3)
@@ -311,6 +404,7 @@ public class GameManager : MonoBehaviour
                 PlayerPrefs.SetInt("Level", LastLevel); 
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
                     isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
+                Button7.GetComponent<Button>().interactable = true;
             }
 
             if (enemyScore == 3)
@@ -335,6 +429,7 @@ public class GameManager : MonoBehaviour
                 PlayerPrefs.SetInt("Level", LastLevel);
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
                     isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
+                Button8.GetComponent<Button>().interactable = true;
             }
 
             if (enemyScore == 3)
@@ -361,6 +456,7 @@ public class GameManager : MonoBehaviour
                 
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
                     isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
+                Button9.GetComponent<Button>().interactable = true;
             }
 
             if (enemyScore == 3)
@@ -385,6 +481,7 @@ public class GameManager : MonoBehaviour
                 PlayerPrefs.SetInt("Level", LastLevel);
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
                     isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
+                Button10.GetComponent<Button>().interactable = true;
             }
 
             if (enemyScore == 3)
@@ -409,6 +506,7 @@ public class GameManager : MonoBehaviour
                 PlayerPrefs.SetInt("Level", LastLevel); 
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
                     isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
+                Button11.GetComponent<Button>().interactable = true;
             }
 
             if (enemyScore == 3)
@@ -434,6 +532,7 @@ public class GameManager : MonoBehaviour
 
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
                     isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
+                Button12.GetComponent<Button>().interactable = true;
             }
 
             if (enemyScore == 3)
@@ -469,10 +568,6 @@ public class GameManager : MonoBehaviour
             }
         }
         
-        if (Input.GetMouseButtonDown(0))
-        {
-            HandleClick();
-        }
         #region PlayerPrefs
         PlayerPrefs.SetInt("Budget", budget);
         PlayerPrefs.SetInt("Level", LastLevel);
@@ -492,7 +587,7 @@ public class GameManager : MonoBehaviour
 
     private void OnLevel1Click()
     {
-        cam.transform.position = new Vector3(0, -0.2f, -10);
+        levelTreeDisplayPanel.SetActive(false);
         mainMenuPanel.SetActive(false);
         StartCountdown();
         timer = 0;
@@ -503,7 +598,7 @@ public class GameManager : MonoBehaviour
     }
     private void OnLevel2Click()
     {
-        cam.transform.position = new Vector3(0, -0.2f, -10);
+        levelTreeDisplayPanel.SetActive(false);
         mainMenuPanel.SetActive(false);
         StartCountdown();
         timer = 0;
@@ -513,7 +608,7 @@ public class GameManager : MonoBehaviour
 
     private void OnLevel3Click()
     {
-        cam.transform.position = new Vector3(0, -0.2f, -10);
+        levelTreeDisplayPanel.SetActive(false);
         mainMenuPanel.SetActive(false);
         StartCountdown();
         timer = 0;
@@ -522,7 +617,7 @@ public class GameManager : MonoBehaviour
     }
     private void OnLevel4Click()
     {
-        cam.transform.position = new Vector3(0, -0.2f, -10);
+        levelTreeDisplayPanel.SetActive(false);
         mainMenuPanel.SetActive(false);
         StartCountdown();
         timer = 0;
@@ -534,7 +629,7 @@ public class GameManager : MonoBehaviour
     }
     private void OnLevel5Click()
     {
-        cam.transform.position = new Vector3(0, -0.2f, -10);
+        levelTreeDisplayPanel.SetActive(false);
         mainMenuPanel.SetActive(false);
         StartCountdown();
         timer = 0;
@@ -544,7 +639,7 @@ public class GameManager : MonoBehaviour
     }
     private void OnLevel6Click()
     {
-        cam.transform.position = new Vector3(0, -0.2f, -10);
+        levelTreeDisplayPanel.SetActive(false);
         mainMenuPanel.SetActive(false);
         StartCountdown();
         timer = 0;
@@ -554,7 +649,7 @@ public class GameManager : MonoBehaviour
     } 
     private void OnLevel7Click()
     {
-        cam.transform.position = new Vector3(0, -0.2f, -10);
+        levelTreeDisplayPanel.SetActive(false);
         mainMenuPanel.SetActive(false);
         StartCountdown();
         timer = 0;
@@ -564,7 +659,7 @@ public class GameManager : MonoBehaviour
     }
     private void OnLevel8Click()
     {
-        cam.transform.position = new Vector3(0, -0.2f, -10);
+        levelTreeDisplayPanel.SetActive(false);
         mainMenuPanel.SetActive(false);
         StartCountdown();
         timer = 0;
@@ -577,7 +672,7 @@ public class GameManager : MonoBehaviour
     } 
     private void OnLevel9Click()
     {
-        cam.transform.position = new Vector3(0, -0.2f, -10);
+        levelTreeDisplayPanel.SetActive(false);
         mainMenuPanel.SetActive(false);
         StartCountdown();
         timer = 0;
@@ -588,7 +683,7 @@ public class GameManager : MonoBehaviour
     } 
     private void OnLevel10Click()
     {
-        cam.transform.position = new Vector3(0, -0.2f, -10);
+        levelTreeDisplayPanel.SetActive(false);
         mainMenuPanel.SetActive(false);
         StartCountdown();
         timer = 0;
@@ -598,7 +693,7 @@ public class GameManager : MonoBehaviour
         PowerShootSkill();
     } private void OnLevel11Click()
     {
-        cam.transform.position = new Vector3(0, -0.2f, -10);
+        levelTreeDisplayPanel.SetActive(false);
         mainMenuPanel.SetActive(false);
         StartCountdown();
         timer = 0;
@@ -608,7 +703,7 @@ public class GameManager : MonoBehaviour
         isBestOfThree11 = true;
     } private void OnLevel12Click()
     {
-        cam.transform.position = new Vector3(0, -0.2f, -10);
+        levelTreeDisplayPanel.SetActive(false);
         mainMenuPanel.SetActive(false);
         StartCountdown();
         timer = 0;
@@ -618,65 +713,73 @@ public class GameManager : MonoBehaviour
         isBestOfThree12 = true;
     }
     #endregion
-
-    #region LevelTree Function
+    
 
     public void DisplayLevelTree()
     {
         ingamePanel.SetActive(false);
-        cam.transform.DOMove(new Vector3(0, yPos, -10),2f) ;
+       levelTreeDisplayPanel.SetActive(true);
         mainMenuPanel.SetActive(false);
     }
-    private void HandleClick()
+    
+    public void ButtonLevel1Controler()
     {
-        Vector2 rayOrigin = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.zero);
-
-        if (hit.collider != null)
-        {
-            if (hit.collider.gameObject.CompareTag("Level1"))
-            {
-                OnLevel1Click();
-            }
-            if (hit.collider.gameObject.CompareTag("Level2"))
-            {
-                OnLevel2Click();
-            }
-            if (hit.collider.gameObject.CompareTag("Level3"))
-            {
-                OnLevel3Click();
-            }
-            if (hit.collider.gameObject.CompareTag("Level4"))
-            {
-                OnLevel4Click();
-            } if (hit.collider.gameObject.CompareTag("Level5"))
-            {
-                OnLevel5Click();
-            } if (hit.collider.gameObject.CompareTag("Level6"))
-            {
-                OnLevel6Click();
-            } if (hit.collider.gameObject.CompareTag("Level7"))
-            {
-                OnLevel7Click();
-            } if (hit.collider.gameObject.CompareTag("Level8"))
-            {
-                OnLevel8Click();
-            } if (hit.collider.gameObject.CompareTag("Level9"))
-            {
-                OnLevel9Click();
-            } if (hit.collider.gameObject.CompareTag("Level10"))
-            {
-                OnLevel10Click();
-            } if (hit.collider.gameObject.CompareTag("Level11"))
-            {
-                OnLevel11Click();
-            } if (hit.collider.gameObject.CompareTag("Level12"))
-            {
-                OnLevel12Click();
-            }
-        }
+        OnLevel1Click();
     }
-    #endregion
+    public void ButtonLevel2Controler()
+    {
+        OnLevel2Click();
+    }
+
+    public void ButtonLevel3Controler()
+    {
+        OnLevel3Click();
+    }
+    public void ButtonLevel4Controler()
+    {
+        OnLevel4Click();
+    }
+    public void ButtonLevel5Controler()
+    {
+        OnLevel5Click();
+    }
+    public void ButtonLevel6Controler()
+    {
+        OnLevel6Click();
+    }
+    public void ButtonLevel7Controler()
+    {
+        OnLevel7Click();
+    }
+    public void ButtonLevel8Controler()
+    {
+        OnLevel8Click();
+    }
+    public void ButtonLevel9Controler()
+    {
+        OnLevel9Click();
+    }
+    public void ButtonLevel10Controler()
+    {
+        OnLevel10Click();
+    }
+    public void ButtonLevel11Controler()
+    {
+        OnLevel11Click();
+    }
+    public void ButtonLevel12Controler()
+    {
+        OnLevel2Click();
+    }
+
+
+
+
+
+
+
+
+
     
     private void StopTheGame()
     {

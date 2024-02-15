@@ -21,21 +21,12 @@ public class EnmeySkills : MonoBehaviour
     public static bool EnemyHaveFrezeer;
     #endregion
 
-    #region  PowerShootDegerleri
-
-    [SerializeField] private Transform grabPoint;
-    [SerializeField] private Transform rayPoint;
-    [SerializeField] private float rayDistance;
-    [SerializeField] private float circleRadius = 1f;
-     BallMovements ballMovements;
-     private GameObject grabbedGameObject;
-     private int layerIndex;
-
-    #endregion
+  
 
     private void Start()
     {
         Enemyy = GameObject.FindGameObjectWithTag("Enemy");
+       
     }
 
     void Update()
@@ -43,12 +34,10 @@ public class EnmeySkills : MonoBehaviour
         if (Time.time > nextActionTime && EnemyHaveFrezeer)
         {
             FireFrezeer();
-            
-           
-
             nextActionTime = Time.time + Random.Range(minDelay, maxDelay);
         }
         
+       
         
         
     }
@@ -78,16 +67,5 @@ public class EnmeySkills : MonoBehaviour
         
     }
 
-    public void enemyPowerShootCharging()
-    {
-      /*  Collider2D hitCollider = Physics2D.OverlapCircleAll(rayPoint.position, circleRadius);
-        foreach (Collider2D collider in hitCollider)
-        {
-            if (collider.CompareTag("Ball"))
-            {
-                grabbedGameObject = collider.gameObject;
-                grabbedGameObject.GetComponent<Rigidbody2D>().isKinematic = true;
-            }
-        }*/
-    }
+
 }

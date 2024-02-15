@@ -320,13 +320,13 @@ public class GameManager : MonoBehaviour
             {
                 StopTheGame();
                 winPanel.SetActive(true);
-                freezeSkillTutorialPanel.SetActive(true);
                 budget += 300;
                 isBestOfThree4 = true;
                 freeze.SetActive(false);
                 powerShot.SetActive(false);
                 if (!isPassedLevel3)
                 {
+                    freezeSkillTutorialPanel.SetActive(true);
                     LastLevel++;
                     isPassedLevel3 = true;
                 }
@@ -463,13 +463,13 @@ public class GameManager : MonoBehaviour
             {
                 StopTheGame();
                 winPanel.SetActive(true);
-                powerShootTutorialPanel.SetActive(true);
                 budget += 300;
                 isBestOfThree9 = true;
                 freeze.SetActive(false);
                 powerShot.SetActive(false);
                 if (!isPassedLevel8)
                 {
+                    powerShootTutorialPanel.SetActive(true);
                     LastLevel++;
                     isPassedLevel8 = true;
                 }

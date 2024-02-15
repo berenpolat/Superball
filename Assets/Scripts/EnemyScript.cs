@@ -46,14 +46,14 @@ public class EnemyScript : MonoBehaviour
         transform.position = enemyStartPoint.position;
         originalSpeed = enemySpeed;
         
-
+      
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Ball"))
+        if (other.gameObject.CompareTag("Ball") && EnmeySkills.canPowerShot == false)
         {
-            //ShootBall();
+            ShootBall();
         }
     }
 

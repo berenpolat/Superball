@@ -27,9 +27,12 @@ public class EnmeySkills : MonoBehaviour
     [SerializeField] private float ballPSpeed;
     [SerializeField] private GameObject ball;
     [SerializeField] private GameObject winFile;
+    [SerializeField] private GameObject powerShotEffect;
     [SerializeField] private BallMovements bm;
+    private GameObject powerShotEffectInstance;
+    
     public static bool enemyHavePowerShot;
-    private bool canPowerShot = false;
+    public static bool canPowerShot = false;
     private float nextPActionTime = 0f;
     #endregion
   
@@ -37,6 +40,7 @@ public class EnmeySkills : MonoBehaviour
     private void Start()
     {
         Enemyy = GameObject.FindGameObjectWithTag("Enemy");
+            enemyHavePowerShot = true;
        
     }
 
@@ -49,9 +53,9 @@ public class EnmeySkills : MonoBehaviour
         }
 
         
-        if (Time.time > nextPActionTime && enemyHavePowerShot)
+        if (Time.time > nextPActionTime )
         {
-            
+            canPowerShot = true;
         }
         
         
@@ -59,10 +63,15 @@ public class EnmeySkills : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Ball") && Time.time > nextPActionTime)
+        if (other.gameObject.CompareTag("Ball") && canPowerShot && enemyHavePowerShot)
         {
             Vector2 direction = (winFile.transform.position - transform.position).normalized;
             bm.Shoot(direction*ballPSpeed);
+            canPowerShot = false;
+            powerShotEffectInstance = Instantiate(powerShotEffect, transform.position, quaternion.identity);
+            powerShotEffectInstance.transform.SetParent(Enemyy.transform);
+            Destroy(powerShotEffectInstance, 1f);
+
         }
     }
     

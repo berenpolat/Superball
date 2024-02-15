@@ -21,6 +21,17 @@ public class EnmeySkills : MonoBehaviour
     public static bool EnemyHaveFrezeer;
     #endregion
 
+    #region enemyPowerShot
+    [SerializeField] private float minPDelay;
+    [SerializeField] private float maxPDelay;
+    [SerializeField] private float ballPSpeed;
+    [SerializeField] private GameObject ball;
+    [SerializeField] private GameObject winFile;
+    [SerializeField] private BallMovements bm;
+    public static bool enemyHavePowerShot;
+    private bool canPowerShot = false;
+    private float nextPActionTime = 0f;
+    #endregion
   
 
     private void Start()
@@ -36,12 +47,25 @@ public class EnmeySkills : MonoBehaviour
             FireFrezeer();
             nextActionTime = Time.time + Random.Range(minDelay, maxDelay);
         }
+
         
-       
+        if (Time.time > nextPActionTime && enemyHavePowerShot)
+        {
+            
+        }
         
         
     }
 
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Ball") && Time.time > nextPActionTime)
+        {
+            Vector2 direction = (winFile.transform.position - transform.position).normalized;
+            bm.Shoot(direction*ballPSpeed);
+        }
+    }
+    
     void FireFrezeer()
     {
         FrezeerEffectInstance = Instantiate(FrezeerEffect, transform.position, quaternion.identity);

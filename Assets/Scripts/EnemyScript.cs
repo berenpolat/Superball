@@ -53,7 +53,7 @@ public class EnemyScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ball"))
         {
-            ShootBall();
+            //ShootBall();
         }
     }
 

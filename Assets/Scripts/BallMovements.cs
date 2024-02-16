@@ -60,7 +60,7 @@ public class BallMovements : MonoBehaviour
     private IEnumerator ShowGoalPanel()
     {
         goalPanel.SetActive(true);
-        yield return new WaitForSeconds(2.3f);
+        yield return new WaitForSeconds(2f);
         goalPanel.SetActive(false);
     }
     

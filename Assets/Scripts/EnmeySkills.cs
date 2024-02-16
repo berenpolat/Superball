@@ -40,8 +40,8 @@ public class EnmeySkills : MonoBehaviour
     private void Start()
     {
         Enemyy = GameObject.FindGameObjectWithTag("Enemy");
-            enemyHavePowerShot = true;
-       
+            
+            
     }
 
     void Update()
@@ -56,6 +56,7 @@ public class EnmeySkills : MonoBehaviour
         if (Time.time > nextPActionTime )
         {
             canPowerShot = true;
+            nextPActionTime = Time.time + Random.Range(minPDelay, maxPDelay);
         }
         
         
@@ -70,7 +71,7 @@ public class EnmeySkills : MonoBehaviour
             canPowerShot = false;
             powerShotEffectInstance = Instantiate(powerShotEffect, transform.position, quaternion.identity);
             powerShotEffectInstance.transform.SetParent(Enemyy.transform);
-            Destroy(powerShotEffectInstance, 1f);
+            Destroy(powerShotEffectInstance, .5f);
 
         }
     }

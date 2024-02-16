@@ -44,41 +44,12 @@ public class PlayerMovements : MonoBehaviour
 
         // Dönüþ açýsýný hesapla
         float angle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg;
-
-        // Karakterin dönme açýsýný sýnýrla
-        if (targetDirection.x > 0 && targetDirection.y > 0)
-        {
-            // Sað yukarý
-            angle = Mathf.Clamp(angle, -45f, 45f);
-        }
-        else if (targetDirection.x > 0 && targetDirection.y < 0)
-        {
-            // Sað aþaðý
-            angle = Mathf.Clamp(angle, -45f, -45);
-        }
-        else if (targetDirection.x < 0)
-        {
-            // Sol
-            angle = Mathf.Clamp(angle, -45, -45f);
-        }
-
+        
         Quaternion targetRotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
         // Karakterin dönmesi
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.fixedDeltaTime * rotationSpeed);
-
-        // Sprite'ýn dönüþünü ayarla
-        if (variableJoystick.Horizontal < 0)
-        {
-            // Karakter sola hareket ediyorsa
-            transform.localScale = new Vector3(-1, 1, 1); // Sprite'ý ters çevir
-        }
-        else if (variableJoystick.Horizontal > 0)
-        {
-            // Karakter saða hareket ediyorsa
-            transform.localScale = new Vector3(1, 1, 1); // Normal dönüþü ayarla
-        }
-
+        
         // Hareketi uygula
         rb.velocity = targetDirection * speed;
 

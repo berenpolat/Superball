@@ -37,6 +37,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject ball;
     [SerializeField] private Camera cam;
+    [SerializeField] private GameObject floor;
+    [SerializeField] private GameObject square;
+    [SerializeField] private Sprite freezeFloor;
 
     #endregion
     
@@ -117,6 +120,8 @@ public class GameManager : MonoBehaviour
                 Button4.GetComponent<Button>().interactable = true;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree3 = true;
+                floor.GetComponent<SpriteRenderer>().sprite = freezeFloor;
+                square.GetComponent<SpriteRenderer>().color = Color.blue;
                 break;
             case 4:
                 Button1.GetComponent<Button>().interactable = true;
@@ -324,6 +329,8 @@ public class GameManager : MonoBehaviour
                 isBestOfThree4 = true;
                 freeze.SetActive(false);
                 powerShot.SetActive(false);
+                floor.GetComponent<SpriteRenderer>().sprite = freezeFloor;
+                square.GetComponent<SpriteRenderer>().color = Color.blue;
                 if (!isPassedLevel3)
                 {
                     freezeSkillTutorialPanel.SetActive(true);

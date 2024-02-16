@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Debug = System.Diagnostics.Debug;
 
 public class BallMovements : MonoBehaviour
 {
@@ -25,6 +27,9 @@ public class BallMovements : MonoBehaviour
     [SerializeField] private float force;
     [SerializeField] private float PowerShotForce;
     public Transform ballStartPoint;
+    public static bool isPowerShotActive = true;
+    public Color newColor;
+    
 
     #endregion
     #region unity Methods
@@ -34,7 +39,22 @@ public class BallMovements : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         transform.position = ballStartPoint.position;
-       
+      
+    }
+
+    private void Update()
+    {
+        if (isPowerShotActive)
+        {
+            TrailRenderer trailRenderer = GetComponent<TrailRenderer>();
+
+            // Eğer Trail Renderer bileşeni varsa, rengini değiştir
+            if (trailRenderer != null)
+            {
+                
+                
+            }
+        }
     }
 
 

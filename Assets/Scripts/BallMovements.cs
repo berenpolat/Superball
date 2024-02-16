@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class BallMovements : MonoBehaviour
@@ -9,6 +10,9 @@ public class BallMovements : MonoBehaviour
     
     #endregion
 
+    #region Panels
+    [SerializeField] private GameObject goalPanel;
+    #endregion
 
     #region Script instances
 
@@ -49,8 +53,15 @@ public class BallMovements : MonoBehaviour
         {
             gm.playerScore += 1;
             SetInitialPositions();
+            StartCoroutine(ShowGoalPanel());
         }
-        
+    }
+
+    private IEnumerator ShowGoalPanel()
+    {
+        goalPanel.SetActive(true);
+        yield return new WaitForSeconds(2.3f);
+        goalPanel.SetActive(false);
     }
     
     #endregion

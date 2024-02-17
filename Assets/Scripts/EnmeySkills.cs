@@ -52,7 +52,7 @@ public class EnmeySkills : MonoBehaviour
         }
 
         
-        if (Time.time > nextPActionTime)
+        if (Time.time > nextPActionTime && enemyHavePowerShot)
         {
             canPowerShot = true;
             nextPActionTime = Time.time + Random.Range(minPDelay, maxPDelay);

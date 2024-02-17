@@ -646,7 +646,7 @@ public class GameManager : MonoBehaviour
         isBestOfThree2 = true;
         EnmeySkills.EnemyHaveFrezeer = false;
         EnmeySkills.enemyHavePowerShot = false;
-        EnmeySkills.canPowerShot = false;
+     
     }
 
     private void OnLevel3Click()
@@ -658,7 +658,7 @@ public class GameManager : MonoBehaviour
         isBestOfThree3 = true;
         EnmeySkills.EnemyHaveFrezeer = false;
         EnmeySkills.enemyHavePowerShot = false;
-        EnmeySkills.canPowerShot = false;
+       
     }
     private void OnLevel4Click()
     {
@@ -672,7 +672,7 @@ public class GameManager : MonoBehaviour
         stm.isFreezeSkillUnlocked = true;
         EnmeySkills.EnemyHaveFrezeer = true;
         EnmeySkills.enemyHavePowerShot = false;
-        EnmeySkills.canPowerShot = false;
+      
     }
     private void OnLevel5Click()
     {
@@ -683,7 +683,7 @@ public class GameManager : MonoBehaviour
         FrezeerSkill();
         EnmeySkills.EnemyHaveFrezeer = true;
         EnmeySkills.enemyHavePowerShot = false;
-        EnmeySkills.canPowerShot = false;
+       
         isBestOfThree5 = true;
     }
     private void OnLevel6Click()
@@ -695,7 +695,7 @@ public class GameManager : MonoBehaviour
         FrezeerSkill();
         EnmeySkills.EnemyHaveFrezeer = true;
         EnmeySkills.enemyHavePowerShot = false;
-        EnmeySkills.canPowerShot = false;
+        
         isBestOfThree6 = true;
     } 
     private void OnLevel7Click()
@@ -707,7 +707,7 @@ public class GameManager : MonoBehaviour
         FrezeerSkill();
         EnmeySkills.EnemyHaveFrezeer = true;
         EnmeySkills.enemyHavePowerShot = true;
-        EnmeySkills.canPowerShot = false;
+        
         isBestOfThree7 = true;
     }
     private void OnLevel8Click()
@@ -719,7 +719,7 @@ public class GameManager : MonoBehaviour
         FrezeerSkill();
         EnmeySkills.EnemyHaveFrezeer = true;
         EnmeySkills.enemyHavePowerShot = true;
-        EnmeySkills.canPowerShot = false;
+     
         powerShot.SetActive(true);
         isBestOfThree8 = true;
         stm.isPowerUpSkillUnlocked = true;
@@ -735,7 +735,7 @@ public class GameManager : MonoBehaviour
         PowerShootSkill();
         EnmeySkills.EnemyHaveFrezeer = true;
         EnmeySkills.enemyHavePowerShot = true;
-        EnmeySkills.canPowerShot = false;
+       
         isBestOfThree9 = true;
     } 
     private void OnLevel10Click()
@@ -747,7 +747,7 @@ public class GameManager : MonoBehaviour
         isBestOfThree10 = true;
         EnmeySkills.EnemyHaveFrezeer = true;
         EnmeySkills.enemyHavePowerShot = true;
-        EnmeySkills.canPowerShot = false;
+       
         FrezeerSkill();
         PowerShootSkill();
     } private void OnLevel11Click()
@@ -760,7 +760,7 @@ public class GameManager : MonoBehaviour
         PowerShootSkill();
         EnmeySkills.EnemyHaveFrezeer = true;
         EnmeySkills.enemyHavePowerShot = true;
-        EnmeySkills.canPowerShot = false;
+        
         isBestOfThree11 = true;
     } private void OnLevel12Click()
     {
@@ -770,7 +770,7 @@ public class GameManager : MonoBehaviour
         timer = 0;
         EnmeySkills.EnemyHaveFrezeer = true;
         EnmeySkills.enemyHavePowerShot = true;
-        EnmeySkills.canPowerShot = false;
+       
         FrezeerSkill();
         PowerShootSkill();
         isBestOfThree12 = true;
@@ -867,6 +867,7 @@ public class GameManager : MonoBehaviour
         enemy.SetActive(true);
         player.SetActive(true);
         ball.SetActive(true);
+        EnmeySkills.canPowerShot = false;
     }
 
     #region CounterRegion

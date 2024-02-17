@@ -119,6 +119,8 @@ public class GameManager : MonoBehaviour
                 square.GetComponent<SpriteRenderer>().color = Color.green;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree2 = true;
+                isPassedLevel1 = true;
+                isPassedLevel2 = true;
                 break;
             case 3:
                 Button1.GetComponent<Button>().interactable = true;
@@ -129,6 +131,9 @@ public class GameManager : MonoBehaviour
                 isBestOfThree3 = true;
                 floor.GetComponent<SpriteRenderer>().sprite = freezeFloor;
                 square.GetComponent<SpriteRenderer>().color = Color.blue;
+                isPassedLevel1 = true;
+                isPassedLevel2 = true;
+                isPassedLevel3 = true;
                 break;
             case 4:
                 Button1.GetComponent<Button>().interactable = true;
@@ -140,6 +145,10 @@ public class GameManager : MonoBehaviour
                 square.GetComponent<SpriteRenderer>().color = Color.blue;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree4 = true;
+                isPassedLevel1 = true;
+                isPassedLevel2 = true;
+                isPassedLevel3 = true;
+                isPassedLevel4 = true;
                 break;
             case 5:
                 Button1.GetComponent<Button>().interactable = true;
@@ -152,6 +161,12 @@ public class GameManager : MonoBehaviour
                 square.GetComponent<SpriteRenderer>().color = Color.blue;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree5= true;
+                isPassedLevel1 = true;
+                isPassedLevel2 = true;
+                isPassedLevel3 = true;
+                isPassedLevel4 = true;
+                isPassedLevel4 = true;
+                isPassedLevel5 = true;
                 break;
             case 6:
                 Button1.GetComponent<Button>().interactable = true;
@@ -165,6 +180,13 @@ public class GameManager : MonoBehaviour
                 square.GetComponent<SpriteRenderer>().color = Color.blue;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree6 = true;
+                isPassedLevel1 = true;
+                isPassedLevel2 = true;
+                isPassedLevel3 = true;
+                isPassedLevel4 = true;
+                isPassedLevel4 = true;
+                isPassedLevel5 = true;
+                isPassedLevel6 = true;
                 break;
             case 7:
                 Button1.GetComponent<Button>().interactable = true;
@@ -179,6 +201,14 @@ public class GameManager : MonoBehaviour
                 square.GetComponent<SpriteRenderer>().color = Color.blue;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree7 = true;
+                isPassedLevel1 = true;
+                isPassedLevel2 = true;
+                isPassedLevel3 = true;
+                isPassedLevel4 = true;
+                isPassedLevel4 = true;
+                isPassedLevel5 = true;
+                isPassedLevel6 = true;
+                isPassedLevel7 = true;
                 break;
             case 8:
                 Button1.GetComponent<Button>().interactable = true;
@@ -194,6 +224,15 @@ public class GameManager : MonoBehaviour
                 square.GetComponent<SpriteRenderer>().color = Color.blue;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree8 = true;
+                isPassedLevel1 = true;
+                isPassedLevel2 = true;
+                isPassedLevel3 = true;
+                isPassedLevel4 = true;
+                isPassedLevel4 = true;
+                isPassedLevel5 = true;
+                isPassedLevel6 = true;
+                isPassedLevel7 = true;
+                isPassedLevel8 = true;
                 break;
             case 9:
                 Button1.GetComponent<Button>().interactable = true;
@@ -210,6 +249,16 @@ public class GameManager : MonoBehaviour
                 square.GetComponent<SpriteRenderer>().color = Color.blue;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree9 = true;
+                isPassedLevel1 = true;
+                isPassedLevel2 = true;
+                isPassedLevel3 = true;
+                isPassedLevel4 = true;
+                isPassedLevel4 = true;
+                isPassedLevel5 = true;
+                isPassedLevel6 = true;
+                isPassedLevel7 = true;
+                isPassedLevel8 = true;
+                isPassedLevel9 = true;
                 break;
             case 10:
                 Button1.GetComponent<Button>().interactable = true;
@@ -227,6 +276,17 @@ public class GameManager : MonoBehaviour
                 square.GetComponent<SpriteRenderer>().color = Color.blue;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree10 = true;
+                isPassedLevel1 = true;
+                isPassedLevel2 = true;
+                isPassedLevel3 = true;
+                isPassedLevel4 = true;
+                isPassedLevel4 = true;
+                isPassedLevel5 = true;
+                isPassedLevel6 = true;
+                isPassedLevel7 = true;
+                isPassedLevel8 = true;
+                isPassedLevel9 = true;
+                isPassedLevel10 = true;
                 break;
             case 11:
                 Button1.GetComponent<Button>().interactable = true;
@@ -245,12 +305,37 @@ public class GameManager : MonoBehaviour
                 square.GetComponent<SpriteRenderer>().color = Color.blue;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree11 = true;
+                isPassedLevel1 = true;
+                isPassedLevel2 = true;
+                isPassedLevel3 = true;
+                isPassedLevel4 = true;
+                isPassedLevel4 = true;
+                isPassedLevel5 = true;
+                isPassedLevel6 = true;
+                isPassedLevel7 = true;
+                isPassedLevel8 = true;
+                isPassedLevel9 = true;
+                isPassedLevel10 = true;
+                isPassedLevel11 = true;
                 break;
             case 12:
                 mainMenuPanel.SetActive(true);
                 isBestOfThree12 = true;
                 floor.GetComponent<SpriteRenderer>().sprite = freezeFloor;
                 square.GetComponent<SpriteRenderer>().color = Color.blue;
+                isPassedLevel1 = true;
+                isPassedLevel2 = true;
+                isPassedLevel3 = true;
+                isPassedLevel4 = true;
+                isPassedLevel4 = true;
+                isPassedLevel5 = true;
+                isPassedLevel6 = true;
+                isPassedLevel7 = true;
+                isPassedLevel8 = true;
+                isPassedLevel9 = true;
+                isPassedLevel10 = true;
+                isPassedLevel11 = true;
+                isPassedLevel12 = true;
                 break;
             default:
                 OnLevel1Click();

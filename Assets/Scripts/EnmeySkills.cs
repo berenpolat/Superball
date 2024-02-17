@@ -40,8 +40,7 @@ public class EnmeySkills : MonoBehaviour
     private void Start()
     {
         Enemyy = GameObject.FindGameObjectWithTag("Enemy");
-            
-            
+        
     }
 
     void Update()
@@ -53,7 +52,7 @@ public class EnmeySkills : MonoBehaviour
         }
 
         
-        if (Time.time > nextPActionTime )
+        if (Time.time > nextPActionTime)
         {
             canPowerShot = true;
             nextPActionTime = Time.time + Random.Range(minPDelay, maxPDelay);

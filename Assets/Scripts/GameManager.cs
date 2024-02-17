@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject floor;
     [SerializeField] private GameObject square;
     [SerializeField] private Sprite freezeFloor;
+    [SerializeField] private Sprite cityFloor;
 
     #endregion
     
@@ -99,10 +100,14 @@ public class GameManager : MonoBehaviour
             case 0:
                 Button1.GetComponent<Button>().interactable = true;
                 mainMenuPanel.SetActive(true);
+                floor.GetComponent<SpriteRenderer>().sprite = cityFloor;
+                square.GetComponent<SpriteRenderer>().color = Color.green;
                 break;
             case 1:
                 Button1.GetComponent<Button>().interactable = true;
                 Button2.GetComponent<Button>().interactable = true;
+                floor.GetComponent<SpriteRenderer>().sprite = cityFloor;
+                square.GetComponent<SpriteRenderer>().color = Color.green;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree1 = true;
                 break;
@@ -110,6 +115,8 @@ public class GameManager : MonoBehaviour
                 Button1.GetComponent<Button>().interactable = true;
                 Button2.GetComponent<Button>().interactable = true;
                 Button3.GetComponent<Button>().interactable = true;
+                floor.GetComponent<SpriteRenderer>().sprite = cityFloor;
+                square.GetComponent<SpriteRenderer>().color = Color.green;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree2 = true;
                 break;
@@ -129,6 +136,8 @@ public class GameManager : MonoBehaviour
                 Button3.GetComponent<Button>().interactable = true;
                 Button4.GetComponent<Button>().interactable = true;
                 Button5.GetComponent<Button>().interactable = true;
+                floor.GetComponent<SpriteRenderer>().sprite = freezeFloor;
+                square.GetComponent<SpriteRenderer>().color = Color.blue;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree4 = true;
                 break;
@@ -139,6 +148,8 @@ public class GameManager : MonoBehaviour
                 Button4.GetComponent<Button>().interactable = true;
                 Button5.GetComponent<Button>().interactable = true;
                 Button6.GetComponent<Button>().interactable = true;
+                floor.GetComponent<SpriteRenderer>().sprite = freezeFloor;
+                square.GetComponent<SpriteRenderer>().color = Color.blue;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree5= true;
                 break;
@@ -150,6 +161,8 @@ public class GameManager : MonoBehaviour
                 Button5.GetComponent<Button>().interactable = true;
                 Button6.GetComponent<Button>().interactable = true;
                 Button7.GetComponent<Button>().interactable = true;
+                floor.GetComponent<SpriteRenderer>().sprite = freezeFloor;
+                square.GetComponent<SpriteRenderer>().color = Color.blue;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree6 = true;
                 break;
@@ -162,6 +175,8 @@ public class GameManager : MonoBehaviour
                 Button6.GetComponent<Button>().interactable = true;
                 Button7.GetComponent<Button>().interactable = true;
                 Button8.GetComponent<Button>().interactable = true;
+                floor.GetComponent<SpriteRenderer>().sprite = freezeFloor;
+                square.GetComponent<SpriteRenderer>().color = Color.blue;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree7 = true;
                 break;
@@ -175,6 +190,8 @@ public class GameManager : MonoBehaviour
                 Button7.GetComponent<Button>().interactable = true;
                 Button8.GetComponent<Button>().interactable = true;
                 Button9.GetComponent<Button>().interactable = true;
+                floor.GetComponent<SpriteRenderer>().sprite = freezeFloor;
+                square.GetComponent<SpriteRenderer>().color = Color.blue;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree8 = true;
                 break;
@@ -189,6 +206,8 @@ public class GameManager : MonoBehaviour
                 Button8.GetComponent<Button>().interactable = true;
                 Button9.GetComponent<Button>().interactable = true;
                 Button10.GetComponent<Button>().interactable = true;
+                floor.GetComponent<SpriteRenderer>().sprite = freezeFloor;
+                square.GetComponent<SpriteRenderer>().color = Color.blue;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree9 = true;
                 break;
@@ -204,6 +223,8 @@ public class GameManager : MonoBehaviour
                 Button9.GetComponent<Button>().interactable = true;
                 Button10.GetComponent<Button>().interactable = true;
                 Button11.GetComponent<Button>().interactable = true;
+                floor.GetComponent<SpriteRenderer>().sprite = freezeFloor;
+                square.GetComponent<SpriteRenderer>().color = Color.blue;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree10 = true;
                 break;
@@ -220,12 +241,16 @@ public class GameManager : MonoBehaviour
                 Button10.GetComponent<Button>().interactable = true;
                 Button11.GetComponent<Button>().interactable = true;
                 Button12.GetComponent<Button>().interactable = true;
+                floor.GetComponent<SpriteRenderer>().sprite = freezeFloor;
+                square.GetComponent<SpriteRenderer>().color = Color.blue;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree11 = true;
                 break;
             case 12:
                 mainMenuPanel.SetActive(true);
                 isBestOfThree12 = true;
+                floor.GetComponent<SpriteRenderer>().sprite = freezeFloor;
+                square.GetComponent<SpriteRenderer>().color = Color.blue;
                 break;
             default:
                 OnLevel1Click();
@@ -273,8 +298,7 @@ public class GameManager : MonoBehaviour
                     LastLevel++;
                     isPassedLevel1 = true;
                 }
-                PlayerPrefs.SetInt("Level", LastLevel); 
-
+                PlayerPrefs.SetInt("Level", LastLevel);
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
                     isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
                 Button2.GetComponent<Button>().interactable = true;
@@ -634,6 +658,8 @@ public class GameManager : MonoBehaviour
         isBestOfThree1 = true;
         EnmeySkills.EnemyHaveFrezeer = true;
         EnmeySkills.enemyHavePowerShot = true;
+        floor.GetComponent<SpriteRenderer>().sprite = cityFloor;
+        square.GetComponent<SpriteRenderer>().color = Color.green;
         FrezeerSkill();
         PowerShootSkill();
     }
@@ -644,6 +670,8 @@ public class GameManager : MonoBehaviour
         StartCountdown();
         timer = 0;
         isBestOfThree2 = true;
+        floor.GetComponent<SpriteRenderer>().sprite = cityFloor;
+        square.GetComponent<SpriteRenderer>().color = Color.green;
         EnmeySkills.EnemyHaveFrezeer = false;
         EnmeySkills.enemyHavePowerShot = false;
      
@@ -656,6 +684,8 @@ public class GameManager : MonoBehaviour
         StartCountdown();
         timer = 0;
         isBestOfThree3 = true;
+        floor.GetComponent<SpriteRenderer>().sprite = cityFloor;
+        square.GetComponent<SpriteRenderer>().color = Color.green;
         EnmeySkills.EnemyHaveFrezeer = false;
         EnmeySkills.enemyHavePowerShot = false;
        
@@ -669,6 +699,8 @@ public class GameManager : MonoBehaviour
         freeze.SetActive(true);
         FrezeerSkill();
         isBestOfThree4 = true;
+        floor.GetComponent<SpriteRenderer>().sprite = freezeFloor;
+        square.GetComponent<SpriteRenderer>().color = Color.blue;
         stm.isFreezeSkillUnlocked = true;
         EnmeySkills.EnemyHaveFrezeer = true;
         EnmeySkills.enemyHavePowerShot = false;
@@ -681,6 +713,8 @@ public class GameManager : MonoBehaviour
         StartCountdown();
         timer = 0;
         FrezeerSkill();
+        floor.GetComponent<SpriteRenderer>().sprite = freezeFloor;
+        square.GetComponent<SpriteRenderer>().color = Color.blue;
         EnmeySkills.EnemyHaveFrezeer = true;
         EnmeySkills.enemyHavePowerShot = false;
        
@@ -693,6 +727,8 @@ public class GameManager : MonoBehaviour
         StartCountdown();
         timer = 0;
         FrezeerSkill();
+        floor.GetComponent<SpriteRenderer>().sprite = freezeFloor;
+        square.GetComponent<SpriteRenderer>().color = Color.blue;
         EnmeySkills.EnemyHaveFrezeer = true;
         EnmeySkills.enemyHavePowerShot = false;
         
@@ -705,6 +741,8 @@ public class GameManager : MonoBehaviour
         StartCountdown();
         timer = 0;
         FrezeerSkill();
+        floor.GetComponent<SpriteRenderer>().sprite = freezeFloor;
+        square.GetComponent<SpriteRenderer>().color = Color.blue;
         EnmeySkills.EnemyHaveFrezeer = true;
         EnmeySkills.enemyHavePowerShot = true;
         
@@ -717,6 +755,8 @@ public class GameManager : MonoBehaviour
         StartCountdown();
         timer = 0;
         FrezeerSkill();
+        floor.GetComponent<SpriteRenderer>().sprite = freezeFloor;
+        square.GetComponent<SpriteRenderer>().color = Color.blue;
         EnmeySkills.EnemyHaveFrezeer = true;
         EnmeySkills.enemyHavePowerShot = true;
      
@@ -733,6 +773,8 @@ public class GameManager : MonoBehaviour
         timer = 0;
         FrezeerSkill();
         PowerShootSkill();
+        floor.GetComponent<SpriteRenderer>().sprite = freezeFloor;
+        square.GetComponent<SpriteRenderer>().color = Color.blue;
         EnmeySkills.EnemyHaveFrezeer = true;
         EnmeySkills.enemyHavePowerShot = true;
        
@@ -745,6 +787,8 @@ public class GameManager : MonoBehaviour
         StartCountdown();
         timer = 0;
         isBestOfThree10 = true;
+        floor.GetComponent<SpriteRenderer>().sprite = freezeFloor;
+        square.GetComponent<SpriteRenderer>().color = Color.blue;
         EnmeySkills.EnemyHaveFrezeer = true;
         EnmeySkills.enemyHavePowerShot = true;
        
@@ -758,6 +802,8 @@ public class GameManager : MonoBehaviour
         timer = 0;
         FrezeerSkill();
         PowerShootSkill();
+        floor.GetComponent<SpriteRenderer>().sprite = freezeFloor;
+        square.GetComponent<SpriteRenderer>().color = Color.blue;
         EnmeySkills.EnemyHaveFrezeer = true;
         EnmeySkills.enemyHavePowerShot = true;
         
@@ -768,6 +814,8 @@ public class GameManager : MonoBehaviour
         mainMenuPanel.SetActive(false);
         StartCountdown();
         timer = 0;
+        floor.GetComponent<SpriteRenderer>().sprite = freezeFloor;
+        square.GetComponent<SpriteRenderer>().color = Color.blue;
         EnmeySkills.EnemyHaveFrezeer = true;
         EnmeySkills.enemyHavePowerShot = true;
        

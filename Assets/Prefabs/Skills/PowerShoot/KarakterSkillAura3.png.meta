@@ -200,7 +200,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      KarakterSkillAura3_0: -4440437164583098385
+      KarakterSkillAura3_1: 5258107742680018979
+      KarakterSkillAura3_2: -7298429943040672589
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

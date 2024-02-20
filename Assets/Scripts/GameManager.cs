@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     private bool isBestOfThree1,isBestOfThree2,isBestOfThree3,isBestOfThree4,isBestOfThree5,isBestOfThree6,
         isBestOfThree7,isBestOfThree8,isBestOfThree9,isBestOfThree10,isBestOfThree11,isBestOfThree12;
     public int LastLevel=0;
-    public List<GameObject> shoppedGameObject;
+    public List<GameObject> usedButtons;
     private bool isPassedLevel1,isPassedLevel2,isPassedLevel3,isPassedLevel4,isPassedLevel5,isPassedLevel6,
         isPassedLevel7,isPassedLevel8,isPassedLevel9,isPassedLevel10,isPassedLevel11,isPassedLevel12;
     #endregion
@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PlayerMovements pm;
     [SerializeField] private BallMovements bm;
     [SerializeField] private SkillTreeManager stm;
+    [SerializeField] private MarketScript ms;
     #endregion
 
     #region Buttons
@@ -1002,6 +1003,7 @@ public class GameManager : MonoBehaviour
         ball.SetActive(true);
         EnmeySkills.canPowerShot = false;
     }
+    
 
     #region CounterRegion
 

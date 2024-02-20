@@ -152,7 +152,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      frezeerActive_0: 2650545047097105468
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

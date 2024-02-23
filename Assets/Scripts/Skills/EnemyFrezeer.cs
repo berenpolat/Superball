@@ -1,10 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class EnemyFrezeer : MonoBehaviour
 {
+  [SerializeField] private GameObject FrezeerBlowUp;
+  private GameObject FrezeerBlowUpInstance;
   private void OnTriggerEnter2D(Collider2D other)
   {
     if (other.CompareTag("Player"))
@@ -15,7 +18,9 @@ public class EnemyFrezeer : MonoBehaviour
       {
         playerMovements.speed = 0;
       }
-      
+
+      FrezeerBlowUpInstance = Instantiate(FrezeerBlowUp, transform.position, quaternion.identity);
+      Destroy(FrezeerBlowUpInstance, 1f);
       Destroy((gameObject));
     }
 

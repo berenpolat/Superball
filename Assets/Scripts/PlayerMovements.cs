@@ -18,6 +18,8 @@ public class PlayerMovements : MonoBehaviour
     private float playerOriginalSpeed;
     public static bool CanShoot;
     private Rigidbody2D rb;
+    private Animator animator;
+    private bool isMoving;
     
     #endregion
 
@@ -36,6 +38,8 @@ public class PlayerMovements : MonoBehaviour
         transform.position = playerStartPoint.position;
         CanShoot = true;
         playerOriginalSpeed = speed;
+        isMoving = false;
+        animator = GetComponent<Animator>();
     }
     private void FixedUpdate()
     {
@@ -57,6 +61,9 @@ public class PlayerMovements : MonoBehaviour
         {
             StartCoroutine(resetSpeed());
         }
+
+        isMoving = rb.velocity.magnitude > 0.1f;
+        animator.SetBool("isMoving", isMoving);
     }
         
     

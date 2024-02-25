@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class BallMovements : MonoBehaviour
@@ -7,6 +8,8 @@ public class BallMovements : MonoBehaviour
     
     [SerializeField] private GameObject Player;
     [SerializeField] private GameObject Enemy;
+    [SerializeField] private GameObject GoalEffect;
+    private GameObject GoalEffectInstance;
     
     #endregion
 
@@ -46,6 +49,8 @@ public class BallMovements : MonoBehaviour
     {
         if (other.gameObject.CompareTag("WinColLeft"))
         {
+            GoalEffectInstance = Instantiate(GoalEffect, transform.position, quaternion.identity);
+            Destroy(GoalEffectInstance, 1f);
             gm.enemyScore += 1;
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             GetComponent<Rigidbody2D>().angularVelocity = 0f;
@@ -53,6 +58,8 @@ public class BallMovements : MonoBehaviour
         }
         if (other.gameObject.CompareTag("WinColRight"))
         {
+            GoalEffectInstance = Instantiate(GoalEffect, transform.position, quaternion.identity);
+            Destroy(GoalEffectInstance, 1f);
             gm.playerScore += 1;
             SetInitialPositions();
             StartCoroutine(ShowGoalPanel());

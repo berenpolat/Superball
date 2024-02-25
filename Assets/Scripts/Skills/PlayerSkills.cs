@@ -79,7 +79,7 @@ public class PlayerSkills : MonoBehaviour
             Frezeer = true;
             FrezeerPowerUpInstance = Instantiate(frezeerPowerUpEffect, (Vector2)player.transform.position + offset, Quaternion.identity);
             FrezeerPowerUpInstance.transform.SetParent(player.transform);
-            frezeerButton.interactable = true;
+            frezeerButton.interactable = false;
         }
     }
     #endregion

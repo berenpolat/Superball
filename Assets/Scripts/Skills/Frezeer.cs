@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Frezeer : MonoBehaviour
 {
-    
-
+    [SerializeField] private GameObject FrezeerBlowUp;
+    private GameObject FrezeerBlowUpInstance;
     void OnTriggerEnter2D(Collider2D other)
     {
         // Diðer obje "Enemy" tag'ine sahip mi kontrol et
@@ -21,6 +22,9 @@ public class Frezeer : MonoBehaviour
                 enemyScript.enemySpeed = 0;
                 
             }
+
+            FrezeerBlowUpInstance = Instantiate(FrezeerBlowUp, transform.position, quaternion.identity);
+            Destroy(FrezeerBlowUpInstance, 1f);
             Destroy(gameObject);
         }
         if(other.CompareTag("Border"))

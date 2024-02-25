@@ -47,6 +47,8 @@ public class BallMovements : MonoBehaviour
         if (other.gameObject.CompareTag("WinColLeft"))
         {
             gm.enemyScore += 1;
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            GetComponent<Rigidbody2D>().angularVelocity = 0f;
             SetInitialPositions();
         }
         if (other.gameObject.CompareTag("WinColRight"))
@@ -54,6 +56,8 @@ public class BallMovements : MonoBehaviour
             gm.playerScore += 1;
             SetInitialPositions();
             StartCoroutine(ShowGoalPanel());
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            GetComponent<Rigidbody2D>().angularVelocity = 0f;
         }
     }
 

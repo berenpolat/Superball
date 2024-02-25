@@ -1,6 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using System;using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,24 +9,35 @@ public class MarketScript : MonoBehaviour
     [SerializeField] private GameObject characterShopPanel;
     [SerializeField] private GameObject characterShopB;
     [SerializeField] private GameObject ballSkinShopB;
-    [SerializeField] private Text buttonText1,buttonText2,buttonText3,buttonText4,buttonText5,buttonText6;
+    [SerializeField] private Text buttonText1, buttonText2, buttonText3, buttonText4, buttonText5, buttonText6;
+    
+    public SpriteRenderer ballSpriteRenderer,playerSpriteRenderer;
+    
+    
+    public Image ball1;
+    public Image ball2;
+    public Image ball3;
+    public Image car1;
+    public Image car2;
+    public Image car3;
+
+    #region UseButtons
+
+    public GameObject UseButtonGo1;
+    public GameObject UseButtonGo2;
+    public GameObject UseButtonGo3;
+    public GameObject UseButtonGo4;
+    public GameObject UseButtonGo5;
+    public GameObject UseButtonGo6;
+    
+
+    #endregion
+
     #region Script Instances
 
     [SerializeField] private GameManager gm;
-    
-    #endregion
-
-    #region BuyButtons
-
-    public GameObject BuyButton1;
-    public GameObject BuyButton2;
-    public GameObject BuyButton3;
-    public GameObject BuyButton4;
-    public GameObject BuyButton5;
-    public GameObject BuyButton6;
 
     #endregion
-    
 
     private void Start()
     {
@@ -39,12 +48,23 @@ public class MarketScript : MonoBehaviour
         UpdateButtonText("buttonText5", 200, buttonText5);
         UpdateButtonText("buttonText6", 300, buttonText6);
     }
+    
+    private void Update()
+    {
+        PlayerPrefs.SetInt("ball1", PlayerPrefs.GetInt("ball1", 0));
+        PlayerPrefs.SetInt("ball2", PlayerPrefs.GetInt("ball2", 0));
+        PlayerPrefs.SetInt("ball3", PlayerPrefs.GetInt("ball3", 0));
+        PlayerPrefs.SetInt("car1", PlayerPrefs.GetInt("car1", 0));
+        PlayerPrefs.SetInt("car2", PlayerPrefs.GetInt("car2", 0));
+        PlayerPrefs.SetInt("car3", PlayerPrefs.GetInt("car3", 0));
+    }
+
 
     private void UpdateButtonText(string key, int cost, Text buttonText)
     {
         if (PlayerPrefs.GetInt(key, 0) == 1)
         {
-            buttonText.text = "Use";
+            buttonText.text = "BOUGHT";
         }
         else
         {
@@ -82,11 +102,39 @@ public class MarketScript : MonoBehaviour
         TryBuyItem("buttonText6", 300, buttonText6, 1);
     }
 
+    public void UseButton1()
+    {
+        ballSpriteRenderer.sprite = ball1.sprite;
+    }
+    public void UseButton2()
+    {
+        ballSpriteRenderer.sprite = ball2.sprite;
+    }
+    public void UseButton3()
+    {
+        ballSpriteRenderer.sprite = ball3.sprite;
+    }
+
+    public void UseButton4()
+    {
+        playerSpriteRenderer.sprite = ball1.sprite;
+    }
+    
+    public void UseButton5()
+    {
+        playerSpriteRenderer.sprite = car2.sprite;
+    }
+
+    public void UseButton6()
+    {
+        playerSpriteRenderer.sprite = car3.sprite;
+    }
+    
     private void TryBuyItem(string key, int cost, Text buttonText, int value)
     {
         if (gm.budget >= cost && PlayerPrefs.GetInt(key, 0) != value)
         {
-            buttonText.text = "Use";
+            buttonText.text = "BOUGHT";
             PlayerPrefs.SetInt(key, value);
             gm.budget -= cost;
         }

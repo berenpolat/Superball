@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        
+        SpriteSetter();
         budget = PlayerPrefs.GetInt("Budget");
         LastLevel = PlayerPrefs.GetInt("Level");
         StopTheGame();
@@ -103,10 +103,8 @@ public class GameManager : MonoBehaviour
                 mainMenuPanel.SetActive(true);
                 floor.GetComponent<SpriteRenderer>().sprite = cityFloor;
                 square.GetComponent<SpriteRenderer>().color = Color.green;
-                SpriteSetter();
                 break;
             case 1:
-                SpriteSetter();
                 Button1.GetComponent<Button>().interactable = true;
                 Button2.GetComponent<Button>().interactable = true;
                 floor.GetComponent<SpriteRenderer>().sprite = cityFloor;
@@ -116,7 +114,6 @@ public class GameManager : MonoBehaviour
 
                 break;
             case 2:
-                SpriteSetter();
                 Button1.GetComponent<Button>().interactable = true;
                 Button2.GetComponent<Button>().interactable = true;
                 Button3.GetComponent<Button>().interactable = true;
@@ -128,7 +125,6 @@ public class GameManager : MonoBehaviour
                 isPassedLevel2 = true;
                 break;
             case 3:
-                SpriteSetter();
                 Button1.GetComponent<Button>().interactable = true;
                 Button2.GetComponent<Button>().interactable = true;
                 Button3.GetComponent<Button>().interactable = true;
@@ -142,7 +138,6 @@ public class GameManager : MonoBehaviour
                 isPassedLevel3 = true;
                 break;
             case 4:
-                SpriteSetter();
                 Button1.GetComponent<Button>().interactable = true;
                 Button2.GetComponent<Button>().interactable = true;
                 Button3.GetComponent<Button>().interactable = true;
@@ -158,7 +153,6 @@ public class GameManager : MonoBehaviour
                 isPassedLevel4 = true;
                 break;
             case 5:
-                SpriteSetter();
                 Button1.GetComponent<Button>().interactable = true;
                 Button2.GetComponent<Button>().interactable = true;
                 Button3.GetComponent<Button>().interactable = true;
@@ -177,7 +171,6 @@ public class GameManager : MonoBehaviour
                 isPassedLevel5 = true;
                 break;
             case 6:
-                SpriteSetter();
                 Button1.GetComponent<Button>().interactable = true;
                 Button2.GetComponent<Button>().interactable = true;
                 Button3.GetComponent<Button>().interactable = true;
@@ -198,7 +191,6 @@ public class GameManager : MonoBehaviour
                 isPassedLevel6 = true;
                 break;
             case 7:
-                SpriteSetter();
                 Button1.GetComponent<Button>().interactable = true;
                 Button2.GetComponent<Button>().interactable = true;
                 Button3.GetComponent<Button>().interactable = true;
@@ -221,7 +213,6 @@ public class GameManager : MonoBehaviour
                 isPassedLevel7 = true;
                 break;
             case 8:
-                SpriteSetter();
                 Button1.GetComponent<Button>().interactable = true;
                 Button2.GetComponent<Button>().interactable = true;
                 Button3.GetComponent<Button>().interactable = true;
@@ -246,7 +237,6 @@ public class GameManager : MonoBehaviour
                 isPassedLevel8 = true;
                 break;
             case 9:
-                SpriteSetter();
                 Button1.GetComponent<Button>().interactable = true;
                 Button2.GetComponent<Button>().interactable = true;
                 Button3.GetComponent<Button>().interactable = true;
@@ -273,7 +263,6 @@ public class GameManager : MonoBehaviour
                 isPassedLevel9 = true;
                 break;
             case 10:
-                SpriteSetter();
                 Button1.GetComponent<Button>().interactable = true;
                 Button2.GetComponent<Button>().interactable = true;
                 Button3.GetComponent<Button>().interactable = true;
@@ -302,7 +291,6 @@ public class GameManager : MonoBehaviour
                 isPassedLevel10 = true;
                 break;
             case 11:
-                SpriteSetter();
                 Button1.GetComponent<Button>().interactable = true;
                 Button2.GetComponent<Button>().interactable = true;
                 Button3.GetComponent<Button>().interactable = true;
@@ -333,7 +321,6 @@ public class GameManager : MonoBehaviour
                 isPassedLevel11 = true;
                 break;
             case 12:
-                SpriteSetter();
                 mainMenuPanel.SetActive(true);
                 isBestOfThree12 = true;
                 floor.GetComponent<SpriteRenderer>().sprite = freezeFloor;
@@ -360,30 +347,30 @@ public class GameManager : MonoBehaviour
 
     public void SpriteSetter()
     {
-                // if (PlayerPrefs.GetInt("buttonText1", 0) == 1)
-                // {
-                //     ms.ballSpriteRenderer.sprite = ms.ball1.sprite;
-                // }
-                // if (PlayerPrefs.GetInt("buttonText2", 0) == 1)
-                // {
-                //     ms.ballSpriteRenderer.sprite = ms.ball2.sprite;
-                // }
-                // if (PlayerPrefs.GetInt("buttonText3", 0) == 1)
-                // {
-                //     ms.ballSpriteRenderer.sprite = ms.ball3.sprite;
-                // }
-                // if (PlayerPrefs.GetInt("buttonText4", 0) == 1)
-                // {
-                //     ms.playerSpriteRenderer.sprite = ms.car1.sprite;
-                // }
-                // if (PlayerPrefs.GetInt("buttonText5", 0) == 1)
-                // {
-                //     ms.playerSpriteRenderer.sprite = ms.car2.sprite;
-                // }
-                // if (PlayerPrefs.GetInt("buttonText6", 0) == 1)
-                // {
-                //     ms.playerSpriteRenderer.sprite = ms.car3.sprite;
-                // }
+        if (PlayerPrefs.GetInt("lastUsedBall") == 1)
+        {
+            ms.ballSpriteRenderer.sprite = ms.ball1.sprite;
+        }
+        if (PlayerPrefs.GetInt("lastUsedBall") == 2)
+        {
+            ms. ballSpriteRenderer.sprite = ms.ball2.sprite;
+        }
+        if (PlayerPrefs.GetInt("lastUsedBall") == 3)
+        {
+            ms.ballSpriteRenderer.sprite = ms.ball3.sprite;    
+        }
+        if (PlayerPrefs.GetInt("lastUsedCar") == 1)
+        {
+                   ms. playerSpriteRenderer.sprite = ms.car1.sprite; 
+        }
+        if (PlayerPrefs.GetInt("lastUsedCar") == 2)
+        {
+                 ms. playerSpriteRenderer.sprite = ms.car2.sprite;   
+        }
+        if (PlayerPrefs.GetInt("lastUsedCar") == 3)
+        {
+                    ms.playerSpriteRenderer.sprite = ms.car3.sprite;
+        }
     }
 
     void Update()

@@ -13,8 +13,9 @@ public class MarketScript : MonoBehaviour
     
     public SpriteRenderer ballSpriteRenderer,playerSpriteRenderer;
 
-    public bool hasUsedBut1, hasUsedBut2, hasUsedBut3, hasUsedBut4, hasUsedBut5, hasUsedBut6;
-    
+    public string hasUsedBut1, hasUsedBut2, hasUsedBut3, hasUsedBut4, hasUsedBut5, hasUsedBut6;
+    public int lastUsedCar; 
+    public int lastUsedBall;
     
     public Image ball1;
     public Image ball2;
@@ -22,18 +23,7 @@ public class MarketScript : MonoBehaviour
     public Image car1;
     public Image car2;
     public Image car3;
-
-    #region UseButtons
-
-    public GameObject UseButtonGo1;
-    public GameObject UseButtonGo2;
-    public GameObject UseButtonGo3;
-    public GameObject UseButtonGo4;
-    public GameObject UseButtonGo5;
-    public GameObject UseButtonGo6;
     
-
-    #endregion
 
     #region Script Instances
 
@@ -43,6 +33,16 @@ public class MarketScript : MonoBehaviour
 
     private void Start()
     {
+        
+        lastUsedBall= PlayerPrefs.GetInt("lastUsedCar");
+        lastUsedBall = PlayerPrefs.GetInt("lastUsedBall");
+
+        hasUsedBut1 = PlayerPrefs.GetString("hasUsedBut1");
+        hasUsedBut2 = PlayerPrefs.GetString("hasUsedBut2");
+        hasUsedBut3 = PlayerPrefs.GetString("hasUsedBut3");
+        hasUsedBut4 = PlayerPrefs.GetString("hasUsedBut4");
+        hasUsedBut5 = PlayerPrefs.GetString("hasUsedBut5");
+        hasUsedBut6 = PlayerPrefs.GetString("hasUsedBut6");
         UpdateButtonText("buttonText1", 100, buttonText1);
         UpdateButtonText("buttonText2", 200, buttonText2);
         UpdateButtonText("buttonText3", 300, buttonText3);
@@ -51,7 +51,6 @@ public class MarketScript : MonoBehaviour
         UpdateButtonText("buttonText6", 300, buttonText6);
     }
     
-
     private void UpdateButtonText(string key, int cost, Text buttonText)
     {
         if (PlayerPrefs.GetInt(key, 0) == 1)
@@ -71,7 +70,8 @@ public class MarketScript : MonoBehaviour
             buttonText1.text = "BOUGHT";
             PlayerPrefs.SetInt("buttonText1", 1);
             gm.budget -= 100;
-            hasUsedBut1 = !hasUsedBut1;
+            hasUsedBut1 = "YES";
+            PlayerPrefs.SetString("hasUsedBut1",hasUsedBut1);
         }
     }
 
@@ -79,10 +79,11 @@ public class MarketScript : MonoBehaviour
     {
         if (gm.budget >= 200 && PlayerPrefs.GetInt("buttonText2", 0) != 1)
         {
-            buttonText1.text = "BOUGHT";
+            buttonText2.text = "BOUGHT";
             PlayerPrefs.SetInt("buttonText2", 1);
             gm.budget -= 200;
-            hasUsedBut2 = !hasUsedBut2;
+            hasUsedBut2 ="YES";
+            PlayerPrefs.SetString("hasUsedBut2",hasUsedBut2);
         }
     }
 
@@ -90,10 +91,11 @@ public class MarketScript : MonoBehaviour
     {
         if (gm.budget >= 300 && PlayerPrefs.GetInt("buttonText3", 0) != 1)
         {
-            buttonText1.text = "BOUGHT";
+            buttonText3.text = "BOUGHT";
             PlayerPrefs.SetInt("buttonText3", 1);
             gm.budget -= 300;
-            hasUsedBut3 = !hasUsedBut3;
+            hasUsedBut3 = "YES";
+            PlayerPrefs.SetString("hasUsedBut3",hasUsedBut3);
         }
     }
 
@@ -101,10 +103,11 @@ public class MarketScript : MonoBehaviour
     {
         if (gm.budget >= 100 && PlayerPrefs.GetInt("buttonText4", 0) != 1)
         {
-            buttonText1.text = "BOUGHT";
+            buttonText4.text = "BOUGHT";
             PlayerPrefs.SetInt("buttonText4", 1);
             gm.budget -= 100;
-            hasUsedBut4 = !hasUsedBut4;
+            hasUsedBut4 ="YES";
+            PlayerPrefs.SetString("hasUsedBut4",hasUsedBut4);
         }
     }
 
@@ -112,10 +115,11 @@ public class MarketScript : MonoBehaviour
     {
         if (gm.budget >= 200 && PlayerPrefs.GetInt("buttonText5", 0) != 1)
         {
-            buttonText1.text = "BOUGHT";
+            buttonText5.text = "BOUGHT";
             PlayerPrefs.SetInt("buttonText5", 1);
             gm.budget -= 200;
-            hasUsedBut5 = !hasUsedBut5;
+            hasUsedBut5 = "YES";
+            PlayerPrefs.SetString("hasUsedBut5",hasUsedBut5);
         }
     }
 
@@ -123,45 +127,76 @@ public class MarketScript : MonoBehaviour
     {
         if (gm.budget >= 300 && PlayerPrefs.GetInt("buttonText6", 0) != 1)
         {
-            buttonText1.text = "BOUGHT";
+            buttonText6.text = "BOUGHT";
             PlayerPrefs.SetInt("buttonText6", 1);
             gm.budget -= 300;
-            hasUsedBut6 = !hasUsedBut6;
+            hasUsedBut6 = "YES";
+            PlayerPrefs.SetString("hasUsedBut6",hasUsedBut6);
         }
     }
 
     public void UseButton1()
     {
-        if(hasUsedBut1)
+        if (hasUsedBut1 == "YES")
+        {
             ballSpriteRenderer.sprite = ball1.sprite;
+            lastUsedBall = 1;
+            PlayerPrefs.SetInt("lastUsedBall",lastUsedBall);
+        }
+            
     }
     public void UseButton2()
     {
-        if(hasUsedBut2)
+        if (hasUsedBut2 == "YES")
+        {
             ballSpriteRenderer.sprite = ball2.sprite;
+            lastUsedBall = 2;
+            PlayerPrefs.SetInt("lastUsedBall",lastUsedBall);
+        }
+            
     }
     public void UseButton3()
     {
-        if(hasUsedBut3)
+        if (hasUsedBut3 == "YES")
+        {
             ballSpriteRenderer.sprite = ball3.sprite;
+            lastUsedBall = 3;
+            PlayerPrefs.SetInt("lastUsedBall",lastUsedBall);
+        }
+            
     }
 
     public void UseButton4()
     {
-        if(hasUsedBut4)
+        if (hasUsedBut4 == "YES")
+        {
             playerSpriteRenderer.sprite = car1.sprite;
+            lastUsedCar = 1;
+            PlayerPrefs.SetInt("lastUsedCar",lastUsedCar);
+        }
+            
     }
     
     public void UseButton5()
     {
-        if(hasUsedBut5)
+        if (hasUsedBut5 == "YES")
+        {
             playerSpriteRenderer.sprite = car2.sprite;
+            lastUsedCar = 2;
+            PlayerPrefs.SetInt("lastUsedCar",lastUsedCar);
+        }
+            
     }
 
     public void UseButton6()
     {
-        if(hasUsedBut6)
+        if (hasUsedBut6 == "YES")
+        {
             playerSpriteRenderer.sprite = car3.sprite;
+            lastUsedCar = 3;
+            PlayerPrefs.SetInt("lastUsedCar",lastUsedCar);
+        }
+            
     }
     
     public void OpenMarket()

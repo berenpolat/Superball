@@ -152,7 +152,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Bayrak3_0: -1008736335051834038
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

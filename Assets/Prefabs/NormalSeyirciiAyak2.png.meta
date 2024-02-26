@@ -152,7 +152,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      NormalSeyirciiAyak2_0: -6082313054023939965
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -344,7 +344,16 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MaviAuraAnimation1_0: -4021194453586029404
+      MaviAuraAnimation1_1: -5995159726132402974
+      MaviAuraAnimation1_2: -664142576863518553
+      MaviAuraAnimation1_3: 6249546933998636965
+      MaviAuraAnimation1_4: 4873888045569080283
+      MaviAuraAnimation1_5: -4015368752821764496
+      MaviAuraAnimation1_6: -5676257084918937934
+      MaviAuraAnimation1_7: -6183052695146632490
+      MaviAuraAnimation1_8: -1628867395731238523
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

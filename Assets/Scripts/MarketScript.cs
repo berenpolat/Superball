@@ -12,6 +12,8 @@ public class MarketScript : MonoBehaviour
     [SerializeField] private Text buttonText1, buttonText2, buttonText3, buttonText4, buttonText5, buttonText6;
     
     public SpriteRenderer ballSpriteRenderer,playerSpriteRenderer;
+
+    public bool hasUsedBut1, hasUsedBut2, hasUsedBut3, hasUsedBut4, hasUsedBut5, hasUsedBut6;
     
     
     public Image ball1;
@@ -49,16 +51,6 @@ public class MarketScript : MonoBehaviour
         UpdateButtonText("buttonText6", 300, buttonText6);
     }
     
-    private void Update()
-    {
-        PlayerPrefs.SetInt("ball1", PlayerPrefs.GetInt("ball1", 0));
-        PlayerPrefs.SetInt("ball2", PlayerPrefs.GetInt("ball2", 0));
-        PlayerPrefs.SetInt("ball3", PlayerPrefs.GetInt("ball3", 0));
-        PlayerPrefs.SetInt("car1", PlayerPrefs.GetInt("car1", 0));
-        PlayerPrefs.SetInt("car2", PlayerPrefs.GetInt("car2", 0));
-        PlayerPrefs.SetInt("car3", PlayerPrefs.GetInt("car3", 0));
-    }
-
 
     private void UpdateButtonText(string key, int cost, Text buttonText)
     {
@@ -74,72 +66,104 @@ public class MarketScript : MonoBehaviour
 
     public void BuyBall1()
     {
-        TryBuyItem("buttonText1", 100, buttonText1, 1);
+        if (gm.budget >= 100 && PlayerPrefs.GetInt("buttonText1", 0) != 1)
+        {
+            buttonText1.text = "BOUGHT";
+            PlayerPrefs.SetInt("buttonText1", 1);
+            gm.budget -= 100;
+            hasUsedBut1 = !hasUsedBut1;
+        }
     }
 
     public void BuyBall2()
     {
-        TryBuyItem("buttonText2", 200, buttonText2, 1);
+        if (gm.budget >= 200 && PlayerPrefs.GetInt("buttonText2", 0) != 1)
+        {
+            buttonText1.text = "BOUGHT";
+            PlayerPrefs.SetInt("buttonText2", 1);
+            gm.budget -= 200;
+            hasUsedBut2 = !hasUsedBut2;
+        }
     }
 
     public void BuyBall3()
     {
-        TryBuyItem("buttonText3", 300, buttonText3, 1);
+        if (gm.budget >= 300 && PlayerPrefs.GetInt("buttonText3", 0) != 1)
+        {
+            buttonText1.text = "BOUGHT";
+            PlayerPrefs.SetInt("buttonText3", 1);
+            gm.budget -= 300;
+            hasUsedBut3 = !hasUsedBut3;
+        }
     }
 
     public void BuyCar1()
     {
-        TryBuyItem("buttonText4", 100, buttonText4, 1);
+        if (gm.budget >= 100 && PlayerPrefs.GetInt("buttonText4", 0) != 1)
+        {
+            buttonText1.text = "BOUGHT";
+            PlayerPrefs.SetInt("buttonText4", 1);
+            gm.budget -= 100;
+            hasUsedBut4 = !hasUsedBut4;
+        }
     }
 
     public void BuyCar2()
     {
-        TryBuyItem("buttonText5", 200, buttonText5, 1);
+        if (gm.budget >= 200 && PlayerPrefs.GetInt("buttonText5", 0) != 1)
+        {
+            buttonText1.text = "BOUGHT";
+            PlayerPrefs.SetInt("buttonText5", 1);
+            gm.budget -= 200;
+            hasUsedBut5 = !hasUsedBut5;
+        }
     }
 
     public void BuyCar3()
     {
-        TryBuyItem("buttonText6", 300, buttonText6, 1);
+        if (gm.budget >= 300 && PlayerPrefs.GetInt("buttonText6", 0) != 1)
+        {
+            buttonText1.text = "BOUGHT";
+            PlayerPrefs.SetInt("buttonText6", 1);
+            gm.budget -= 300;
+            hasUsedBut6 = !hasUsedBut6;
+        }
     }
 
     public void UseButton1()
     {
-        ballSpriteRenderer.sprite = ball1.sprite;
+        if(hasUsedBut1)
+            ballSpriteRenderer.sprite = ball1.sprite;
     }
     public void UseButton2()
     {
-        ballSpriteRenderer.sprite = ball2.sprite;
+        if(hasUsedBut2)
+            ballSpriteRenderer.sprite = ball2.sprite;
     }
     public void UseButton3()
     {
-        ballSpriteRenderer.sprite = ball3.sprite;
+        if(hasUsedBut3)
+            ballSpriteRenderer.sprite = ball3.sprite;
     }
 
     public void UseButton4()
     {
-        playerSpriteRenderer.sprite = ball1.sprite;
+        if(hasUsedBut4)
+            playerSpriteRenderer.sprite = car1.sprite;
     }
     
     public void UseButton5()
     {
-        playerSpriteRenderer.sprite = car2.sprite;
+        if(hasUsedBut5)
+            playerSpriteRenderer.sprite = car2.sprite;
     }
 
     public void UseButton6()
     {
-        playerSpriteRenderer.sprite = car3.sprite;
+        if(hasUsedBut6)
+            playerSpriteRenderer.sprite = car3.sprite;
     }
     
-    private void TryBuyItem(string key, int cost, Text buttonText, int value)
-    {
-        if (gm.budget >= cost && PlayerPrefs.GetInt(key, 0) != value)
-        {
-            buttonText.text = "BOUGHT";
-            PlayerPrefs.SetInt(key, value);
-            gm.budget -= cost;
-        }
-    }
-
     public void OpenMarket()
     {
         marketPanel.SetActive(true);

@@ -360,30 +360,30 @@ public class GameManager : MonoBehaviour
 
     public void SpriteSetter()
     {
-                if (PlayerPrefs.GetInt("buttonText1", 0) == 1)
-                {
-                    ms.ballSpriteRenderer.sprite = ms.ball1.sprite;
-                }
-                if (PlayerPrefs.GetInt("buttonText2", 0) == 1)
-                {
-                    ms.ballSpriteRenderer.sprite = ms.ball2.sprite;
-                }
-                if (PlayerPrefs.GetInt("buttonText3", 0) == 1)
-                {
-                    ms.ballSpriteRenderer.sprite = ms.ball3.sprite;
-                }
-                if (PlayerPrefs.GetInt("buttonText4", 0) == 1)
-                {
-                    ms.playerSpriteRenderer.sprite = ms.car1.sprite;
-                }
-                if (PlayerPrefs.GetInt("buttonText5", 0) == 1)
-                {
-                    ms.playerSpriteRenderer.sprite = ms.car2.sprite;
-                }
-                if (PlayerPrefs.GetInt("buttonText6", 0) == 1)
-                {
-                    ms.playerSpriteRenderer.sprite = ms.car3.sprite;
-                }
+                // if (PlayerPrefs.GetInt("buttonText1", 0) == 1)
+                // {
+                //     ms.ballSpriteRenderer.sprite = ms.ball1.sprite;
+                // }
+                // if (PlayerPrefs.GetInt("buttonText2", 0) == 1)
+                // {
+                //     ms.ballSpriteRenderer.sprite = ms.ball2.sprite;
+                // }
+                // if (PlayerPrefs.GetInt("buttonText3", 0) == 1)
+                // {
+                //     ms.ballSpriteRenderer.sprite = ms.ball3.sprite;
+                // }
+                // if (PlayerPrefs.GetInt("buttonText4", 0) == 1)
+                // {
+                //     ms.playerSpriteRenderer.sprite = ms.car1.sprite;
+                // }
+                // if (PlayerPrefs.GetInt("buttonText5", 0) == 1)
+                // {
+                //     ms.playerSpriteRenderer.sprite = ms.car2.sprite;
+                // }
+                // if (PlayerPrefs.GetInt("buttonText6", 0) == 1)
+                // {
+                //     ms.playerSpriteRenderer.sprite = ms.car3.sprite;
+                // }
     }
 
     void Update()

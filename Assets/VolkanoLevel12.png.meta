@@ -152,7 +152,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      VolkanoLevel12_0: -8939685423552988119
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

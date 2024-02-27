@@ -152,7 +152,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      LavaSaha1_0: -6713821730126490982
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

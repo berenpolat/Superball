@@ -8,6 +8,12 @@ public class PlayerSkills : MonoBehaviour
     #region effectler
     [SerializeField] private GameObject frezeerPowerUpEffect;
     [SerializeField] private GameObject PowerShotPowerUpEffect;
+    [SerializeField] private GameObject PowerShotCarhingEffect;
+    [SerializeField] private GameObject PowerShotReleaseEffect;
+
+    [SerializeField] private Transform ball;
+    private GameObject PowerShotCarhingInstance;
+    private GameObject PowerShotReleaseInstance;
     private GameObject FrezeerPowerUpInstance;
     private GameObject PowerShotInstance;
     public Vector2 offset;
@@ -65,7 +71,7 @@ public class PlayerSkills : MonoBehaviour
             Fbullet.GetComponent<Rigidbody2D>().velocity = FirePoint.up * bulletSpeed;
             Frezeer = false;
             frezeerUsed = true;
-            if (frezeerUsed = true)
+            if (frezeerUsed == true)
             {
                 frezeerButton.interactable = false;
             }
@@ -123,7 +129,11 @@ public class PlayerSkills : MonoBehaviour
                     grabbedObject.GetComponent<Rigidbody2D>().angularVelocity = 0f;
                     grabbedObject.transform.position = grabPoint.position;
                     grabbedObject.transform.SetParent(transform);
+                    Vector3 spawnPosition = new Vector3(ball.position.x + 0.5f, ball.position.y, ball.position.z);
+                    Quaternion spawnRotation = Quaternion.identity; // 2D oyunlarda genellikle Quaternion.identity kullanılır
+                    GameObject PowerShotCarhingInstance = Instantiate(PowerShotCarhingEffect, spawnPosition, spawnRotation);
                     break; // Bir obje bulunduğunda döngüden çıkılır
+                    
                 }
             }
         }

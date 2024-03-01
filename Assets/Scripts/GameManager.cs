@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Vector3 = UnityEngine.Vector3;
 
@@ -14,7 +15,7 @@ public class GameManager : MonoBehaviour
     public int budget = 0;
     private bool isBestOfThree1,isBestOfThree2,isBestOfThree3,isBestOfThree4,isBestOfThree5,isBestOfThree6,
         isBestOfThree7,isBestOfThree8,isBestOfThree9,isBestOfThree10,isBestOfThree11,isBestOfThree12;
-    public int LastLevel=0;
+    [FormerlySerializedAs("LastLevel")] public int lastLevel=0;
     public List<GameObject> usedButtons;
     private bool isPassedLevel1,isPassedLevel2,isPassedLevel3,isPassedLevel4,isPassedLevel5,isPassedLevel6,
         isPassedLevel7,isPassedLevel8,isPassedLevel9,isPassedLevel10,isPassedLevel11,isPassedLevel12;
@@ -36,7 +37,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject enemy;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject ball;
-    [SerializeField] private Camera cam;
+    // [SerializeField] private Camera cam;
     [SerializeField] private GameObject floor;
     [SerializeField] private GameObject square;
     [SerializeField] private Sprite freezeFloor;
@@ -80,7 +81,7 @@ public class GameManager : MonoBehaviour
     {
         SpriteSetter();
         budget = PlayerPrefs.GetInt("Budget");
-        LastLevel = PlayerPrefs.GetInt("Level");
+        lastLevel = PlayerPrefs.GetInt("Level");
         StopTheGame();
 
         Button1.GetComponent<Button>().interactable = true;
@@ -97,7 +98,7 @@ public class GameManager : MonoBehaviour
         Button12.GetComponent<Button>().interactable = false;
         
         timer = 0;
-        switch (LastLevel)
+        switch (lastLevel)
         {
             case 0:
                 Button1.GetComponent<Button>().interactable = true;
@@ -364,27 +365,27 @@ public class GameManager : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("lastUsedBall") == 1)
         {
-            ms.ballSpriteRenderer.sprite = ms.ball1.sprite;
+            ms.ballSpriteRenderer.sprite = ms.ball1;
         }
         if (PlayerPrefs.GetInt("lastUsedBall") == 2)
         {
-            ms. ballSpriteRenderer.sprite = ms.ball2.sprite;
+            ms. ballSpriteRenderer.sprite = ms.ball2;
         }
         if (PlayerPrefs.GetInt("lastUsedBall") == 3)
         {
-            ms.ballSpriteRenderer.sprite = ms.ball3.sprite;    
+            ms.ballSpriteRenderer.sprite = ms.ball3;    
         }
         if (PlayerPrefs.GetInt("lastUsedCar") == 1)
         {
-                   ms. playerSpriteRenderer.sprite = ms.car1.sprite; 
+                   ms. playerSpriteRenderer.sprite = ms.car1; 
         }
         if (PlayerPrefs.GetInt("lastUsedCar") == 2)
         {
-                 ms. playerSpriteRenderer.sprite = ms.car2.sprite;   
+                 ms. playerSpriteRenderer.sprite = ms.car2;   
         }
         if (PlayerPrefs.GetInt("lastUsedCar") == 3)
         {
-                    ms.playerSpriteRenderer.sprite = ms.car3.sprite;
+                    ms.playerSpriteRenderer.sprite = ms.car3;
         }
     }
 
@@ -425,10 +426,10 @@ public class GameManager : MonoBehaviour
                 powerShot.SetActive(false);
                 if (!isPassedLevel1)
                 {
-                    LastLevel++;
+                    lastLevel++;
                     isPassedLevel1 = true;
                 }
-                PlayerPrefs.SetInt("Level", LastLevel);
+                PlayerPrefs.SetInt("Level", lastLevel);
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
                     isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
                 Button2.GetComponent<Button>().interactable = true;
@@ -454,10 +455,10 @@ public class GameManager : MonoBehaviour
                 powerShot.SetActive(false);
                 if (!isPassedLevel2)
                 {
-                    LastLevel++;
+                    lastLevel++;
                     isPassedLevel2 = true;
                 }
-                PlayerPrefs.SetInt("Level", LastLevel);
+                PlayerPrefs.SetInt("Level", lastLevel);
 
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
                     isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
@@ -488,10 +489,10 @@ public class GameManager : MonoBehaviour
                 if (!isPassedLevel3)
                 {
                     freezeSkillTutorialPanel.SetActive(true);
-                    LastLevel++;
+                    lastLevel++;
                     isPassedLevel3 = true;
                 }
-                PlayerPrefs.SetInt("Level", LastLevel); 
+                PlayerPrefs.SetInt("Level", lastLevel); 
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
                     isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
                 Button4.GetComponent<Button>().interactable = true;
@@ -516,10 +517,10 @@ public class GameManager : MonoBehaviour
                 powerShot.SetActive(false);
                 if (!isPassedLevel4)
                 {
-                    LastLevel++;
+                    lastLevel++;
                     isPassedLevel4 = true;
                 }
-                PlayerPrefs.SetInt("Level", LastLevel);
+                PlayerPrefs.SetInt("Level", lastLevel);
                 
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = isBestOfThree7 = 
                     isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
@@ -545,10 +546,10 @@ public class GameManager : MonoBehaviour
                 powerShot.SetActive(false);
                 if (!isPassedLevel5)
                 {
-                    LastLevel++;
+                    lastLevel++;
                     isPassedLevel5 = true;
                 }
-                PlayerPrefs.SetInt("Level", LastLevel); 
+                PlayerPrefs.SetInt("Level", lastLevel); 
 
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
                     isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
@@ -574,10 +575,10 @@ public class GameManager : MonoBehaviour
                 powerShot.SetActive(false);
                 if (!isPassedLevel6)
                 {
-                    LastLevel++;
+                    lastLevel++;
                     isPassedLevel6 = true;
                 }
-                PlayerPrefs.SetInt("Level", LastLevel); 
+                PlayerPrefs.SetInt("Level", lastLevel); 
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
                     isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
                 Button7.GetComponent<Button>().interactable = true;
@@ -602,10 +603,10 @@ public class GameManager : MonoBehaviour
                 powerShot.SetActive(false);
                 if (!isPassedLevel7)
                 {
-                    LastLevel++;
+                    lastLevel++;
                     isPassedLevel7 = true;
                 }
-                PlayerPrefs.SetInt("Level", LastLevel);
+                PlayerPrefs.SetInt("Level", lastLevel);
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
                     isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
                 Button8.GetComponent<Button>().interactable = true;
@@ -631,10 +632,10 @@ public class GameManager : MonoBehaviour
                 if (!isPassedLevel8)
                 {
                     powerShootTutorialPanel.SetActive(true);
-                    LastLevel++;
+                    lastLevel++;
                     isPassedLevel8 = true;
                 }
-                PlayerPrefs.SetInt("Level", LastLevel); 
+                PlayerPrefs.SetInt("Level", lastLevel); 
                 
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
                     isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
@@ -660,10 +661,10 @@ public class GameManager : MonoBehaviour
                 powerShot.SetActive(false);
                 if (!isPassedLevel9)
                 {
-                    LastLevel++;
+                    lastLevel++;
                     isPassedLevel9 = true;
                 }
-                PlayerPrefs.SetInt("Level", LastLevel);
+                PlayerPrefs.SetInt("Level", lastLevel);
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
                     isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
                 Button10.GetComponent<Button>().interactable = true;
@@ -688,10 +689,10 @@ public class GameManager : MonoBehaviour
                 powerShot.SetActive(false);
                 if (!isPassedLevel10)
                 {
-                    LastLevel++;
+                    lastLevel++;
                     isPassedLevel10 = true;
                 }
-                PlayerPrefs.SetInt("Level", LastLevel); 
+                PlayerPrefs.SetInt("Level", lastLevel); 
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
                     isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
                 Button11.GetComponent<Button>().interactable = true;
@@ -716,10 +717,10 @@ public class GameManager : MonoBehaviour
                 powerShot.SetActive(false);
                 if (!isPassedLevel11)
                 {
-                    LastLevel++;
+                    lastLevel++;
                     isPassedLevel11 = true;
                 }
-                PlayerPrefs.SetInt("Level", LastLevel);
+                PlayerPrefs.SetInt("Level", lastLevel);
 
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
                     isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
@@ -745,10 +746,10 @@ public class GameManager : MonoBehaviour
                 powerShot.SetActive(false);
                 if (!isPassedLevel12)
                 {
-                    LastLevel++;
+                    lastLevel++;
                     isPassedLevel12 = true;
                 }
-                PlayerPrefs.SetInt("Level", LastLevel); 
+                PlayerPrefs.SetInt("Level", lastLevel); 
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
                     isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
             }
@@ -764,7 +765,7 @@ public class GameManager : MonoBehaviour
         
         #region PlayerPrefs
         PlayerPrefs.SetInt("Budget", budget);
-        PlayerPrefs.SetInt("Level", LastLevel);
+        PlayerPrefs.SetInt("Level", lastLevel);
         #endregion
     }
 

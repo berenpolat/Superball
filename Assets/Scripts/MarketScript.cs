@@ -17,12 +17,12 @@ public class MarketScript : MonoBehaviour
     public int lastUsedCar; 
     public int lastUsedBall;
     
-    public Image ball1;
-    public Image ball2;
-    public Image ball3;
-    public Image car1;
-    public Image car2;
-    public Image car3;
+    public Sprite ball1;
+    public Sprite ball2;
+    public Sprite ball3;
+    public Sprite car1;
+    public Sprite car2;
+    public Sprite car3;
     
 
     #region Script Instances
@@ -139,7 +139,7 @@ public class MarketScript : MonoBehaviour
     {
         if (hasUsedBut1 == "YES")
         {
-            ballSpriteRenderer.sprite = ball1.sprite;
+            ballSpriteRenderer.sprite = ball1;
             lastUsedBall = 1;
             PlayerPrefs.SetInt("lastUsedBall",lastUsedBall);
         }
@@ -149,7 +149,7 @@ public class MarketScript : MonoBehaviour
     {
         if (hasUsedBut2 == "YES")
         {
-            ballSpriteRenderer.sprite = ball2.sprite;
+            ballSpriteRenderer.sprite = ball2;
             lastUsedBall = 2;
             PlayerPrefs.SetInt("lastUsedBall",lastUsedBall);
         }
@@ -159,7 +159,7 @@ public class MarketScript : MonoBehaviour
     {
         if (hasUsedBut3 == "YES")
         {
-            ballSpriteRenderer.sprite = ball3.sprite;
+            ballSpriteRenderer.sprite = ball3;
             lastUsedBall = 3;
             PlayerPrefs.SetInt("lastUsedBall",lastUsedBall);
         }
@@ -170,7 +170,7 @@ public class MarketScript : MonoBehaviour
     {
         if (hasUsedBut4 == "YES")
         {
-            playerSpriteRenderer.sprite = car1.sprite;
+            playerSpriteRenderer.sprite = car1;
             lastUsedCar = 1;
             PlayerPrefs.SetInt("lastUsedCar",lastUsedCar);
         }
@@ -181,7 +181,7 @@ public class MarketScript : MonoBehaviour
     {
         if (hasUsedBut5 == "YES")
         {
-            playerSpriteRenderer.sprite = car2.sprite;
+            playerSpriteRenderer.sprite = car2;
             lastUsedCar = 2;
             PlayerPrefs.SetInt("lastUsedCar",lastUsedCar);
         }
@@ -192,7 +192,7 @@ public class MarketScript : MonoBehaviour
     {
         if (hasUsedBut6 == "YES")
         {
-            playerSpriteRenderer.sprite = car3.sprite;
+            playerSpriteRenderer.sprite = car3;
             lastUsedCar = 3;
             PlayerPrefs.SetInt("lastUsedCar",lastUsedCar);
         }

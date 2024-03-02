@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Unity.Mathematics;
 using UnityEngine;
@@ -9,12 +10,12 @@ public class BallMovements : MonoBehaviour
     [SerializeField] private GameObject Player;
     [SerializeField] private GameObject Enemy;
     [SerializeField] private GameObject GoalEffect;
-    private GameObject GoalEffectInstance;
+    public GameObject GoalEffectInstance;
     
     #endregion
 
     #region Panels
-    [SerializeField] private GameObject goalPanel;
+    public GameObject goalPanel;
     #endregion
 
     #region Script instances
@@ -41,16 +42,25 @@ public class BallMovements : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         transform.position = ballStartPoint.position;
-       
+       goalPanel.SetActive(false);
+       GoalEffectInstance.SetActive(false);
     }
 
+    private void Update()
+    {
+        if (gm.isPassedLevel1 || gm.isPassedLevel2 || gm.isPassedLevel3 || gm.isPassedLevel4 || gm.isPassedLevel5
+            || gm.isPassedLevel6 || gm.isPassedLevel7 || gm.isPassedLevel8 || gm.isPassedLevel9 || gm.isPassedLevel10 ||
+            gm.isPassedLevel11 || gm.isPassedLevel12)
+        {
+            goalPanel.SetActive(false);
+        }
+    }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("WinColLeft"))
         {
             GoalEffectInstance = Instantiate(GoalEffect, transform.position, quaternion.identity);
-            Destroy(GoalEffectInstance, 1f);
             gm.enemyScore += 1;
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             GetComponent<Rigidbody2D>().angularVelocity = 0f;
@@ -59,9 +69,9 @@ public class BallMovements : MonoBehaviour
         if (other.gameObject.CompareTag("WinColRight"))
         {
             GoalEffectInstance = Instantiate(GoalEffect, transform.position, quaternion.identity);
-            Destroy(GoalEffectInstance, 1f);
             gm.playerScore += 1;
             SetInitialPositions();
+            goalPanel.SetActive(true);
             StartCoroutine(ShowGoalPanel());
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             GetComponent<Rigidbody2D>().angularVelocity = 0f;

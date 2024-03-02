@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
         isBestOfThree7,isBestOfThree8,isBestOfThree9,isBestOfThree10,isBestOfThree11,isBestOfThree12;
     [FormerlySerializedAs("LastLevel")] public int lastLevel=0;
     public List<GameObject> usedButtons;
-    private bool isPassedLevel1,isPassedLevel2,isPassedLevel3,isPassedLevel4,isPassedLevel5,isPassedLevel6,
+    public bool isPassedLevel1,isPassedLevel2,isPassedLevel3,isPassedLevel4,isPassedLevel5,isPassedLevel6,
         isPassedLevel7,isPassedLevel8,isPassedLevel9,isPassedLevel10,isPassedLevel11,isPassedLevel12;
     #endregion
 
@@ -429,6 +429,7 @@ public class GameManager : MonoBehaviour
                     lastLevel++;
                     isPassedLevel1 = true;
                 }
+                
                 PlayerPrefs.SetInt("Level", lastLevel);
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
                     isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
@@ -459,7 +460,8 @@ public class GameManager : MonoBehaviour
                     isPassedLevel2 = true;
                 }
                 PlayerPrefs.SetInt("Level", lastLevel);
-
+                bm.goalPanel.SetActive(false);
+                bm.GoalEffectInstance.SetActive(false);
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
                     isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
                 
@@ -492,6 +494,8 @@ public class GameManager : MonoBehaviour
                     lastLevel++;
                     isPassedLevel3 = true;
                 }
+                bm.goalPanel.SetActive(false);
+                bm.GoalEffectInstance.SetActive(false);
                 PlayerPrefs.SetInt("Level", lastLevel); 
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
                     isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
@@ -521,7 +525,8 @@ public class GameManager : MonoBehaviour
                     isPassedLevel4 = true;
                 }
                 PlayerPrefs.SetInt("Level", lastLevel);
-                
+                bm.goalPanel.SetActive(false);
+                bm.GoalEffectInstance.SetActive(false);
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = isBestOfThree7 = 
                     isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
                 Button5.GetComponent<Button>().interactable = true;
@@ -550,7 +555,8 @@ public class GameManager : MonoBehaviour
                     isPassedLevel5 = true;
                 }
                 PlayerPrefs.SetInt("Level", lastLevel); 
-
+                bm.goalPanel.SetActive(false);
+                bm.GoalEffectInstance.SetActive(false);
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
                     isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
                 Button6.GetComponent<Button>().interactable = true;
@@ -579,6 +585,8 @@ public class GameManager : MonoBehaviour
                     isPassedLevel6 = true;
                 }
                 PlayerPrefs.SetInt("Level", lastLevel); 
+                bm.goalPanel.SetActive(false);
+                bm.GoalEffectInstance.SetActive(false);
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
                     isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
                 Button7.GetComponent<Button>().interactable = true;
@@ -607,6 +615,8 @@ public class GameManager : MonoBehaviour
                     isPassedLevel7 = true;
                 }
                 PlayerPrefs.SetInt("Level", lastLevel);
+                bm.goalPanel.SetActive(false);
+                bm.GoalEffectInstance.SetActive(false);
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
                     isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
                 Button8.GetComponent<Button>().interactable = true;
@@ -635,8 +645,10 @@ public class GameManager : MonoBehaviour
                     lastLevel++;
                     isPassedLevel8 = true;
                 }
-                PlayerPrefs.SetInt("Level", lastLevel); 
                 
+                PlayerPrefs.SetInt("Level", lastLevel); 
+                bm.goalPanel.SetActive(false);
+                bm.GoalEffectInstance.SetActive(false);
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
                     isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
                 Button9.GetComponent<Button>().interactable = true;
@@ -665,6 +677,8 @@ public class GameManager : MonoBehaviour
                     isPassedLevel9 = true;
                 }
                 PlayerPrefs.SetInt("Level", lastLevel);
+                bm.goalPanel.SetActive(false);
+                bm.GoalEffectInstance.SetActive(false);
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
                     isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
                 Button10.GetComponent<Button>().interactable = true;
@@ -693,6 +707,8 @@ public class GameManager : MonoBehaviour
                     isPassedLevel10 = true;
                 }
                 PlayerPrefs.SetInt("Level", lastLevel); 
+                bm.goalPanel.SetActive(false);
+                bm.GoalEffectInstance.SetActive(false);
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
                     isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
                 Button11.GetComponent<Button>().interactable = true;
@@ -721,7 +737,8 @@ public class GameManager : MonoBehaviour
                     isPassedLevel11 = true;
                 }
                 PlayerPrefs.SetInt("Level", lastLevel);
-
+                bm.goalPanel.SetActive(false);
+                bm.GoalEffectInstance.SetActive(false);
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
                     isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
                 Button12.GetComponent<Button>().interactable = true;
@@ -750,6 +767,8 @@ public class GameManager : MonoBehaviour
                     isPassedLevel12 = true;
                 }
                 PlayerPrefs.SetInt("Level", lastLevel); 
+                bm.goalPanel.SetActive(false);
+                bm.GoalEffectInstance.SetActive(false);
                 isBestOfThree1 = isBestOfThree2 = isBestOfThree3 = isBestOfThree4 = isBestOfThree5 = isBestOfThree6 = 
                     isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
             }
@@ -793,6 +812,8 @@ public class GameManager : MonoBehaviour
         square.GetComponent<SpriteRenderer>().color = Color.green;
         // FrezeerSkill();
         // PowerShootSkill();
+        bm.goalPanel.SetActive(false);
+        bm.GoalEffectInstance.SetActive(false);
     }
     private void OnLevel2Click()
     {
@@ -805,6 +826,8 @@ public class GameManager : MonoBehaviour
         square.GetComponent<SpriteRenderer>().color = Color.green;
         // EnmeySkills.EnemyHaveFrezeer = false;
         // EnmeySkills.enemyHavePowerShot = false;
+        bm.goalPanel.SetActive(false);
+        bm.GoalEffectInstance.SetActive(false);
      
     }
 
@@ -819,6 +842,8 @@ public class GameManager : MonoBehaviour
         square.GetComponent<SpriteRenderer>().color = Color.green;
         // EnmeySkills.EnemyHaveFrezeer = false;
         // EnmeySkills.enemyHavePowerShot = false;
+        bm.goalPanel.SetActive(false);
+        bm.GoalEffectInstance.SetActive(false);
        
     }
     private void OnLevel4Click()
@@ -835,7 +860,8 @@ public class GameManager : MonoBehaviour
         stm.isFreezeSkillUnlocked = true;
         EnmeySkills.EnemyHaveFrezeer = true;
         // EnmeySkills.enemyHavePowerShot = false;
-      
+        bm.goalPanel.SetActive(false);
+        bm.GoalEffectInstance.SetActive(false);
     }
     private void OnLevel5Click()
     {
@@ -848,6 +874,8 @@ public class GameManager : MonoBehaviour
         square.GetComponent<SpriteRenderer>().color = Color.blue;
         EnmeySkills.EnemyHaveFrezeer = true;
         // EnmeySkills.enemyHavePowerShot = false;
+        bm.goalPanel.SetActive(false);
+        bm.GoalEffectInstance.SetActive(false);
        
         isBestOfThree5 = true;
     }
@@ -862,7 +890,8 @@ public class GameManager : MonoBehaviour
         square.GetComponent<SpriteRenderer>().color = Color.blue;
         EnmeySkills.EnemyHaveFrezeer = true;
         // EnmeySkills.enemyHavePowerShot = false;
-        
+        bm.goalPanel.SetActive(false);
+        bm.GoalEffectInstance.SetActive(false);
         isBestOfThree6 = true;
     } 
     private void OnLevel7Click()
@@ -876,7 +905,8 @@ public class GameManager : MonoBehaviour
         square.GetComponent<SpriteRenderer>().color = Color.blue;
         EnmeySkills.EnemyHaveFrezeer = true;
         // EnmeySkills.enemyHavePowerShot = true;
-        
+        bm.goalPanel.SetActive(false);
+        bm.GoalEffectInstance.SetActive(false);
         isBestOfThree7 = true;
     }
     private void OnLevel8Click()
@@ -890,11 +920,12 @@ public class GameManager : MonoBehaviour
         square.GetComponent<SpriteRenderer>().color = Color.blue;
         EnmeySkills.EnemyHaveFrezeer = true;
         EnmeySkills.enemyHavePowerShot = true;
-     
+        bm.goalPanel.SetActive(false);
+        bm.GoalEffectInstance.SetActive(false);
         powerShot.SetActive(true);
         isBestOfThree8 = true;
         stm.isPowerUpSkillUnlocked = true;
-
+        
     } 
     private void OnLevel9Click()
     {
@@ -908,7 +939,8 @@ public class GameManager : MonoBehaviour
         square.GetComponent<SpriteRenderer>().color = Color.red;
         EnmeySkills.EnemyHaveFrezeer = true;
         EnmeySkills.enemyHavePowerShot = true;
-       
+        bm.goalPanel.SetActive(false);
+        bm.GoalEffectInstance.SetActive(false);
         isBestOfThree9 = true;
     } 
     private void OnLevel10Click()
@@ -922,7 +954,8 @@ public class GameManager : MonoBehaviour
         square.GetComponent<SpriteRenderer>().color = Color.red;
         EnmeySkills.EnemyHaveFrezeer = true;
         EnmeySkills.enemyHavePowerShot = true;
-       
+        bm.goalPanel.SetActive(false);
+        bm.GoalEffectInstance.SetActive(false);
         FrezeerSkill();
         PowerShootSkill();
     } private void OnLevel11Click()
@@ -937,7 +970,8 @@ public class GameManager : MonoBehaviour
         square.GetComponent<SpriteRenderer>().color = Color.red;
         EnmeySkills.EnemyHaveFrezeer = true;
         EnmeySkills.enemyHavePowerShot = true;
-        
+        bm.goalPanel.SetActive(false);
+        bm.GoalEffectInstance.SetActive(false);
         isBestOfThree11 = true;
     } private void OnLevel12Click()
     {
@@ -949,7 +983,8 @@ public class GameManager : MonoBehaviour
         square.GetComponent<SpriteRenderer>().color = Color.red;
         EnmeySkills.EnemyHaveFrezeer = true;
         EnmeySkills.enemyHavePowerShot = true;
-       
+        bm.goalPanel.SetActive(false);
+        bm.GoalEffectInstance.SetActive(false);
         FrezeerSkill();
         PowerShootSkill();
         isBestOfThree12 = true;

@@ -511,7 +511,7 @@ public class GameManager : MonoBehaviour
             }
         }if (isBestOfThree4)
         {
-            if (playerScore == 4)
+            if (playerScore == 3)
             {
                 StopTheGame();
                 winPanel.SetActive(true);
@@ -541,7 +541,7 @@ public class GameManager : MonoBehaviour
             }
         }if (isBestOfThree5)
         {
-            if (playerScore == 5)
+            if (playerScore == 3)
             {
                 StopTheGame();
                 winPanel.SetActive(true);

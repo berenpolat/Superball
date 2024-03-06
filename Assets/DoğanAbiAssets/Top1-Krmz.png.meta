@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 3c3fab61063fd7c408561449526333bf
+guid: 7198d67b712f4eb49acfa8bbe600bfcd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 134830285232064583
-    second: SehirKarakteri_0
-  - first:
-      213: -9110550419934743142
-    second: SehirKarakteri_1
+      213: -5039041693931771708
+    second: Top1-Krmz_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -49,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -125,43 +122,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SehirKarakteri_0
+      name: Top1-Krmz_0
       rect:
         serializedVersion: 2
-        x: 34
-        y: 16
-        width: 63
-        height: 84
+        x: 103
+        y: 29
+        width: 204
+        height: 200
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 748c8381e630fd100800000000000000
-      internalID: 134830285232064583
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SehirKarakteri_1
-      rect:
-        serializedVersion: 2
-        x: 53
-        y: 0
-        width: 43
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a95f08fa9a2d09180800000000000000
-      internalID: -9110550419934743142
+      spriteID: 4c860d0074ab11ab0800000000000000
+      internalID: -5039041693931771708
       vertices: []
       indices: 
       edges: []
@@ -169,16 +145,14 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: 
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      SehirKarakteri_0: 134830285232064583
-      SehirKarakteri_1: -9110550419934743142
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

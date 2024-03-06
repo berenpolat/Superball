@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 3c3fab61063fd7c408561449526333bf
+guid: 0381c0c0b203a444db0ad9618e94091a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 134830285232064583
-    second: SehirKarakteri_0
+      213: 3500249360745856258
+    second: BuzKarakteri_2_0
   - first:
-      213: -9110550419934743142
-    second: SehirKarakteri_1
+      213: 3944487611708304219
+    second: BuzKarakteri_2_1
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -125,43 +125,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SehirKarakteri_0
+      name: BuzKarakteri_2_0
       rect:
         serializedVersion: 2
-        x: 34
-        y: 16
-        width: 63
-        height: 84
+        x: 71
+        y: 33
+        width: 136
+        height: 158
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 748c8381e630fd100800000000000000
-      internalID: 134830285232064583
+      spriteID: 20d7b8c9f32639030800000000000000
+      internalID: 3500249360745856258
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SehirKarakteri_1
+      name: BuzKarakteri_2_1
       rect:
         serializedVersion: 2
-        x: 53
-        y: 0
-        width: 43
-        height: 15
+        x: 109
+        y: 1
+        width: 80
+        height: 28
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a95f08fa9a2d09180800000000000000
-      internalID: -9110550419934743142
+      spriteID: b5b6dc48592adb630800000000000000
+      internalID: 3944487611708304219
       vertices: []
       indices: 
       edges: []
@@ -170,15 +170,15 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SehirKarakteri_0: 134830285232064583
-      SehirKarakteri_1: -9110550419934743142
+      BuzKarakteri_2_0: 3500249360745856258
+      BuzKarakteri_2_1: 3944487611708304219
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

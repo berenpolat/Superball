@@ -59,9 +59,8 @@ public class EnemyScript : MonoBehaviour
 
     private void Update()
     {
-       
-        
-         TrackTheBall();
+
+        TrackTheBall();
             
         
         if (enemySpeed < originalSpeed)

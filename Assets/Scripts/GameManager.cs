@@ -1,9 +1,7 @@
 using System.Collections.Generic;
-using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
-using Vector3 = UnityEngine.Vector3;
 
 public class GameManager : MonoBehaviour
 {
@@ -30,6 +28,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Text budgetText;
     [SerializeField] private Text levelText;
     
+    #endregion
+
+    #region "EnemySprites"
+
+    [SerializeField] private Sprite cityEn;
+    [SerializeField] private Sprite iceEn;
+    [SerializeField] private Sprite fireEn;
+
     #endregion
 
     #region Gameobjects
@@ -105,6 +111,8 @@ public class GameManager : MonoBehaviour
                 mainMenuPanel.SetActive(true);
                 floor.GetComponent<SpriteRenderer>().sprite = cityFloor;
                 square.GetComponent<SpriteRenderer>().color = Color.green;
+                enemy.GetComponent<SpriteRenderer>().sprite = cityEn;
+                enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
                 break;
             case 1:
                 Button1.GetComponent<Button>().interactable = true;
@@ -113,7 +121,8 @@ public class GameManager : MonoBehaviour
                 square.GetComponent<SpriteRenderer>().color = Color.green;
                 mainMenuPanel.SetActive(true);
                 isBestOfThree1 = true;
-
+                enemy.GetComponent<SpriteRenderer>().sprite = cityEn;
+                enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
                 break;
             case 2:
                 Button1.GetComponent<Button>().interactable = true;
@@ -125,6 +134,8 @@ public class GameManager : MonoBehaviour
                 isBestOfThree2 = true;
                 isPassedLevel1 = true;
                 isPassedLevel2 = true;
+                enemy.GetComponent<SpriteRenderer>().sprite = cityEn;
+                enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
                 break;
             case 3:
                 Button1.GetComponent<Button>().interactable = true;
@@ -138,6 +149,8 @@ public class GameManager : MonoBehaviour
                 isPassedLevel1 = true;
                 isPassedLevel2 = true;
                 isPassedLevel3 = true;
+                enemy.GetComponent<SpriteRenderer>().sprite = iceEn;
+                enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
                 break;
             case 4:
                 Button1.GetComponent<Button>().interactable = true;
@@ -154,6 +167,8 @@ public class GameManager : MonoBehaviour
                 isPassedLevel2 = true;
                 isPassedLevel3 = true;
                 isPassedLevel4 = true;
+                enemy.GetComponent<SpriteRenderer>().sprite = iceEn;
+                enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
                 break;
             case 5:
                 Button1.GetComponent<Button>().interactable = true;
@@ -173,6 +188,8 @@ public class GameManager : MonoBehaviour
                 isPassedLevel4 = true;
                 isPassedLevel4 = true;
                 isPassedLevel5 = true;
+                enemy.GetComponent<SpriteRenderer>().sprite = iceEn;
+                enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
                 break;
             case 6:
                 Button1.GetComponent<Button>().interactable = true;
@@ -194,6 +211,8 @@ public class GameManager : MonoBehaviour
                 isPassedLevel4 = true;
                 isPassedLevel5 = true;
                 isPassedLevel6 = true;
+                enemy.GetComponent<SpriteRenderer>().sprite = iceEn;
+                enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
                 break;
             case 7:
                 Button1.GetComponent<Button>().interactable = true;
@@ -217,6 +236,8 @@ public class GameManager : MonoBehaviour
                 isPassedLevel5 = true;
                 isPassedLevel6 = true;
                 isPassedLevel7 = true;
+                enemy.GetComponent<SpriteRenderer>().sprite = iceEn;
+                enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
                 break;
             case 8:
                 Button1.GetComponent<Button>().interactable = true;
@@ -243,6 +264,8 @@ public class GameManager : MonoBehaviour
                 isPassedLevel6 = true;
                 isPassedLevel7 = true;
                 isPassedLevel8 = true;
+                enemy.GetComponent<SpriteRenderer>().sprite = iceEn;
+                enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
                 break;
             case 9:
                 Button1.GetComponent<Button>().interactable = true;
@@ -271,6 +294,8 @@ public class GameManager : MonoBehaviour
                 isPassedLevel7 = true;
                 isPassedLevel8 = true;
                 isPassedLevel9 = true;
+                enemy.GetComponent<SpriteRenderer>().sprite = fireEn;
+                enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
                 break;
             case 10:
                 Button1.GetComponent<Button>().interactable = true;
@@ -301,6 +326,8 @@ public class GameManager : MonoBehaviour
                 isPassedLevel8 = true;
                 isPassedLevel9 = true;
                 isPassedLevel10 = true;
+                enemy.GetComponent<SpriteRenderer>().sprite = fireEn;
+                enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
                 break;
             case 11:
                 Button1.GetComponent<Button>().interactable = true;
@@ -333,6 +360,8 @@ public class GameManager : MonoBehaviour
                 isPassedLevel9 = true;
                 isPassedLevel10 = true;
                 isPassedLevel11 = true;
+                enemy.GetComponent<SpriteRenderer>().sprite = fireEn;
+                enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
                 break;
             case 12:
                 mainMenuPanel.SetActive(true);
@@ -354,6 +383,8 @@ public class GameManager : MonoBehaviour
                 isPassedLevel10 = true;
                 isPassedLevel11 = true;
                 isPassedLevel12 = true;
+                enemy.GetComponent<SpriteRenderer>().sprite = fireEn;
+                enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
                 break;
             default:
                 OnLevel1Click();
@@ -814,6 +845,8 @@ public class GameManager : MonoBehaviour
         // PowerShootSkill();
         bm.goalPanel.SetActive(false);
         bm.GoalEffectInstance.SetActive(false);
+        enemy.GetComponent<SpriteRenderer>().sprite = cityEn;
+        enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
     }
     private void OnLevel2Click()
     {
@@ -828,7 +861,8 @@ public class GameManager : MonoBehaviour
         // EnmeySkills.enemyHavePowerShot = false;
         bm.goalPanel.SetActive(false);
         bm.GoalEffectInstance.SetActive(false);
-     
+        enemy.GetComponent<SpriteRenderer>().sprite = cityEn;
+        enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
     }
 
     private void OnLevel3Click()
@@ -844,7 +878,8 @@ public class GameManager : MonoBehaviour
         // EnmeySkills.enemyHavePowerShot = false;
         bm.goalPanel.SetActive(false);
         bm.GoalEffectInstance.SetActive(false);
-       
+        enemy.GetComponent<SpriteRenderer>().sprite = cityEn;
+        enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
     }
     private void OnLevel4Click()
     {
@@ -862,6 +897,8 @@ public class GameManager : MonoBehaviour
         // EnmeySkills.enemyHavePowerShot = false;
         bm.goalPanel.SetActive(false);
         bm.GoalEffectInstance.SetActive(false);
+        enemy.GetComponent<SpriteRenderer>().sprite = iceEn;
+        enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
     }
     private void OnLevel5Click()
     {
@@ -876,7 +913,8 @@ public class GameManager : MonoBehaviour
         // EnmeySkills.enemyHavePowerShot = false;
         bm.goalPanel.SetActive(false);
         bm.GoalEffectInstance.SetActive(false);
-       
+        enemy.GetComponent<SpriteRenderer>().sprite = iceEn;
+        enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         isBestOfThree5 = true;
     }
     private void OnLevel6Click()
@@ -893,6 +931,8 @@ public class GameManager : MonoBehaviour
         bm.goalPanel.SetActive(false);
         bm.GoalEffectInstance.SetActive(false);
         isBestOfThree6 = true;
+        enemy.GetComponent<SpriteRenderer>().sprite = iceEn;
+        enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
     } 
     private void OnLevel7Click()
     {
@@ -908,6 +948,8 @@ public class GameManager : MonoBehaviour
         bm.goalPanel.SetActive(false);
         bm.GoalEffectInstance.SetActive(false);
         isBestOfThree7 = true;
+        enemy.GetComponent<SpriteRenderer>().sprite = iceEn;
+        enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
     }
     private void OnLevel8Click()
     {
@@ -925,6 +967,8 @@ public class GameManager : MonoBehaviour
         powerShot.SetActive(true);
         isBestOfThree8 = true;
         stm.isPowerUpSkillUnlocked = true;
+        enemy.GetComponent<SpriteRenderer>().sprite = iceEn;
+        enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         
     } 
     private void OnLevel9Click()
@@ -942,6 +986,8 @@ public class GameManager : MonoBehaviour
         bm.goalPanel.SetActive(false);
         bm.GoalEffectInstance.SetActive(false);
         isBestOfThree9 = true;
+        enemy.GetComponent<SpriteRenderer>().sprite = fireEn;
+        enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
     } 
     private void OnLevel10Click()
     {
@@ -958,6 +1004,8 @@ public class GameManager : MonoBehaviour
         bm.GoalEffectInstance.SetActive(false);
         FrezeerSkill();
         PowerShootSkill();
+        enemy.GetComponent<SpriteRenderer>().sprite = fireEn;
+        enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
     } private void OnLevel11Click()
     {
         levelTreeDisplayPanel.SetActive(false);
@@ -973,6 +1021,8 @@ public class GameManager : MonoBehaviour
         bm.goalPanel.SetActive(false);
         bm.GoalEffectInstance.SetActive(false);
         isBestOfThree11 = true;
+        enemy.GetComponent<SpriteRenderer>().sprite = fireEn;
+        enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
     } private void OnLevel12Click()
     {
         levelTreeDisplayPanel.SetActive(false);
@@ -988,6 +1038,8 @@ public class GameManager : MonoBehaviour
         FrezeerSkill();
         PowerShootSkill();
         isBestOfThree12 = true;
+        enemy.GetComponent<SpriteRenderer>().sprite = fireEn;
+        enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
     }
     #endregion
     

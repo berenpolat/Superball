@@ -7,14 +7,14 @@ using Random = UnityEngine.Random;
 
 public class EnmeySkills : MonoBehaviour
 {
-    #region  Frezeerdegerleri
+    #region  FrezeerValues
     [SerializeField] private GameObject FrezeerPrefab;
     [SerializeField] private GameObject FrezeerEffect;
     [SerializeField] private Transform FrezeerSpwnPoint;
     [SerializeField] private float minDelay;
     [SerializeField] private float maxDelay;
     [SerializeField] private float bulletSpeed;
-    private float nextActionTime = 0f;
+    private float nextActionTime;
     private GameObject currentEffect;
     private GameObject Enemyy;
     private GameObject FrezeerEffectInstance;

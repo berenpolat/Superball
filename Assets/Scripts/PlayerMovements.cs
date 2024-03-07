@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -32,6 +33,11 @@ public class PlayerMovements : MonoBehaviour
 
     #region Unity Methods
 
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -39,7 +45,7 @@ public class PlayerMovements : MonoBehaviour
         CanShoot = true;
         playerOriginalSpeed = speed;
         isMoving = false;
-        animator = GetComponent<Animator>();
+        
     }
     private void FixedUpdate()
     {

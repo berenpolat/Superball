@@ -433,15 +433,10 @@ public class GameManager : MonoBehaviour
 
         if (timer >= 60f)  
         {
-            // StopTheGame();
-            if (playerScore > enemyScore)
-            {
-                winPanel.SetActive(true);
-            }
-            if(playerScore < enemyScore)
-            {
-                losePanel.SetActive(true);
-            }
+           // StopTheGame();
+            losePanel.SetActive(true);
+            freeze.SetActive(false);
+            powerShot.SetActive(false);
         }
 
        

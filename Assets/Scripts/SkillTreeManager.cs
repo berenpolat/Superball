@@ -1,5 +1,3 @@
-using System.Net.Mime;
-using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 
 public class SkillTreeManager : MonoBehaviour

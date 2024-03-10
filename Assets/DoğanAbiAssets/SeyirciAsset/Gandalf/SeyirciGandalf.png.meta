@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: 49f41404da965ba48bdcf2bfc382bc33
+guid: e4c27bb11ad89a246b98563211315e35
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5834230418591301515
-    second: SeyirciSiyahSacliAdam_0
+      213: 5053346679885641171
+    second: SeyirciGandalf_0
   - first:
-      213: -7821728438215042782
-    second: SeyirciSiyahSacliAdam_1
+      213: 7761286949797886702
+    second: SeyirciGandalf_1
   - first:
-      213: -8828316553456021634
-    second: SeyirciSiyahSacliAdam_2
+      213: 1010626884457329372
+    second: SeyirciGandalf_2
   - first:
-      213: -2398532671822927996
-    second: SeyirciSiyahSacliAdam_3
+      213: -785456014563613445
+    second: SeyirciGandalf_3
   - first:
-      213: -1099682282429962567
-    second: SeyirciSiyahSacliAdam_4
+      213: 5426797417322205031
+    second: SeyirciGandalf_4
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -58,7 +58,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -92,6 +92,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -104,6 +105,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -116,6 +118,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -128,40 +131,33 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SeyirciSiyahSacliAdam_0
+      name: SeyirciGandalf_0
       rect:
         serializedVersion: 2
-        x: 49
-        y: 59
-        width: 106
-        height: 122
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b8fb9e597a957f050800000000000000
-      internalID: 5834230418591301515
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SeyirciSiyahSacliAdam_1
-      rect:
-        serializedVersion: 2
-        x: 153
+        x: 37
         y: 83
-        width: 30
-        height: 32
+        width: 114
+        height: 114
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,20 +165,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2291f9e3d63a37390800000000000000
-      internalID: -7821728438215042782
+      spriteID: 3d5bb751808112640800000000000000
+      internalID: 5053346679885641171
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SeyirciSiyahSacliAdam_2
+      name: SeyirciGandalf_1
       rect:
         serializedVersion: 2
-        x: 27
-        y: 51
-        width: 30
-        height: 28
+        x: 155
+        y: 19
+        width: 37
+        height: 106
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,20 +186,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e7f8d8a7ed48b7580800000000000000
-      internalID: -8828316553456021634
+      spriteID: eeaf39a1c51a5bb60800000000000000
+      internalID: 7761286949797886702
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SeyirciSiyahSacliAdam_3
+      name: SeyirciGandalf_2
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 57
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd2f9800cc7760e00800000000000000
+      internalID: 1010626884457329372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeyirciGandalf_3
       rect:
         serializedVersion: 2
         x: 55
-        y: 17
-        width: 36
-        height: 20
+        y: 15
+        width: 40
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -211,20 +228,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 48763d13e33b6bed0800000000000000
-      internalID: -2398532671822927996
+      spriteID: bf4ed319aef7915f0800000000000000
+      internalID: -785456014563613445
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SeyirciSiyahSacliAdam_4
+      name: SeyirciGandalf_4
       rect:
         serializedVersion: 2
         x: 115
-        y: 17
-        width: 38
-        height: 20
+        y: 15
+        width: 42
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -232,8 +249,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9b6a8fd5ac42db0f0800000000000000
-      internalID: -1099682282429962567
+      spriteID: 76f4f77af7bdf4b40800000000000000
+      internalID: 5426797417322205031
       vertices: []
       indices: 
       edges: []
@@ -249,11 +266,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SeyirciSiyahSacliAdam_0: 5834230418591301515
-      SeyirciSiyahSacliAdam_1: -7821728438215042782
-      SeyirciSiyahSacliAdam_2: -8828316553456021634
-      SeyirciSiyahSacliAdam_3: -2398532671822927996
-      SeyirciSiyahSacliAdam_4: -1099682282429962567
+      SeyirciGandalf_0: 5053346679885641171
+      SeyirciGandalf_1: 7761286949797886702
+      SeyirciGandalf_2: 1010626884457329372
+      SeyirciGandalf_3: -785456014563613445
+      SeyirciGandalf_4: 5426797417322205031
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

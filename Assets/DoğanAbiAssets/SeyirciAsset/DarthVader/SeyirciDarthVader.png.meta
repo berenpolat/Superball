@@ -1,22 +1,19 @@
 fileFormatVersion: 2
-guid: e4c27bb11ad89a246b98563211315e35
+guid: 3d35eb46978766544b431931729bf1e9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5053346679885641171
-    second: SeyirciGandalf_0
+      213: -1784613774344442194
+    second: SeyirciDarthVader_0
   - first:
-      213: 7761286949797886702
-    second: SeyirciGandalf_1
+      213: 137109484583822728
+    second: SeyirciDarthVader_1
   - first:
-      213: 1010626884457329372
-    second: SeyirciGandalf_2
+      213: 1225671447518683447
+    second: SeyirciDarthVader_2
   - first:
-      213: -785456014563613445
-    second: SeyirciGandalf_3
-  - first:
-      213: 5426797417322205031
-    second: SeyirciGandalf_4
+      213: -7125644133408887719
+    second: SeyirciDarthVader_3
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -58,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -92,6 +89,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -104,6 +102,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -116,6 +115,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -128,19 +128,33 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SeyirciGandalf_0
+      name: SeyirciDarthVader_0
       rect:
         serializedVersion: 2
-        x: 37
-        y: 83
-        width: 114
-        height: 114
+        x: 21
+        y: 129
+        width: 152
+        height: 102
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,20 +162,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3d5bb751808112640800000000000000
-      internalID: 5053346679885641171
+      spriteID: eae2eee3a37cb37e0800000000000000
+      internalID: -1784613774344442194
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SeyirciGandalf_1
+      name: SeyirciDarthVader_1
       rect:
         serializedVersion: 2
-        x: 155
-        y: 19
-        width: 37
-        height: 106
+        x: 33
+        y: 59
+        width: 134
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,41 +183,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eeaf39a1c51a5bb60800000000000000
-      internalID: 7761286949797886702
+      spriteID: 885a4fb895c17e100800000000000000
+      internalID: 137109484583822728
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SeyirciGandalf_2
+      name: SeyirciDarthVader_2
       rect:
         serializedVersion: 2
-        x: 39
-        y: 57
-        width: 24
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cd2f9800cc7760e00800000000000000
-      internalID: 1010626884457329372
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SeyirciGandalf_3
-      rect:
-        serializedVersion: 2
-        x: 55
-        y: 15
+        x: 49
+        y: 17
         width: 40
-        height: 24
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -211,20 +204,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bf4ed319aef7915f0800000000000000
-      internalID: -785456014563613445
+      spriteID: 731a0b800b5720110800000000000000
+      internalID: 1225671447518683447
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SeyirciGandalf_4
+      name: SeyirciDarthVader_3
       rect:
         serializedVersion: 2
-        x: 115
-        y: 15
-        width: 42
-        height: 24
+        x: 105
+        y: 17
+        width: 40
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -232,8 +225,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 76f4f77af7bdf4b40800000000000000
-      internalID: 5426797417322205031
+      spriteID: 95c2158f960ac1d90800000000000000
+      internalID: -7125644133408887719
       vertices: []
       indices: 
       edges: []
@@ -249,11 +242,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SeyirciGandalf_0: 5053346679885641171
-      SeyirciGandalf_1: 7761286949797886702
-      SeyirciGandalf_2: 1010626884457329372
-      SeyirciGandalf_3: -785456014563613445
-      SeyirciGandalf_4: 5426797417322205031
+      SeyirciDarthVader_0: -1784613774344442194
+      SeyirciDarthVader_1: 137109484583822728
+      SeyirciDarthVader_2: 1225671447518683447
+      SeyirciDarthVader_3: -7125644133408887719
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

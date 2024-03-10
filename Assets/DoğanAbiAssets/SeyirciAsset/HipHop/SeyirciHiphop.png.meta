@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 3d35eb46978766544b431931729bf1e9
+guid: dd5c00476c9c67349bb0c80b132fec7b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1784613774344442194
-    second: SeyirciDarthVader_0
+      213: 6847109016719324699
+    second: SeyirciHiphop_0
   - first:
-      213: 137109484583822728
-    second: SeyirciDarthVader_1
+      213: -5300676784060335388
+    second: SeyirciHiphop_1
   - first:
-      213: 1225671447518683447
-    second: SeyirciDarthVader_2
+      213: -9204334427304796852
+    second: SeyirciHiphop_2
   - first:
-      213: -7125644133408887719
-    second: SeyirciDarthVader_3
+      213: -1379915601592120773
+    second: SeyirciHiphop_3
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -55,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -89,6 +89,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -101,6 +102,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -113,6 +115,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -125,19 +128,33 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SeyirciDarthVader_0
+      name: SeyirciHiphop_0
       rect:
         serializedVersion: 2
-        x: 21
-        y: 129
-        width: 152
-        height: 102
+        x: 19
+        y: 51
+        width: 126
+        height: 138
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +162,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eae2eee3a37cb37e0800000000000000
-      internalID: -1784613774344442194
+      spriteID: b16fde78f51d50f50800000000000000
+      internalID: 6847109016719324699
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SeyirciDarthVader_1
+      name: SeyirciHiphop_1
       rect:
         serializedVersion: 2
-        x: 33
-        y: 59
-        width: 134
-        height: 60
+        x: 149
+        y: 69
+        width: 30
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,18 +183,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 885a4fb895c17e100800000000000000
-      internalID: 137109484583822728
+      spriteID: 4ea7ce09c863076b0800000000000000
+      internalID: -5300676784060335388
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SeyirciDarthVader_2
+      name: SeyirciHiphop_2
       rect:
         serializedVersion: 2
-        x: 49
-        y: 17
+        x: 55
+        y: 13
         width: 40
         height: 36
       alignment: 0
@@ -187,19 +204,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 731a0b800b5720110800000000000000
-      internalID: 1225671447518683447
+      spriteID: c4d5992ea92a34080800000000000000
+      internalID: -9204334427304796852
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SeyirciDarthVader_3
+      name: SeyirciHiphop_3
       rect:
         serializedVersion: 2
-        x: 105
-        y: 17
-        width: 40
+        x: 115
+        y: 13
+        width: 42
         height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -208,8 +225,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 95c2158f960ac1d90800000000000000
-      internalID: -7125644133408887719
+      spriteID: b3a051b421e89dce0800000000000000
+      internalID: -1379915601592120773
       vertices: []
       indices: 
       edges: []
@@ -225,10 +242,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SeyirciDarthVader_0: -1784613774344442194
-      SeyirciDarthVader_1: 137109484583822728
-      SeyirciDarthVader_2: 1225671447518683447
-      SeyirciDarthVader_3: -7125644133408887719
+      SeyirciHiphop_0: 6847109016719324699
+      SeyirciHiphop_1: -5300676784060335388
+      SeyirciHiphop_2: -9204334427304796852
+      SeyirciHiphop_3: -1379915601592120773
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

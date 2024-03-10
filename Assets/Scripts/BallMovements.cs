@@ -35,6 +35,12 @@ public class BallMovements : MonoBehaviour
     public Transform ballStartPoint;
 
     #endregion
+
+    [SerializeField] private AudioSource ballSoundSource;
+    [SerializeField] private AudioClip ballSound;
+    [SerializeField] private AudioClip cheerSound;
+    [SerializeField] private AudioClip sadSound;
+    
     #region unity Methods
 
 
@@ -60,6 +66,7 @@ public class BallMovements : MonoBehaviour
     {
         if (other.gameObject.CompareTag("WinColLeft"))
         {
+            ballSoundSource.PlayOneShot(sadSound);
             GoalEffectInstance = Instantiate(GoalEffect, transform.position, quaternion.identity);
             gm.enemyScore += 1;
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
@@ -68,6 +75,7 @@ public class BallMovements : MonoBehaviour
         }
         if (other.gameObject.CompareTag("WinColRight"))
         {
+            ballSoundSource.PlayOneShot(cheerSound);
             GoalEffectInstance = Instantiate(GoalEffect, transform.position, quaternion.identity);
             gm.playerScore += 1;
             SetInitialPositions();
@@ -76,7 +84,31 @@ public class BallMovements : MonoBehaviour
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             GetComponent<Rigidbody2D>().angularVelocity = 0f;
         }
+
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            if (ballSoundSource != null && ballSound != null)
+            {
+                ballSoundSource.PlayOneShot(ballSound);
+            }
+        }
+        if (other.gameObject.CompareTag("Player"))
+        {
+            if (ballSoundSource != null && ballSound != null)
+            {
+                ballSoundSource.PlayOneShot(ballSound);
+            }
+        }
+        if (other.gameObject.CompareTag("Wall"))
+        {
+            if (ballSoundSource != null && ballSound != null)
+            {
+                ballSoundSource.PlayOneShot(ballSound);
+            }
+        }
+      
     }
+    
 
     private IEnumerator ShowGoalPanel()
     {

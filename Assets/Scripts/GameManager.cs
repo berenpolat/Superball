@@ -1,7 +1,10 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using UnityEngine.Audio;
+using System.Diagnostics;
 
 public class GameManager : MonoBehaviour
 {
@@ -80,8 +83,22 @@ public class GameManager : MonoBehaviour
         Button7,Button8,Button9,Button10,Button11,Button12;
 
     #endregion
-    
+
+
+    #region SoundController
+
+    [SerializeField] private AudioClip inGameSound;
+    [SerializeField] private AudioClip playSound;
+    public AudioSource PlaySong;
+    public AudioSource Supporter;
+
+    #endregion
     #region Unity Methods
+
+    private void FixedUpdate()
+    {
+        PlaySong = gameObject.GetComponent<AudioSource>();
+    }
 
     private void Start()
     {
@@ -1035,8 +1052,16 @@ public class GameManager : MonoBehaviour
         enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
     }
     #endregion
-    
 
+
+    private void PlaySoundPlayer()
+    {
+        PlaySong.clip = playSound;
+        PlaySong.loop = true;
+        PlaySong.Play();
+        Supporter.Play();
+    }
+    
     public void DisplayLevelTree()
     {
         ingamePanel.SetActive(false);
@@ -1048,51 +1073,63 @@ public class GameManager : MonoBehaviour
     public void ButtonLevel1Controler()
     {
         OnLevel1Click();
+        PlaySoundPlayer();
     }
     public void ButtonLevel2Controler()
     {
         OnLevel2Click();
+        PlaySoundPlayer();
     }
 
     public void ButtonLevel3Controler()
     {
         OnLevel3Click();
+        PlaySoundPlayer();
     }
     public void ButtonLevel4Controler()
     {
         OnLevel4Click();
+        PlaySoundPlayer();
     }
     public void ButtonLevel5Controler()
     {
         OnLevel5Click();
+        PlaySoundPlayer();
     }
     public void ButtonLevel6Controler()
     {
         OnLevel6Click();
+        PlaySoundPlayer();
     }
     public void ButtonLevel7Controler()
     {
         OnLevel7Click();
+        PlaySoundPlayer();
     }
     public void ButtonLevel8Controler()
     {
         OnLevel8Click();
+        PlaySoundPlayer();
     }
     public void ButtonLevel9Controler()
     {
         OnLevel9Click();
+        PlaySoundPlayer();
     }
     public void ButtonLevel10Controler()
     {
         OnLevel10Click();
+        PlaySoundPlayer();
     }
     public void ButtonLevel11Controler()
     {
         OnLevel11Click();
+        PlaySoundPlayer();
     }
     public void ButtonLevel12Controler()
     {
         OnLevel2Click();
+        PlaySoundPlayer();
     }
     #endregion
 
@@ -1110,6 +1147,10 @@ public class GameManager : MonoBehaviour
         enemy.GetComponent<Rigidbody2D>().velocity= Vector2.zero;
         player.GetComponent<Rigidbody2D>().velocity=Vector2.zero;
         ball.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        PlaySong.clip = inGameSound;
+        PlaySong.loop = true;
+        PlaySong.Play();
+        Supporter.Stop();
     }
 
     private void StartTheGameplay()
@@ -1127,6 +1168,7 @@ public class GameManager : MonoBehaviour
         player.SetActive(true);
         ball.SetActive(true);
         EnmeySkills.canPowerShot = false;
+  
     }
 
     #region CounterRegion

@@ -981,17 +981,14 @@ public class GameManager : MonoBehaviour
         mainMenuPanel.SetActive(false);
         StartCountdown();
         timer = 0;
-        freeze.SetActive(true);
-        FrezeerSkill();
         isBestOfThree4 = true;
-        floor.GetComponent<SpriteRenderer>().sprite = freezeFloor;
-        square.GetComponent<SpriteRenderer>().color = Color.blue;
-        stm.isFreezeSkillUnlocked = true;
-        EnmeySkills.EnemyHaveFrezeer = true;
+        floor.GetComponent<SpriteRenderer>().sprite = cityFloor;
+        square.GetComponent<SpriteRenderer>().color = Color.green;
+        // EnmeySkills.EnemyHaveFrezeer = false;
         // EnmeySkills.enemyHavePowerShot = false;
         bm.goalPanel.SetActive(false);
         bm.GoalEffectInstance.SetActive(false);
-        enemy.GetComponent<SpriteRenderer>().sprite = iceEn;
+        enemy.GetComponent<SpriteRenderer>().sprite = cityEn;
         enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
     }
     private void OnLevel5Click()

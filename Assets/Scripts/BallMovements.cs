@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BallMovements : MonoBehaviour
 {
@@ -118,7 +119,16 @@ public class BallMovements : MonoBehaviour
     }
     
     #endregion
-   
+
+    #region  skill variables
+    [SerializeField] private GameObject freeze;
+    [SerializeField] private GameObject powerShot;
+    [SerializeField] private Button  FrezeerButton;
+    [SerializeField] private Button PowerShotbutton;
+    
+    
+    
+    #endregion
     public void Shoot(Vector3 direction)
     {
         rb.AddForce(direction * force);
@@ -133,6 +143,20 @@ public class BallMovements : MonoBehaviour
         Player.transform.position = pm.playerStartPoint.position;
         Enemy.transform.position = es.enemyStartPoint.position;
         transform.position = ballStartPoint.position;
+
+        if (GameManager.isHavingFrezeer == true)
+        {
+            freeze.SetActive(true);
+            FrezeerButton.interactable = true;
+            PlayerSkills.frezeerUsed = false;
+        }
+
+        if (GameManager.isHavingPowerShoot == true)
+        {
+            powerShot.SetActive(true);
+            PowerShotbutton.interactable = true;
+        }
     }
-    
 }
+    
+

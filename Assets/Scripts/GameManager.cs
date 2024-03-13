@@ -920,6 +920,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject powerShot;
     [SerializeField] private Button  FrezeerButton;
     [SerializeField] private Button PowerShotbutton;
+    public static bool isHavingFrezeer;
+    public static bool isHavingPowerShoot;
     #endregion
 
     #region Level Functions
@@ -941,6 +943,8 @@ public class GameManager : MonoBehaviour
         bm.GoalEffectInstance.SetActive(false);
         enemy.GetComponent<SpriteRenderer>().sprite = cityEn;
         enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        isHavingFrezeer = false;
+        isHavingPowerShoot = false;
     }
     private void OnLevel2Click()
     {
@@ -957,6 +961,8 @@ public class GameManager : MonoBehaviour
         bm.GoalEffectInstance.SetActive(false);
         enemy.GetComponent<SpriteRenderer>().sprite = cityEn;
         enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        isHavingFrezeer = false;
+        isHavingPowerShoot = false;
     }
 
     private void OnLevel3Click()
@@ -974,6 +980,8 @@ public class GameManager : MonoBehaviour
         bm.GoalEffectInstance.SetActive(false);
         enemy.GetComponent<SpriteRenderer>().sprite = cityEn;
         enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        isHavingFrezeer = false;
+        isHavingPowerShoot = false;
     }
     private void OnLevel4Click()
     {
@@ -990,6 +998,8 @@ public class GameManager : MonoBehaviour
         bm.GoalEffectInstance.SetActive(false);
         enemy.GetComponent<SpriteRenderer>().sprite = cityEn;
         enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        isHavingFrezeer = false;
+        isHavingPowerShoot = false;
     }
     private void OnLevel5Click()
     {
@@ -1007,6 +1017,7 @@ public class GameManager : MonoBehaviour
         enemy.GetComponent<SpriteRenderer>().sprite = iceEn;
         enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         isBestOfThree5 = true;
+        isHavingPowerShoot = false;
     }
     private void OnLevel6Click()
     {
@@ -1024,6 +1035,7 @@ public class GameManager : MonoBehaviour
         isBestOfThree6 = true;
         enemy.GetComponent<SpriteRenderer>().sprite = iceEn;
         enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        isHavingPowerShoot = false;
     } 
     private void OnLevel7Click()
     {
@@ -1041,6 +1053,7 @@ public class GameManager : MonoBehaviour
         isBestOfThree7 = true;
         enemy.GetComponent<SpriteRenderer>().sprite = iceEn;
         enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        isHavingPowerShoot = false;
     }
     private void OnLevel8Click()
     {
@@ -1052,14 +1065,13 @@ public class GameManager : MonoBehaviour
         floor.GetComponent<SpriteRenderer>().sprite = freezeFloor;
         square.GetComponent<SpriteRenderer>().color = Color.blue;
         EnmeySkills.EnemyHaveFrezeer = true;
-        EnmeySkills.enemyHavePowerShot = true;
         bm.goalPanel.SetActive(false);
         bm.GoalEffectInstance.SetActive(false);
-        powerShot.SetActive(true);
         isBestOfThree8 = true;
         stm.isPowerUpSkillUnlocked = true;
         enemy.GetComponent<SpriteRenderer>().sprite = iceEn;
         enemy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        isHavingPowerShoot = false;
         
     } 
     private void OnLevel9Click()
@@ -1281,12 +1293,14 @@ public class GameManager : MonoBehaviour
 
     private void FrezeerSkill()
     {
+        isHavingFrezeer = true;
         freeze.SetActive(true);
         FrezeerButton.interactable = true;
         PlayerSkills.frezeerUsed = false;
     }
     private void PowerShootSkill()
     {
+        isHavingPowerShoot = true;
         powerShot.SetActive(true);
         PowerShotbutton.interactable = true;
     }

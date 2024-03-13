@@ -68,7 +68,7 @@ public class PlayerMovements : MonoBehaviour
         }
 
         isMoving = rb.velocity.magnitude > 0.1f;
-        animator.SetBool("isMoving", isMoving);
+        
     }
         
     

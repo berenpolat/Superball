@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a646a56fb5cacd74da80246c52165a9d
+guid: 4800edacfadc46c4c823d79dd637ed81
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -134,7 +134,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: seyirci8_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 60
+        width: 98
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31a4fb5266b664f40b112153d75be636
+      internalID: -947329036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seyirci8_1
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 38
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98dd982e191f4d9418af30cf2f156125
+      internalID: 355424867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seyirci8_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 36
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3673d72198187254f94153869d71cb55
+      internalID: 1542680140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seyirci8_3
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 10
+        width: 38
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68f4f8f0ac1b80842898a9ee47a06058
+      internalID: 1149748298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seyirci8_4
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 10
+        width: 42
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ad31b4b521e3da4abade544f2a9bae5
+      internalID: 603028463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -145,7 +250,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      seyirci8_0: -947329036
+      seyirci8_1: 355424867
+      seyirci8_2: 1542680140
+      seyirci8_3: 1149748298
+      seyirci8_4: 603028463
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

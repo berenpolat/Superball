@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4800edacfadc46c4c823d79dd637ed81
+guid: a646a56fb5cacd74da80246c52165a9d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,34 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: seyirci8_0
+      name: seyirci7_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 40
-        width: 28
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a9603d2a81dfe6b43a2a7557b40a0abf
-      internalID: 1443991718
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: seyirci8_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 56
+        x: 20
+        y: 62
         width: 98
-        height: 106
+        height: 114
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,19 +150,61 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ead2d26a545987d4c937e1c9ed038c5b
-      internalID: -2006926799
+      spriteID: 8ad3076e286846447b9393e4f0f1571d
+      internalID: 1427087934
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: seyirci8_2
+      name: seyirci7_1
       rect:
         serializedVersion: 2
-        x: 98
+        x: 20
         y: 38
         width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 219cc51628071874d93537eecf090918
+      internalID: -329243475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seyirci7_2
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 38
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a0583996df2b5e4580dfd0c30843b15
+      internalID: 1724433724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seyirci7_3
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 12
+        width: 38
         height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -192,20 +213,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9451883e6ad8eab49baf3bf228d55316
-      internalID: -960202380
+      spriteID: 80aca4f5b10e06b428f21b955fe0f5a1
+      internalID: -1485878364
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: seyirci8_3
+      name: seyirci7_4
       rect:
         serializedVersion: 2
-        x: 26
-        y: 6
-        width: 38
-        height: 24
+        x: 90
+        y: 12
+        width: 40
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,29 +234,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 544b0c8e45bc0d94cad526d111aacc4a
-      internalID: 1111149000
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: seyirci8_4
-      rect:
-        serializedVersion: 2
-        x: 84
-        y: 6
-        width: 42
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ec76bd5176dc3014bb3bf197db68b5ab
-      internalID: 1458095123
+      spriteID: 3633de97a77ff1f459179526135621ee
+      internalID: -772832403
       vertices: []
       indices: 
       edges: []
@@ -251,11 +251,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      seyirci8_0: 1443991718
-      seyirci8_1: -2006926799
-      seyirci8_2: -960202380
-      seyirci8_3: 1111149000
-      seyirci8_4: 1458095123
+      seyirci7_0: 1427087934
+      seyirci7_1: -329243475
+      seyirci7_2: 1724433724
+      seyirci7_3: -1485878364
+      seyirci7_4: -772832403
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

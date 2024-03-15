@@ -1381,7 +1381,7 @@ public class GameManager : MonoBehaviour
     }
     public void ButtonLevel12Controler()
     {
-        OnLevel2Click();
+        OnLevel12Click();
         PlaySoundPlayer();
     }
     #endregion

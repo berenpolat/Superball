@@ -5,6 +5,8 @@ using UnityEngine.Serialization;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 using System.Diagnostics;
+using UnityEngine.UIElements;
+using Button = UnityEngine.UI.Button;
 
 public class GameManager : MonoBehaviour
 {
@@ -60,6 +62,7 @@ public class GameManager : MonoBehaviour
     #region Panels
 
     [SerializeField] private GameObject mainMenuPanel;
+    [SerializeField] private GameObject tiePanel;
     [SerializeField] private GameObject ingamePanel;
     [SerializeField] private GameObject winPanel;
     [SerializeField] private GameObject losePanel;
@@ -474,10 +477,23 @@ public class GameManager : MonoBehaviour
                 Button2.GetComponent<Button>().interactable = true;
                 timer = 0;
             }
-            if (timer >= 60f && inGame)  
+            if (timer >= 60f)
             {
-                losePanel.SetActive(true);
-                StopTheGame();
+                if (playerScore > enemyScore)
+                {
+                    winPanel.SetActive(true);
+                    StopTheGame();
+                }
+                else if (playerScore < enemyScore)
+                {
+                    losePanel.SetActive(true);
+                    StopTheGame();    
+                }
+                else 
+                {
+                    tiePanel.SetActive(true);
+                    StopTheGame();
+                }
             }
             if (enemyScore == 3)
             {
@@ -512,10 +528,23 @@ public class GameManager : MonoBehaviour
                 timer = 0;
                 Button3.GetComponent<Button>().interactable = true;
             }
-            if (timer >= 60f)  
+            if (timer >= 60f)
             {
-                losePanel.SetActive(true);
-                StopTheGame();
+                if (playerScore > enemyScore)
+                {
+                    winPanel.SetActive(true);
+                    StopTheGame();
+                }
+                else if (playerScore < enemyScore)
+                {
+                    losePanel.SetActive(true);
+                    StopTheGame();    
+                }
+                else 
+                {
+                    tiePanel.SetActive(true);
+                    StopTheGame();
+                }
             }
             if (enemyScore == 3)
             {
@@ -553,10 +582,23 @@ public class GameManager : MonoBehaviour
                 Button4.GetComponent<Button>().interactable = true;
                 timer = 0;
             }
-            if (timer >= 60f)  
+            if (timer >= 60f)
             {
-                losePanel.SetActive(true);
-                StopTheGame();
+                if (playerScore > enemyScore)
+                {
+                    winPanel.SetActive(true);
+                    StopTheGame();
+                }
+                else if (playerScore < enemyScore)
+                {
+                    losePanel.SetActive(true);
+                    StopTheGame();    
+                }
+                else 
+                {
+                    tiePanel.SetActive(true);
+                    StopTheGame();
+                }
             }
             if (enemyScore == 3)
             {
@@ -590,10 +632,23 @@ public class GameManager : MonoBehaviour
                 Button5.GetComponent<Button>().interactable = true;
                 timer = 0;
             }
-            if (timer >= 60f)  
+            if (timer >= 60f)
             {
-                losePanel.SetActive(true);
-                StopTheGame();
+                if (playerScore > enemyScore)
+                {
+                    winPanel.SetActive(true);
+                    StopTheGame();
+                }
+                else if (playerScore < enemyScore)
+                {
+                    losePanel.SetActive(true);
+                    StopTheGame();    
+                }
+                else 
+                {
+                    tiePanel.SetActive(true);
+                    StopTheGame();
+                }
             }
             if (enemyScore == 3)
             {
@@ -627,10 +682,23 @@ public class GameManager : MonoBehaviour
                 Button6.GetComponent<Button>().interactable = true;
                 timer = 0;
             }
-            if (timer >= 60f)  
+            if (timer >= 60f)
             {
-                losePanel.SetActive(true);
-                StopTheGame();
+                if (playerScore > enemyScore)
+                {
+                    winPanel.SetActive(true);
+                    StopTheGame();
+                }
+                else if (playerScore < enemyScore)
+                {
+                    losePanel.SetActive(true);
+                    StopTheGame();    
+                }
+                else 
+                {
+                    tiePanel.SetActive(true);
+                    StopTheGame();
+                }
             }
             if (enemyScore == 3)
             {
@@ -664,11 +732,25 @@ public class GameManager : MonoBehaviour
                 Button7.GetComponent<Button>().interactable = true;
                 timer = 0;
             }
-            if (timer >= 60f)  
+            if (timer >= 60f)
             {
-                losePanel.SetActive(true);
-                StopTheGame();
+                if (playerScore > enemyScore)
+                {
+                    winPanel.SetActive(true);
+                    StopTheGame();
+                }
+                else if (playerScore < enemyScore)
+                {
+                    losePanel.SetActive(true);
+                    StopTheGame();    
+                }
+                else 
+                {
+                    tiePanel.SetActive(true);
+                    StopTheGame();
+                }
             }
+
             if (enemyScore == 3)
             {
                 StopTheGame();
@@ -701,10 +783,23 @@ public class GameManager : MonoBehaviour
                 Button8.GetComponent<Button>().interactable = true;
                 timer = 0;
             }
-            if (timer >= 60f)  
+            if (timer >= 60f)
             {
-                losePanel.SetActive(true);
-                StopTheGame();
+                if (playerScore > enemyScore)
+                {
+                    winPanel.SetActive(true);
+                    StopTheGame();
+                }
+                else if (playerScore < enemyScore)
+                {
+                    losePanel.SetActive(true);
+                    StopTheGame();    
+                }
+                else 
+                {
+                    tiePanel.SetActive(true);
+                    StopTheGame();
+                }
             }
             if (enemyScore == 3)
             {
@@ -740,10 +835,23 @@ public class GameManager : MonoBehaviour
                 Button9.GetComponent<Button>().interactable = true;
                 timer = 0;
             }
-            if (timer >= 60f)  
+            if (timer >= 60f)
             {
-                losePanel.SetActive(true);
-                StopTheGame();
+                if (playerScore > enemyScore)
+                {
+                    winPanel.SetActive(true);
+                    StopTheGame();
+                }
+                else if (playerScore < enemyScore)
+                {
+                    losePanel.SetActive(true);
+                    StopTheGame();    
+                }
+                else 
+                {
+                    tiePanel.SetActive(true);
+                    StopTheGame();
+                }
             }
             if (enemyScore == 3)
             {
@@ -777,10 +885,23 @@ public class GameManager : MonoBehaviour
                 Button10.GetComponent<Button>().interactable = true;
                 timer = 0;
             }
-            if (timer >= 60f)  
+            if (timer >= 60f)
             {
-                losePanel.SetActive(true);
-                StopTheGame();
+                if (playerScore > enemyScore)
+                {
+                    winPanel.SetActive(true);
+                    StopTheGame();
+                }
+                else if (playerScore < enemyScore)
+                {
+                    losePanel.SetActive(true);
+                    StopTheGame();    
+                }
+                else 
+                {
+                    tiePanel.SetActive(true);
+                    StopTheGame();
+                }
             }
             if (enemyScore == 3)
             {
@@ -814,10 +935,23 @@ public class GameManager : MonoBehaviour
                 Button11.GetComponent<Button>().interactable = true;
                 timer = 0;
             }
-            if (timer >= 60f)  
+            if (timer >= 60f)
             {
-                losePanel.SetActive(true);
-                StopTheGame();
+                if (playerScore > enemyScore)
+                {
+                    winPanel.SetActive(true);
+                    StopTheGame();
+                }
+                else if (playerScore < enemyScore)
+                {
+                    losePanel.SetActive(true);
+                    StopTheGame();    
+                }
+                else 
+                {
+                    tiePanel.SetActive(true);
+                    StopTheGame();
+                }
             }
             if (enemyScore == 3)
             {
@@ -851,10 +985,23 @@ public class GameManager : MonoBehaviour
                 Button12.GetComponent<Button>().interactable = true;
                 timer = 0;
             }
-            if (timer >= 60f)  
+            if (timer >= 60f)
             {
-                losePanel.SetActive(true);
-                StopTheGame();
+                if (playerScore > enemyScore)
+                {
+                    winPanel.SetActive(true);
+                    StopTheGame();
+                }
+                else if (playerScore < enemyScore)
+                {
+                    losePanel.SetActive(true);
+                    StopTheGame();    
+                }
+                else 
+                {
+                    tiePanel.SetActive(true);
+                    StopTheGame();
+                }
             }
             if (enemyScore == 3)
             {
@@ -887,10 +1034,23 @@ public class GameManager : MonoBehaviour
                     isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
                 timer = 0;
             }
-            if (timer >= 60f)  
+            if (timer >= 60f)
             {
-                losePanel.SetActive(true);
-                StopTheGame();
+                if (playerScore > enemyScore)
+                {
+                    winPanel.SetActive(true);
+                    StopTheGame();
+                }
+                else if (playerScore < enemyScore)
+                {
+                    losePanel.SetActive(true);
+                    StopTheGame();    
+                }
+                else 
+                {
+                    tiePanel.SetActive(true);
+                    StopTheGame();
+                }
             }
             if (enemyScore == 3)
             {

@@ -78,12 +78,24 @@ public class EnemyScript : MonoBehaviour
         Vector2 direction = (winFile.transform.position - transform.position).normalized;
         bm.Shoot(direction*ballSpeed);
     }
+
     void TrackTheBall()
     {
         Vector2 direction = (ball.transform.position - transform.position).normalized;
-        
+
+        // Flip the sprite vertically if moving left or right
+        if (direction.x < 0) // Moving left
+        {
+            transform.localScale = new Vector2(0.5f, transform.localScale.y);
+        }
+        else if (direction.x > 0) // Moving right
+        {
+            transform.localScale= new Vector2(-0.5f, transform.localScale.y);
+        }
+
         rb.velocity = direction * enemySpeed;
     }
+
 
 
     private IEnumerator ResetSpeedAfterDelay() 

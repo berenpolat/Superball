@@ -20,12 +20,12 @@ public class SkillTreeManager : MonoBehaviour
     {
         if (isFreezeSkillUnlocked)
         {
-            freezeSkill.color = Color.white;
+            freezeSkill.color = Color.blue;
         }
 
         if (isPowerUpSkillUnlocked)
         {
-            powerUpSkill.color =Color.white;
+            powerUpSkill.color =Color.red;
         }
     }
 }

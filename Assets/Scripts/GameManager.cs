@@ -1688,6 +1688,12 @@ public class GameManager : MonoBehaviour
         losePanel.SetActive(false);
         mainMenuPanel.SetActive(true);
     }
+    
+    public void BackToMenuButtonForTier()
+    {
+        tiePanel.SetActive(false);
+        mainMenuPanel.SetActive(true);
+    }
 
     public void OpenSkillTree()
     {

@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject mainMenuPanel;
     [SerializeField] private GameObject tiePanel;
+    [SerializeField] private GameObject creditsPanel;
     [SerializeField] private GameObject ingamePanel;
     [SerializeField] private GameObject winPanel;
     [SerializeField] private GameObject losePanel;
@@ -1510,5 +1511,9 @@ public class GameManager : MonoBehaviour
         powerShootTutorialPanel.SetActive(false);
     }
 
+    public void BackFromCreditsPanel()
+    {
+        creditsPanel.SetActive(false);
+    }
     #endregion
 }

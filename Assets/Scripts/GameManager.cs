@@ -1249,6 +1249,7 @@ public class GameManager : MonoBehaviour
                         isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
                     timer = 0;
                     StopTheGame();
+                    creditsPanel.SetActive(true);
                 }
                 else if (playerScore < enemyScore)
                 {
@@ -1258,6 +1259,7 @@ public class GameManager : MonoBehaviour
                 else 
                 {
                     tiePanel.SetActive(true);
+                    creditsPanel.SetActive(true);
                     StopTheGame();
                 }
             }
@@ -1728,6 +1730,11 @@ public class GameManager : MonoBehaviour
     public void BackFromCreditsPanel()
     {
         creditsPanel.SetActive(false);
+    }
+
+    public void OpenCreditsPanel()
+    {
+        creditsPanel.SetActive(true);
     }
     #endregion
 }

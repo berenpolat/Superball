@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
-using UnityEngine.Audio;
-using System.Diagnostics;
-using UnityEngine.UIElements;
 using Button = UnityEngine.UI.Button;
 
 public class GameManager : MonoBehaviour

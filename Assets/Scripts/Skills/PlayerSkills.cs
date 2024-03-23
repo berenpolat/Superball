@@ -40,8 +40,11 @@ public class PlayerSkills : MonoBehaviour
     public Button PowerShootButton;
     public bool PowerShoot; 
     private GameObject grabbedObject;
+    public  GameObject powerShootRange;
     private bool PowerShooCanUse;
     private int layerIndex;
+    
+       
 
     #endregion
 
@@ -53,6 +56,7 @@ public class PlayerSkills : MonoBehaviour
         frezeerUsed = false;
         PowerShoot = true;
         PowerShooCanUse = false;
+        powerShootRange.SetActive(false);
     }
     public void ResetSkills()
     {
@@ -104,6 +108,7 @@ public class PlayerSkills : MonoBehaviour
             PlayerMovements.CanShoot = false;
             PowerShotInstance = Instantiate(PowerShotPowerUpEffect, (Vector2)player.transform.position + offset, Quaternion.identity);
             PowerShotInstance.transform.SetParent(player.transform.GetChild(0));
+            powerShootRange.SetActive(true);
 
         }
 
@@ -114,6 +119,7 @@ public class PlayerSkills : MonoBehaviour
         {
             // Yuvarlak alanda tarama yapılır
             Collider2D[] hitColliders = Physics2D.OverlapCircleAll(rayPoint.position, circleRadius);
+            powerShootRange.SetActive(false);
 
             // Tarama sonucunda çarpışan objeler kontrol edilir
             foreach (Collider2D collider in hitColliders)

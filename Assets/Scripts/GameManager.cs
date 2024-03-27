@@ -615,7 +615,7 @@ public class GameManager : MonoBehaviour
                 square.GetComponent<SpriteRenderer>().color = Color.blue;
                 if (!isPassedLevel3)
                 {
-                    freezeSkillTutorialPanel.SetActive(true);
+
                     lastLevel++;
                     isPassedLevel3 = true;
                 }
@@ -642,7 +642,7 @@ public class GameManager : MonoBehaviour
                     square.GetComponent<SpriteRenderer>().color = Color.blue;
                     if (!isPassedLevel3)
                     {
-                        freezeSkillTutorialPanel.SetActive(true);
+
                         lastLevel++;
                         isPassedLevel3 = true;
                     }
@@ -693,6 +693,7 @@ public class GameManager : MonoBehaviour
                 powerShot.SetActive(false);
                 if (!isPassedLevel4)
                 {
+                    freezeSkillTutorialPanel.SetActive(true);
                     lastLevel++;
                     isPassedLevel4 = true;
                 }
@@ -717,6 +718,7 @@ public class GameManager : MonoBehaviour
                     powerShot.SetActive(false);
                     if (!isPassedLevel4)
                     {
+                        freezeSkillTutorialPanel.SetActive(true);
                         lastLevel++;
                         isPassedLevel4 = true;
                     }
@@ -1337,7 +1339,7 @@ public class GameManager : MonoBehaviour
                     freeze.SetActive(false);
                     powerShot.SetActive(false);
                     timer = 0;
-                    
+
                 }
             }
             if (enemyScore == 3)

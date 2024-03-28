@@ -1313,6 +1313,7 @@ public class GameManager : MonoBehaviour
                     powerShot.SetActive(false);
                     if (!isPassedLevel12)
                     {
+                        lastLevel++;
                         isPassedLevel12 = true;
                     }
                     PlayerPrefs.SetInt("Level", lastLevel);
@@ -1322,7 +1323,6 @@ public class GameManager : MonoBehaviour
                         isBestOfThree7 = isBestOfThree8 = isBestOfThree9 = isBestOfThree10 = isBestOfThree11 = isBestOfThree12 = false;
                     timer = 0;
                     StopTheGame();
-                    creditsPanel.SetActive(true);
                 }
                 else if (playerScore < enemyScore)
                 {

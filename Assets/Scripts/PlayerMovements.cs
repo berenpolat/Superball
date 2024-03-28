@@ -51,29 +51,43 @@ public class PlayerMovements : MonoBehaviour
         Vector2 targetDirection = new Vector2(variableJoystick.Horizontal, variableJoystick.Vertical);
         targetDirection.Normalize();
 
-        // Dönüþ açýsýný hesapla
-        float angle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg;
-        
-        Quaternion targetRotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        // Check if the player is moving
+        if (targetDirection.magnitude > 0.1f)
+        {
+            // Calculate the angle based on the direction of movement
+            float angle = Vector2.SignedAngle(Vector2.right, targetDirection);
 
-        // Karakterin dönmesi
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.fixedDeltaTime * rotationSpeed);
-        
-        // Hareketi uygula
-        rb.velocity = targetDirection * speed;
+            // Rotate the player
+           // transform.rotation = Quaternion.Euler(0, 0, angle);
+
+            // Apply movement
+            rb.velocity = targetDirection * speed;
+        }
+        else
+        {
+            // Stop the player if not moving
+            rb.velocity = Vector2.zero;
+        }
 
         if (speed < playerOriginalSpeed)
         {
             StartCoroutine(resetSpeed());
         }
+        if (targetDirection.x < 0) // Moving left
+        {
+            transform.localScale = new Vector2(-1f, transform.localScale.y);
+        }
+        else if (targetDirection.x > 0) // Moving right
+        {
+            transform.localScale = new Vector2(1f, transform.localScale.y);
+        }
 
         isMoving = rb.velocity.magnitude > 0.1f;
-        
     }
-        
-    
+
+
     #endregion
-    
+
     public void ShootButton()
     {
       if(CanShoot == true)

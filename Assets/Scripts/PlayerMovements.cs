@@ -1,3 +1,4 @@
+
 using System.Collections;
 using UnityEngine;
 
@@ -14,13 +15,13 @@ public class PlayerMovements : MonoBehaviour
     [SerializeField] private float radius;
     [SerializeField] private float rotationSpeed;
     public Transform playerStartPoint;
-    public  float speed;
+    public float speed;
     private float playerOriginalSpeed;
     public static bool CanShoot;
     private Rigidbody2D rb;
     private Animator animator;
     private bool isMoving;
-    
+
     #endregion
 
     #region Vectors
@@ -44,45 +45,31 @@ public class PlayerMovements : MonoBehaviour
         CanShoot = true;
         playerOriginalSpeed = speed;
         isMoving = false;
-        
+
     }
     private void FixedUpdate()
     {
         Vector2 targetDirection = new Vector2(variableJoystick.Horizontal, variableJoystick.Vertical);
         targetDirection.Normalize();
 
-        // Check if the player is moving
-        if (targetDirection.magnitude > 0.1f)
-        {
-            // Calculate the angle based on the direction of movement
-            float angle = Vector2.SignedAngle(Vector2.right, targetDirection);
+        // Dönüþ açýsýný hesapla
+        float angle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg;
 
-            // Rotate the player
-           // transform.rotation = Quaternion.Euler(0, 0, angle);
+        Quaternion targetRotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-            // Apply movement
-            rb.velocity = targetDirection * speed;
-        }
-        else
-        {
-            // Stop the player if not moving
-            rb.velocity = Vector2.zero;
-        }
+        // Karakterin dönmesi
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.fixedDeltaTime * rotationSpeed);
+
+        // Hareketi uygula
+        rb.velocity = targetDirection * speed;
 
         if (speed < playerOriginalSpeed)
         {
             StartCoroutine(resetSpeed());
         }
-        if (targetDirection.x < 0) // Moving left
-        {
-            transform.localScale = new Vector2(-1f, transform.localScale.y);
-        }
-        else if (targetDirection.x > 0) // Moving right
-        {
-            transform.localScale = new Vector2(1f, transform.localScale.y);
-        }
 
         isMoving = rb.velocity.magnitude > 0.1f;
+
     }
 
 
@@ -90,23 +77,23 @@ public class PlayerMovements : MonoBehaviour
 
     public void ShootButton()
     {
-      if(CanShoot == true)
-      {
-
-        Collider2D[] colls = Physics2D.OverlapCircleAll(transform.position, radius);
-        foreach(Collider2D coll in colls)
+        if (CanShoot == true)
         {
-            if(coll.TryGetComponent(out BallMovements ball))
+
+            Collider2D[] colls = Physics2D.OverlapCircleAll(transform.position, radius);
+            foreach (Collider2D coll in colls)
             {
-                Vector3 dir = coll.transform.position - transform.position;
-                ball.Shoot(dir);
-                break;
-                
+                if (coll.TryGetComponent(out BallMovements ball))
+                {
+                    Vector3 dir = coll.transform.position - transform.position;
+                    ball.Shoot(dir);
+                    break;
+
+                }
             }
         }
-      }
     }
-    public  void powerShot()
+    public void powerShot()
     {
         Collider2D[] colls = Physics2D.OverlapCircleAll(transform.position, radius);
         foreach (Collider2D coll in colls)
@@ -116,7 +103,7 @@ public class PlayerMovements : MonoBehaviour
                 Vector3 dir = coll.transform.position - transform.position;
                 ball.PowerShoot(dir);
                 break;
-                
+
             }
         }
     }

@@ -1358,6 +1358,11 @@ public class GameManager : MonoBehaviour
         {
             timer = 0;
         }
+        if (!inGame)
+        {
+            timer = 0;
+        }
+     
 
         #region PlayerPrefs
         PlayerPrefs.SetInt("Budget", budget);

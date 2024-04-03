@@ -1306,9 +1306,9 @@ public class GameManager : MonoBehaviour
             {
                 if (playerScore > enemyScore)
                 {
+                    
+                    winPanel.SetActive(true);
                     creditsPanel.SetActive(true);
-                    winPanel.SetActive(true);
-                    winPanel.SetActive(true);
                     budget += 300;
                     isBestOfThree1 = true;
                     freeze.SetActive(false);

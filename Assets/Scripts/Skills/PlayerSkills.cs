@@ -39,6 +39,7 @@ public class PlayerSkills : MonoBehaviour
     public PlayerMovements playerMovements;
     public Button PowerShootButton;
     public bool PowerShoot; 
+    public GameObject powerShootGosterge;
     private GameObject grabbedObject;
     public  GameObject powerShootRange;
     private bool PowerShooCanUse;
@@ -119,7 +120,8 @@ public class PlayerSkills : MonoBehaviour
         {
             // Yuvarlak alanda tarama yapılır
             Collider2D[] hitColliders = Physics2D.OverlapCircleAll(rayPoint.position, circleRadius);
-            powerShootRange.SetActive(false);
+            powerShootRange.SetActive(false); 
+            powerShootGosterge.SetActive(true);
 
             // Tarama sonucunda çarpışan objeler kontrol edilir
             foreach (Collider2D collider in hitColliders)
@@ -136,6 +138,7 @@ public class PlayerSkills : MonoBehaviour
                     Vector3 spawnPosition = new Vector3(ball.position.x + 0.5f, ball.position.y, ball.position.z);
                     Quaternion spawnRotation = Quaternion.identity; // 2D oyunlarda genellikle Quaternion.identity kullanılır
                     GameObject PowerShotCarhingInstance = Instantiate(PowerShotCarhingEffect, spawnPosition, spawnRotation);
+                    ;
                     break; // Bir obje bulunduğunda döngüden çıkılır
                     
                 }
@@ -157,6 +160,7 @@ public class PlayerSkills : MonoBehaviour
         PlayerMovements.CanShoot = true;
         playerMovements.powerShot();
         Destroy(PowerShotInstance);
+        powerShootGosterge.SetActive(false);
     }
 
     #endregion
